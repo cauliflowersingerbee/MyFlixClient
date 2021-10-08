@@ -14,3 +14,5 @@ class MyFlixApplication extends React.Component {
     );
   }
 }
+// Finds the root of your app
+const container = document.getElementsByClassName('app-container')[0];
