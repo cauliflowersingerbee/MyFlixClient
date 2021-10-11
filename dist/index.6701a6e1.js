@@ -22776,8 +22776,7 @@ class MainView extends _reactDefault.default.Component {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 37
             },
-            __self: this,
-            children: "The list is empty!"
+            __self: this
         }));
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
