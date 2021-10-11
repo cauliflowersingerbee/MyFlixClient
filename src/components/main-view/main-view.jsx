@@ -50,21 +50,28 @@ export class MainView extends React.Component {
       render() {
         const { movies, selectedMovie } = this.state;
       
-        if (movies.length === 0) return <div className="main-view" />;
-      
-        return (
-          <div className="main-view">
-            {selectedMovie
-              ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-              : movies.map(movie => (
-                <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-              ))
-            }
-          </div>
-        );
-      }
+           /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+    // Before the movies have been loaded
+    if (movies.length === 0) return <div className="main-view" />;
+
+    return (
+      <div className="main-view">
+        {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
+        {selectedMovie
+          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+          : movies.map(movie => (
+            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+         ))
+        }
+      </div>
+    );
+  }
+
+}
     
-    }
+  
 
 
     
