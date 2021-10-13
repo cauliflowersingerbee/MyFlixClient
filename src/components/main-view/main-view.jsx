@@ -13,7 +13,8 @@ export class MainView extends React.Component {
           movies: [],
           selectedMovie: null,
           user: '', 
-          register: null,
+          register: 'null',
+          login: 'null'
         };
       }
 
@@ -51,7 +52,7 @@ export class MainView extends React.Component {
   onRegistration(register) {
     this.setState({
       register
-    })
+    });
   }
 
   render() {
@@ -62,7 +63,7 @@ export class MainView extends React.Component {
     are *passed as a prop to the LoginView*/
 
     if (!register)
-      return <RegistrationView onRegistration={(register)} />;
+return <RegistrationView onRegistration={(register)} />;
 
 
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
