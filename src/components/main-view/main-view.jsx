@@ -5,6 +5,8 @@ import { LoginView } from '../login-view/login-view';
 import {RegistrationView} from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export class MainView extends React.Component {
     constructor(){
@@ -67,27 +69,26 @@ export class MainView extends React.Component {
     if (newUser) return <RegistrationView onRegistration={(newUser)} />;
 
 
-    
-
     // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <div className="main-view">
-        {/*If the state of `selectedMovie` is not null, 
-        that selected movie will be returned otherwise, 
-        all *movies will be returned*/}
         {selectedMovie
-          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+          ? (
+            <Row>
+              <Col>
+                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+              </Col>
+            </Row>
+          )
           : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
-         ))
+            <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+          ))
         }
       </div>
     );
   }
-
-}
     
   
 
