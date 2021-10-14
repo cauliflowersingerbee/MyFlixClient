@@ -39,7 +39,7 @@ export class MovieView extends React.Component {
           );
         }
       }
-}
+
 
 MovieView.propTypes = {
     movie: PropTypes.shape({
@@ -47,16 +47,8 @@ MovieView.propTypes = {
         ImagePath: PropTypes.string,
         Description: PropTypes.string.isRequired,
         Featured: PropTypes.bool,
-        Genre: PropTypes.shape({
-          Name: PropTypes.string,
-          Description: PropTypes.string,
+        Genre: PropTypes.array.isRequired,
+        Director: PropTypes.array.isRequired
         }),
-        Director: PropTypes.shape({
-          Name: PropTypes.string,
-          Bio: PropTypes.string,
-          Birth: PropTypes.string,
-          Death: PropTypes.string,
-        }),
-    }).isRequired,
     onBackClick: PropTypes.func.isRequired
   };

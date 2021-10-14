@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row'
+
 
 export class MovieCard extends React.Component {
     render() {
@@ -26,16 +28,8 @@ export class MovieCard extends React.Component {
         ImagePath: PropTypes.string,
         Description: PropTypes.string.isRequired,
         Featured: PropTypes.bool,
-        Genre: PropTypes.shape({
-          Name: PropTypes.string,
-          Description: PropTypes.string,
+        Genre: PropTypes.array.isRequired,
+        Director: PropTypes.array.isRequired
         }),
-        Director: PropTypes.shape({
-          Name: PropTypes.string,
-          Bio: PropTypes.string,
-          Birth: PropTypes.string,
-          Death: PropTypes.string,
-        }),
-    }).isRequired,
     onMovieClick: PropTypes.func.isRequired
   };
