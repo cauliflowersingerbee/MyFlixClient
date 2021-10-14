@@ -22778,21 +22778,21 @@ class MainView extends _reactDefault.default.Component {
     }
     /*When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property to 
-    that movie*/ setSelectedMovie(movie) {
+    that movie*/ setSelectedMovie(newSelectedMovie) {
         this.setState({
-            selectedMovie: movie
+            selectedMovie: newSelectedMovie
         });
     }
     /* When a user successfully logs in, this function 
     updates the `user` property in state to that 
     *particular user*/ onLoggedIn(user) {
         this.setState({
-            user
+            user: user
         });
     }
     onRegistration(newUser) {
         this.setState({
-            newUser
+            newUser: newUser
         });
     }
     render() {
@@ -22804,7 +22804,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 68
             },
             __self: this
         }));
@@ -22812,7 +22812,7 @@ class MainView extends _reactDefault.default.Component {
             onRegistration: newUser,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 70
+                lineNumber: 71
             },
             __self: this
         }));
@@ -22821,7 +22821,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 74
+                lineNumber: 75
             },
             __self: this
         }));
@@ -22829,7 +22829,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 77
+                lineNumber: 78
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22839,7 +22839,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80
+                    lineNumber: 81
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22849,7 +22849,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 89
                     },
                     __self: this
                 }, movie._id)
@@ -26379,7 +26379,7 @@ MovieCard.propTypes = {
         Description: _propTypesDefault.default.string.isRequired,
         Featured: _propTypesDefault.default.bool,
         Director: _propTypesDefault.default.object.isRequired
-    }),
+    }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
 

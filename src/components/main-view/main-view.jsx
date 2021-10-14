@@ -35,11 +35,12 @@ export class MainView extends React.Component {
     updates the state of the `selectedMovie` *property to 
     that movie*/
       
-    setSelectedMovie(movie) {
+    setSelectedMovie(newSelectedMovie) {
       this.setState({
-        selectedMovie: movie
+        selectedMovie: newSelectedMovie,
       });
     }
+  
     
     /* When a user successfully logs in, this function 
     updates the `user` property in state to that 
@@ -47,14 +48,14 @@ export class MainView extends React.Component {
 
   onLoggedIn(user) {
     this.setState({
-      user
+      user: user
     });
   }
 
   onRegistration(newUser) {
     this.setState({
-      newUser
-    })
+      newUser: newUser
+    });
   }
 
   render() {
