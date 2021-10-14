@@ -9,7 +9,28 @@ import { MovieView } from '../movie-view/movie-view';
 
 
 export class MainView extends React.Component {
-   
+    constructor(){
+        super();
+        this.state = {
+          movies: [],
+          selectedMovie: null,
+          user: null,
+          newUser: null
+        };
+      }
+
+      componentDidMount(){
+        axios
+        .get('https://kino-noir.herokuapp.com/movies')
+          .then(response => {
+            this.setState({
+              movies: response.data
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
     /*When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property to 
     that movie*/
