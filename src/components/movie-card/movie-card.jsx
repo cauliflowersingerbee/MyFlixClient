@@ -25,8 +25,7 @@ export class MovieCard extends React.Component {
         ImagePath: PropTypes.string,
         Description: PropTypes.string.isRequired,
         Featured: PropTypes.bool,
-        Genre: PropTypes.array.isRequired,
-        Director: PropTypes.array.isRequired
+        Director: PropTypes.objectOf.isRequired
         }),
     onMovieClick: PropTypes.func.isRequired
   };
