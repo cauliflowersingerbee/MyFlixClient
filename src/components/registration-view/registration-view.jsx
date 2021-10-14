@@ -38,8 +38,6 @@ export function RegistrationView(props) {
   );
 }
 
-
-
 RegistrationView.propTypes = {
     newUser: PropTypes.shape({
       Username: PropTypes.string.isRequired,
@@ -50,3 +48,14 @@ RegistrationView.propTypes = {
     onRegistration: PropTypes.func.isRequired
     
   };
+
+
+
+
+LoginView.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired,
+};
