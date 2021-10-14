@@ -14,7 +14,7 @@ export class MainView extends React.Component {
         this.state = {
           movies: [],
           selectedMovie: 'null',
-          user: 'null',
+          user: '',
           newUser: 'null'
         };
       }

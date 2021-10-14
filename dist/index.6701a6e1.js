@@ -22763,7 +22763,7 @@ class MainView extends _reactDefault.default.Component {
         this.state = {
             movies: [],
             selectedMovie: 'null',
-            user: 'null',
+            user: '',
             newUser: 'null'
         };
     }
@@ -24448,7 +24448,7 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(user, password);
+        console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(user);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
