@@ -35,9 +35,9 @@ export class MainView extends React.Component {
     updates the state of the `selectedMovie` *property to 
     that movie*/
       
-    setSelectedMovie(newSelectedMovie) {
+    setSelectedMovie(movie) {
       this.setState({
-        selectedMovie: newSelectedMovie,
+        selectedMovie: movie
       });
     }
   
@@ -86,5 +86,4 @@ export class MainView extends React.Component {
     );
   }
 }
-
     
