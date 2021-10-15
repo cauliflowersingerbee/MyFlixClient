@@ -12,7 +12,7 @@ export function RegistrationView(props) {
     console.log(username, password, email, birthday);
     /* Send a request to the server for authentication */
     /* then call props.onLoggedIn(username) */
-    props.onRegistration(newUser);
+    props.onRegistration(username);
   };
   
   return (

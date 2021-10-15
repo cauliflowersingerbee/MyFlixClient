@@ -22780,7 +22780,7 @@ class MainView extends _reactDefault.default.Component {
     updates the state of the `selectedMovie` *property to 
     that movie*/ setSelectedMovie(newSelectedMovie) {
         this.setState({
-            selectedMovie: ewSelectedMovie
+            selectedMovie: newSelectedMovie
         });
     }
     /* When a user successfully logs in, this function 
@@ -25384,7 +25384,7 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password, email, birthday);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegistration(newUser);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegistration(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
         __source: {

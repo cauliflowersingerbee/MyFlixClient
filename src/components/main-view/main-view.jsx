@@ -22,22 +22,22 @@ export class MainView extends React.Component {
       componentDidMount(){
         axios
         .get('https://kino-noir.herokuapp.com/movies')
-          .then(response => {
-            this.setState({
-              movies: response.data
-            });
-          })
-          .catch(error => {
-            console.log(error);
+        .then(response => {
+          this.setState({
+            movies: response.data
           });
-      }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
     /*When a movie is clicked, this function is invoked and 
     updates the state of the `selectedMovie` *property to 
     that movie*/
       
     setSelectedMovie(newSelectedMovie) {
       this.setState({
-        selectedMovie: ewSelectedMovie,
+        selectedMovie: newSelectedMovie,
       });
     }
   
