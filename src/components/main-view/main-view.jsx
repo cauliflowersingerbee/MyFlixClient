@@ -14,8 +14,8 @@ export class MainView extends React.Component {
         this.state = {
           movies: [],
           selectedMovie: 'null',
-          user: '',
-          newUser: 'null'
+          user: 'null',
+          newUser: 'null',
         };
       }
 
@@ -37,7 +37,7 @@ export class MainView extends React.Component {
       
     setSelectedMovie(newSelectedMovie) {
       this.setState({
-        selectedMovie: newSelectedMovie,
+        selectedMovie: movie,
       });
     }
   
@@ -48,13 +48,13 @@ export class MainView extends React.Component {
 
   onLoggedIn(user) {
     this.setState({
-      user: user
+      user
     });
   }
 
   onRegistration(newUser) {
     this.setState({
-      newUser: newUser
+      newUser
     });
   }
 
@@ -65,7 +65,7 @@ export class MainView extends React.Component {
     If there is a user logged in, the user details 
     are *passed as a prop to the LoginView*/
 
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    if (user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
     
 
     if (newUser) return <RegistrationView onRegistration={(newUser)} />;
