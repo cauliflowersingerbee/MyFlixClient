@@ -22780,7 +22780,7 @@ class MainView extends _reactDefault.default.Component {
     updates the state of the `selectedMovie` *property to 
     that movie*/ setSelectedMovie(newSelectedMovie) {
         this.setState({
-            selectedMovie: movie
+            selectedMovie: ewSelectedMovie
         });
     }
     /* When a user successfully logs in, this function 
@@ -22809,7 +22809,8 @@ class MainView extends _reactDefault.default.Component {
             __self: this
         }));
         if (newUser) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-            onRegistration: newUser,
+            onRegistration: (newUser1)=>this.onRegistration(newUser1)
+            ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 71
@@ -24515,7 +24516,7 @@ LoginView.propTypes = {
     user: _propTypesDefault.default.shape({
         username: _propTypesDefault.default.string.isRequired,
         password: _propTypesDefault.default.string.isRequired
-    }),
+    }).isRequired,
     onLoggedIn: _propTypesDefault.default.func.isRequired
 };
 var _c;
@@ -25543,10 +25544,8 @@ class MovieCard extends _reactDefault.default.Component {
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
-        ImagePath: _propTypesDefault.default.string,
         Description: _propTypesDefault.default.string.isRequired,
-        Featured: _propTypesDefault.default.bool,
-        Director: _propTypesDefault.default.object.isRequired
+        ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
@@ -25734,8 +25733,8 @@ MovieView.propTypes = {
         Featured: _propTypesDefault.default.bool,
         Genre: _propTypesDefault.default.array.isRequired,
         Director: _propTypesDefault.default.array.isRequired
-    }),
-    onBackClick: _propTypesDefault.default.func.isRequired
+    }).isRequired,
+    onMovieClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$3741.postlude(module);

@@ -49,6 +49,6 @@ MovieView.propTypes = {
         Featured: PropTypes.bool,
         Genre: PropTypes.array.isRequired,
         Director: PropTypes.array.isRequired
-        }),
-    onBackClick: PropTypes.func.isRequired
+      }).isRequired,
+    onMovieClick: PropTypes.func.isRequired
   };

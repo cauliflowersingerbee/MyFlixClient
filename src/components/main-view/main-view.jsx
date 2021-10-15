@@ -37,7 +37,7 @@ export class MainView extends React.Component {
       
     setSelectedMovie(newSelectedMovie) {
       this.setState({
-        selectedMovie: movie,
+        selectedMovie: ewSelectedMovie,
       });
     }
   
@@ -68,7 +68,7 @@ export class MainView extends React.Component {
     if (user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
     
 
-    if (newUser) return <RegistrationView onRegistration={(newUser)} />;
+    if (newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
 
     // Before the movies have been loaded
