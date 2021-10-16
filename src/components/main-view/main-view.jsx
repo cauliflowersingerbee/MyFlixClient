@@ -65,7 +65,7 @@ export class MainView extends React.Component {
     If there is a user logged in, the user details 
     are *passed as a prop to the LoginView*/
 
-    if (user === 'null') return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    if (user === 'null') {return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;}
 
     else
 
