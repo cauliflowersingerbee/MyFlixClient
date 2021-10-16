@@ -41,6 +41,12 @@ export class MainView extends React.Component {
     });
   }
 
+  onMovieClick(movie) {
+    this.setState({
+      movie
+    });
+  }
+
   
   render() {
     const { movies, selectedMovie } = this.state;
