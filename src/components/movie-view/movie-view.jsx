@@ -50,5 +50,5 @@ MovieView.propTypes = {
         Genre: PropTypes.array.isRequired,
         Director: PropTypes.array.isRequired
       }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
+    onBackClick: PropTypes.func.isRequired
   };

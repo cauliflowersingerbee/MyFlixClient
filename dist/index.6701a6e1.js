@@ -979,7 +979,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","react-bootstrap/Container":"2PRIq"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","react-bootstrap/Container":"2PRIq","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22799,7 +22799,7 @@ class MainView extends _reactDefault.default.Component {
         const { movies , selectedMovie , user , newUser  } = this.state;
         /* If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details 
-    are *passed as a prop to the LoginView*/ if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+    are *passed as a prop to the LoginView*/ if (user === 'null') return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
             onLoggedIn: (user1)=>this.onLoggedIn(user1)
             ,
             __source: {
@@ -22808,12 +22808,12 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }));
-        if (newUser) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
+        else if (newUser) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
             onRegistration: (newUser1)=>this.onRegistration(newUser1)
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 71
+                lineNumber: 72
             },
             __self: this
         }));
@@ -22822,15 +22822,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 75
-            },
-            __self: this
-        }));
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "main-view",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 78
+                lineNumber: 80
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22840,7 +22832,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80
+                    lineNumber: 82
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22850,7 +22842,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 82
+                        lineNumber: 84
                     },
                     __self: this
                 }, movie._id)
@@ -24446,7 +24438,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(user);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
         __source: {
@@ -25490,7 +25482,7 @@ function RegistrationView(props) {
         ]
     }));
 }
-_s(RegistrationView, "oodxkowr8L/+sgf0pg4pF6PrtNw=");
+_s(RegistrationView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
     newUser: _propTypesDefault.default.shape({
@@ -25529,9 +25521,10 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            onClick: ()=>onMovieClick(movie)
-            ,
             className: "movie-card",
+            onClick: ()=>{
+                onMovieClick(movie);
+            },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 10
@@ -25734,7 +25727,7 @@ MovieView.propTypes = {
         Genre: _propTypesDefault.default.array.isRequired,
         Director: _propTypesDefault.default.array.isRequired
     }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
+    onBackClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$3741.postlude(module);
