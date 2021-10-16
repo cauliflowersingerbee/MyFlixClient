@@ -29,27 +29,35 @@ export class MainView extends React.Component {
       });
   }
 
-  setSelectedMovie(newSelectedMovie) {
+  setSelectedMovie(movie) {
     this.setState({
-      selectedMovie: newSelectedMovie
+      selectedMovie: movie
     });
   }
+
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
+
   
   render() {
     const { movies, selectedMovie } = this.state;
 
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <div className="main-view">
-        {selectedMovie
+         {selectedMovie
           ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
           : movies.map(movie => (
             <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
          ))
         }
       </div>
-    );
+    )
   }
 }

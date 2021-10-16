@@ -22763,18 +22763,32 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    setSelectedMovie(newSelectedMovie) {
+    setSelectedMovie(movie) {
         this.setState({
-            selectedMovie: newSelectedMovie
+            selectedMovie: movie
+        });
+    }
+    onLoggedIn(user) {
+        this.setState({
+            user
         });
     }
     render() {
         const { movies , selectedMovie  } = this.state;
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user)=>this.onLoggedIn(user)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 48
+            },
+            __self: this
+        }));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 42
+                lineNumber: 50
             },
             __self: this
         }));
@@ -22782,7 +22796,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 45
+                lineNumber: 53
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22792,7 +22806,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 47
+                    lineNumber: 55
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22802,7 +22816,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 49
+                        lineNumber: 57
                     },
                     __self: this
                 }, movie._id)
@@ -24703,7 +24717,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
-    /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ // props.onLoggedIn(username);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
         __source: {
