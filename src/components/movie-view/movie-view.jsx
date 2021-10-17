@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Col';
 
 export class MovieView extends React.Component {
 
@@ -12,9 +13,9 @@ export class MovieView extends React.Component {
         <div className="main-view">
         {selectedMovie
           ? (
-            <Row>
+            <Row className="justify-content-md-center">
               <Col md={8}>
-                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
               </Col>
             </Row>
           )
