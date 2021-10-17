@@ -56,6 +56,11 @@ export class MainView extends React.Component {
     });
   }
 
+  onBackClick(movie) {
+    this.setState({
+      movie
+    });
+  }
   
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
