@@ -79,30 +79,7 @@ export class MainView extends React.Component {
                 {selectedMovie
                   ? 
                   (<Row>
-                    <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                  </Row>)
-                  (<Row>
-                    <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
-                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                   <Col md={3}>
+                    <Col>
                       <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                    </Col>
                   </Row>)
