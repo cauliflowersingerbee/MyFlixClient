@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+import img from '../../img/LoginImg.jpg'
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -18,7 +19,7 @@ export function LoginView(props) {
     <Container>
       <Row>
         <Col>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', marginTop: '15rem',margin: '5rem'}}>
         <Card.Body>
           <Form>
             <Form.Group controlId="formUsername">
@@ -36,6 +37,11 @@ export function LoginView(props) {
           </Form>
           </Card.Body>
           </Card>
+          </Col>
+          <Col>
+        
+          <img src={img} alt="TV viewer eating popcorn" style={{height: '35rem', width: '37rem', marginTop: '5rem'}}/>
+        
           </Col>
         </Row>
     </Container>
