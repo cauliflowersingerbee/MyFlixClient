@@ -74,13 +74,35 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-    <Container>
+    <Container fluid="sm">
       <div className="main-view">
-            <div class="col-sm-6">
                 {selectedMovie
                   ? 
                   (<Row>
-                    <Col>
+                    <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                  </Row>)
+                  (<Row>
+                    <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
+                      <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                   </Col>
+                   <Col md={3}>
                       <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                    </Col>
                   </Row>)
@@ -89,7 +111,6 @@ export class MainView extends React.Component {
                 ))
                 }
             </div>
-        </div>
       </Container>
     )
   }
