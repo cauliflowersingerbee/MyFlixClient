@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 
 
+
 export class MovieCard extends React.Component {
   render() {
     const { movie, onMovieClick } = this.props;
