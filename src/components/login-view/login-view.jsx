@@ -16,14 +16,16 @@ export function LoginView(props) {
   
   return (
     <Container>
-      <Row>
+      <Row className="justify-content-md-center">
         <Col>
+        <Card>
+        <Card.Body>
           <Form>
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
               <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
             </Form.Group>
-
+            
             <Form.Group controlId="formPassword">
               <Form.Label>Password:</Form.Label>
               <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
@@ -32,6 +34,8 @@ export function LoginView(props) {
               Submit
             </Button>
           </Form>
+          </Card.Body>
+          </Card>
           </Col>
         </Row>
     </Container>
