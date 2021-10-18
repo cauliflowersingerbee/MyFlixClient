@@ -5,12 +5,6 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import './main-view.scss';
-
 
 
 
@@ -72,15 +66,14 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
 
-    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-    //if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <div className="main-view">
-        <Navbar bg="light" expand="lg"></Navbar>
         {selectedMovie
           ? (
             <Row>
@@ -92,6 +85,7 @@ export class MainView extends React.Component {
           ))
         }
       </div>
+
     )
   }
 }
