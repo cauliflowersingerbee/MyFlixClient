@@ -25452,7 +25452,6 @@ function LoginView(props) {
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-            className: "justify-content-md-center",
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 19
@@ -25465,6 +25464,9 @@ function LoginView(props) {
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                    style: {
+                        width: '18rem'
+                    },
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 21

@@ -16,9 +16,9 @@ export function LoginView(props) {
   
   return (
     <Container>
-      <Row className="justify-content-md-center">
+      <Row>
         <Col>
-        <Card>
+        <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Form>
             <Form.Group controlId="formUsername">
