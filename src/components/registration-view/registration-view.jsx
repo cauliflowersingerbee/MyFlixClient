@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import logo from '../../img/KinoNoirLogo.png'
-import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Alert, Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/RegistrationImg.jpg';
 
 
@@ -18,11 +18,24 @@ export function RegistrationView(props) {
     /* then call props.onLoggedIn(username) */
     props.onRegistration(username);
   };
+
+  
   return (
     <Container>
       <Row>
         <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'25rem'}}/>
       </Row>
+      <Row>
+          <Alert variant="danger" style={{ padding: '3rem' , width: '40rem', marginTop: '5rem', height: '10rem'}}>
+            <Alert.Heading>Oh Snap, you're not registered!</Alert.Heading>
+            <hr />
+            <p className="mb-0">
+            Please create a User account in order to access Kino Noir.
+          </p>
+        </Alert>
+
+      </Row>
+      
       <Row>
         <Col>
           <Form>
