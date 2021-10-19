@@ -6,12 +6,9 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-body {
-  color: #768591;
-}
-.movie-cards {
-    display: flex;
-    flex-wrap: wrap;
-}
 
+.login-card {
+  display: flex;
+  flex-wrap: nowrap;
+}
 /*# sourceMappingURL=index.caa67093.css.map */

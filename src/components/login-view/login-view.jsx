@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
-import './login-view.scss'
 import logo from '../../img/KinoNoirLogo.png';
 
 
@@ -20,13 +19,15 @@ export function LoginView(props) {
   
   return (
     
-    <Container>
-      <Row>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'20rem'}} fluid/>
-      </Row>
-      <Row>
+    <Container className="login-card">
+
+      <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '45rem', width: '40rem', margin: '2rem'}} fluid/>
+      
+      
+        
+      
         <Col>
-            <Card style={{ width: '18rem', marginTop: '15rem', margin: '5rem', marginLeft: '10rem'}}>
+            <Card style={{ width: '20rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                     <Form>
                       <Form.Group controlId="formUsername">
@@ -45,10 +46,9 @@ export function LoginView(props) {
                  </Card.Body>
             </Card>
           </Col>
-          <Col>
-          <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '30rem', width: '26rem', marginTop: '2rem', marginRight: '6rem'}} fluid/>
-          </Col>
-        </Row>
+          
+          <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem'}}/>
+         
     </Container>
     
   );

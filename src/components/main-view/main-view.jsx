@@ -5,7 +5,6 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { Card, Nav, Navbar, Form, Button, Container, Row, Col } from 'react-bootstrap';
-import './main-view.css'
 import logo from '../../img/KinoNoirLogo.png'
 
 
