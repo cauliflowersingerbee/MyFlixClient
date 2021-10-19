@@ -2,10 +2,10 @@ $primary-color: #038C8C;
 $secondary-color: #A8C0CE;
 
 body {
-    background-color: $primary-color;
+  background-color: $primary-color;
 }
 
-.movie-cards {
-  display: flex;
-  flex-wrap: wrap;
+.main-view {
+ display: flex;
+ flex-wrap: wrap;
 }

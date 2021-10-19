@@ -2,7 +2,7 @@ body {
   background-color: #038C8C;
 }
 
-.movie-cards {
+.main-view {
   display: flex;
   flex-wrap: wrap;
 }

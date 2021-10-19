@@ -67,9 +67,9 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
 
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+    //if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
@@ -95,7 +95,7 @@ export class MainView extends React.Component {
                         movies.map(movie => (
                         (<Row className="justify-content-md-center">
                           <Col md={8}>
-                          <Card style={{ width: '25rem', margin:'1rem', marginRight: '3rem'}}>
+                          <Card style={{ width: '18rem', margin:'1rem', marginRight: '3rem'}}>
                         <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
                         </Card>
                       </Col>
