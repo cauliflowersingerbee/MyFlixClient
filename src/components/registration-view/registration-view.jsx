@@ -68,8 +68,6 @@ export function RegistrationView(props) {
         <Col fluid md={6}>
     <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', margin: '2rem'}}/>
     </Col>
-
-          
       </Row>
     </Container>
   );
