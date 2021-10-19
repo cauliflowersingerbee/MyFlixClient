@@ -22,24 +22,15 @@ export function RegistrationView(props) {
   
   return (
     <Container className="registration-card">
-      <Row>
       
-        <Col>
-          <Alert variant="danger" style={{ padding: '3rem' , width: '40rem', marginTop: '1rem', height: '10rem'}}>
-            <Alert.Heading>Oh Snap, you're not registered!</Alert.Heading>
-            <hr />
-            <p className="mb-0">
-            Please create a User account in order to access Kino Noir.
-          </p>
-        </Alert>
-        </Col>
-
-        </Row>
      
       <Row>
-        <Col fluid md={6}>
+      <Col fluid xs={8}>
+    <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', margin: '2rem'}}/>
+    </Col>
+     <Col fluid xs={4}>
           <Form>
-              <Card style={{ padding: '3rem' , width: '30rem', marginTop: '15rem',margin: '5rem', height: '30rem'}}>
+              <Card style={{ padding: '3rem' , width: '30rem', marginTop: '15rem', margin: '5rem', height: '30rem'}}>
               <Card.Body>
               <label>
                 Username:
@@ -65,9 +56,8 @@ export function RegistrationView(props) {
               </Card>
           </Form>
         </Col>
-        <Col fluid md={6}>
-    <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', margin: '2rem'}}/>
-    </Col>
+
+       
       </Row>
     </Container>
   );
