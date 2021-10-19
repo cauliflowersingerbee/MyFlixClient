@@ -22956,7 +22956,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","react-bootstrap":"h2YVd","./main-view.css":"6Ipr3","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/KinoNoirLogo.png":"cqMek"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","react-bootstrap":"h2YVd","./main-view.css":"6Ipr3","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -24548,6 +24548,7 @@ function RegistrationView(props) {
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegistration(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+        fluid: "md",
         __source: {
             fileName: "src/components/registration-view/registration-view.jsx",
             lineNumber: 24
@@ -24569,6 +24570,7 @@ function RegistrationView(props) {
                         marginTop: '0.5rem',
                         marginLeft: '25rem'
                     },
+                    fluid: true,
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
                         lineNumber: 26
@@ -37514,6 +37516,7 @@ function LoginView(props) {
                         marginTop: '0.5rem',
                         marginLeft: '20rem'
                     },
+                    fluid: true,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 25
@@ -37649,6 +37652,7 @@ function LoginView(props) {
                                 marginTop: '2rem',
                                 marginRight: '6rem'
                             },
+                            fluid: true,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
                                 lineNumber: 49

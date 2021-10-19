@@ -21,9 +21,9 @@ export function RegistrationView(props) {
 
   
   return (
-    <Container>
+    <Container fluid="md">
       <Row>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'25rem'}}/>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'25rem'}} fluid/>
       </Row>
       <Row>
           <Alert variant="danger" style={{ padding: '3rem' , width: '40rem', marginTop: '5rem', height: '10rem'}}>

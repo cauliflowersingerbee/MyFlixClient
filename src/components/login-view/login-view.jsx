@@ -22,7 +22,7 @@ export function LoginView(props) {
     
     <Container>
       <Row>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'20rem'}}/>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'20rem'}} fluid/>
       </Row>
       <Row>
         <Col>
@@ -46,7 +46,7 @@ export function LoginView(props) {
             </Card>
           </Col>
           <Col>
-          <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '30rem', width: '26rem', marginTop: '2rem', marginRight: '6rem'}}/>
+          <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '30rem', width: '26rem', marginTop: '2rem', marginRight: '6rem'}} fluid/>
           </Col>
         </Row>
     </Container>
