@@ -10,7 +10,8 @@ body {
  flex-wrap: wrap;
 }
 
-.login-card {
+.login-card, .registration-card {
   display: flex;
   flex-wrap: nowrap;
 }
+
