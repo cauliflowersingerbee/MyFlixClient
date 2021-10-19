@@ -1,4 +1,17 @@
-.my-flix {
-  color: steelblue;
+body {
+  background-color: #038C8C;
 }
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+body {
+  color: #768591;
+}
+.movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=index.caa67093.css.map */

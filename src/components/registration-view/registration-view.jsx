@@ -48,7 +48,7 @@ export function RegistrationView(props) {
           </Form>
         </Col>
         <Col>
-          <img src={img} alt="Colorful structure out of metal sheets" style={{height: '30rem', width: '20rem', marginTop: '2rem'}}/>
+          <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '30rem', width: '20rem', marginTop: '2rem'}}/>
           </Col>
       </Row>
     </Container>

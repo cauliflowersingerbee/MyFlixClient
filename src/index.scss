@@ -5,3 +5,7 @@ body {
     background-color: $primary-color;
 }
 
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
