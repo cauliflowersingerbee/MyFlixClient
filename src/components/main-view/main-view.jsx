@@ -4,9 +4,8 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Container } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+
 
 
 
@@ -67,7 +66,7 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
 
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     //if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
@@ -78,9 +77,11 @@ export class MainView extends React.Component {
       <div className="main-view">
                 {selectedMovie
                   ? 
-                  (<Row className="justify-content-md-center">
-                    <Col md={8}>
+                  (<Row>
+                    <Col>
+                    <Card>
                       <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                      </Card>
                    </Col>
                   </Row>)
                   : movies.map(movie => (

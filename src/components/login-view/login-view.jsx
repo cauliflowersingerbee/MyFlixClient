@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { Navbar, Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
 import './login-view.scss'
-import logo from '../../img/KinoNoirLogo.png'
+import logo from '../../img/KinoNoirLogo.png';
 
 
 export function LoginView(props) {
@@ -22,11 +22,11 @@ export function LoginView(props) {
     
     <Container>
       <Row>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'25rem'}}/>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'20rem'}}/>
       </Row>
       <Row>
         <Col>
-            <Card style={{ width: '18rem', marginTop: '15rem',margin: '5rem'}}>
+            <Card style={{ width: '18rem', marginTop: '15rem', margin: '5rem', marginLeft: '10rem'}}>
                 <Card.Body>
                     <Form>
                       <Form.Group controlId="formUsername">
@@ -38,7 +38,7 @@ export function LoginView(props) {
                         <Form.Label>Password:</Form.Label>
                         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                       </Form.Group>
-                      <Button variant="primary" type="submit" onClick={handleSubmit}>
+                      <Button style={{marginTop: '1rem'}} variant="primary" type="submit" onClick={handleSubmit}>
                         Submit
                       </Button>
                     </Form>
@@ -46,7 +46,7 @@ export function LoginView(props) {
             </Card>
           </Col>
           <Col>
-          <img src={img} alt="TV viewer eating popcorn" style={{height: '35rem', width: '37rem', marginTop: '2rem'}}/>
+          <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '30rem', width: '26rem', marginTop: '2rem', marginRight: '6rem'}}/>
           </Col>
         </Row>
     </Container>
