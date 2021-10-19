@@ -18,16 +18,13 @@ export function LoginView(props) {
   };
   
   return (
-    
+    <div>
     <Container className="login-card">
-
-      <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '45rem', width: '40rem', margin: '2rem'}} fluid/>
-      
-      
         
-      
-        <Col>
-            <Card style={{ width: '20rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
+      <Row>
+        
+        <Col fluid md={3}>
+            <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                     <Form>
                       <Form.Group controlId="formUsername">
@@ -42,14 +39,26 @@ export function LoginView(props) {
                       <Button style={{marginTop: '1rem'}} variant="primary" type="submit" onClick={handleSubmit}>
                         Submit
                       </Button>
+                      <div>
+                      <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '10rem', marginTop: '0.5rem'}}/>
+                      </div>        
                     </Form>
                  </Card.Body>
             </Card>
           </Col>
+
+          <Col fluid md={9}>
+        <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '100%', width: '100%', margin: '2rem'}} />
+        </Col>
           
-          <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem'}}/>
+        
+        
+          </Row>
+        
+          
          
     </Container>
+    </div>
     
   );
 }

@@ -23,23 +23,24 @@ export function RegistrationView(props) {
   return (
     <Container fluid="md">
       <Row>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'25rem'}} fluid/>
-      </Row>
-      <Row>
-          <Alert variant="danger" style={{ padding: '3rem' , width: '40rem', marginTop: '5rem', height: '10rem'}}>
+      <Col xs={6} md={4}>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'5rem'}} fluid/>
+        </Col>
+        <Col>
+          <Alert variant="danger" style={{ padding: '3rem' , width: '40rem', marginTop: '1rem', height: '10rem'}}>
             <Alert.Heading>Oh Snap, you're not registered!</Alert.Heading>
             <hr />
             <p className="mb-0">
             Please create a User account in order to access Kino Noir.
           </p>
         </Alert>
-
-      </Row>
-      
-      <Row>
+        </Col>
+     
+     
         <Col>
           <Form>
-              <Card style={{ padding: '3rem' , width: '18rem', marginTop: '15rem',margin: '5rem'}}>
+              <Card style={{ padding: '3rem' , width: '30rem', marginTop: '15rem',margin: '5rem', height: '30rem'}}>
+              <Card.Body>
               <label>
                 Username:
                 <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
@@ -56,13 +57,13 @@ export function RegistrationView(props) {
                 Birthday:
                 <input type="birthday" value={birthday} onChange={e => setBirthday(e.target.value)} />
               </label>
-              <Button style={{marginTop: '1rem'}} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+              <Button style={{marginTop: '7rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+              </Card.Body>
               </Card>
           </Form>
         </Col>
-        <Col>
-          <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '30rem', width: '20rem', marginTop: '2rem'}}/>
-          </Col>
+       
+          
       </Row>
     </Container>
   );
