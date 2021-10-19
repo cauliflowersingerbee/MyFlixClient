@@ -68,7 +68,7 @@ export class MainView extends React.Component {
 
     //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+    //if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
@@ -76,7 +76,9 @@ export class MainView extends React.Component {
     <div>
         <Container>
         <Row >
-        <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '15rem', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
+          <Col fluid xs={3}>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
+        </Col>
         </Row>
           <div className="main-view">
             
