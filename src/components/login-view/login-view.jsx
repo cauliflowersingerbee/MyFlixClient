@@ -50,13 +50,7 @@ export function LoginView(props) {
           <Col fluid md={9}>
         <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '100%', width: '100%', margin: '2rem'}} />
         </Col>
-          
-        
-        
           </Row>
-        
-          
-         
     </Container>
     </div>
     
