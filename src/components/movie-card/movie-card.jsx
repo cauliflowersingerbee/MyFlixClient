@@ -11,7 +11,7 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick } = this.props;
 
     return (
-      <Container fluid xs={3}>
+      <Container >
         <Row>
             <Col>
               <Card>

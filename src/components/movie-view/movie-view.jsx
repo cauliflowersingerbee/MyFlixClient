@@ -13,10 +13,12 @@ export class MovieView extends React.Component {
         <Container>
           
             <Row>
-                <Col >
+                <Col>
+                    <Card>
+                      <Card.Body>
                       <div className="movie-view">
                         <div className="movie-poster">
-                          <img src={movie.ImagePath} />
+                          <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>
                         <div className="movie-title">
                           <span className="label">Title: </span>
@@ -28,6 +30,8 @@ export class MovieView extends React.Component {
                         </div>
                         <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
                       </div>
+                      </Card.Body>
+                    </Card>
               </Col>
            </Row>
         </Container>
