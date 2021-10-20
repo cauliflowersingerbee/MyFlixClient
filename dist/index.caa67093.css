@@ -7,8 +7,13 @@ body {
   flex-wrap: wrap;
 }
 
-.login-card, .registration-card {
+.login-card {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.registration-card {
+  display: flex;
+  flex-wrap: wrap;
 }
 /*# sourceMappingURL=index.caa67093.css.map */
