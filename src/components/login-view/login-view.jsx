@@ -27,6 +27,7 @@ export function LoginView(props) {
     });
     /* then call props.onLoggedIn(username) */
     props.onLoggedIn(username);
+    
   };
   
   return (
