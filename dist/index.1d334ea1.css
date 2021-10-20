@@ -1,0 +1,17 @@
+body {
+  color: #768591;
+}
+.movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+  background-color: #038C8C;
+}
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */

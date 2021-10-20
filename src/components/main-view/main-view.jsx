@@ -4,7 +4,8 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-
+import { Card, Container, Row, Col } from 'react-bootstrap';
+import logo from '../../img/KinoNoirLogo.png'
 
 
 
@@ -72,13 +73,39 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-      <div className="main-view">
-         {selectedMovie
-          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-          : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
-         ))
-        }
+    <div>
+        <Container>
+        <Row >
+          <Col fluid xs={3}>
+        <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
+        </Col>
+        </Row>
+          <div className="main-view">
+            
+                    {selectedMovie
+                      ? 
+                      (<Row>
+                        <Col>
+                        <Card>
+                          <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                          </Card>
+                      </Col>
+                      
+                      </Row>)
+                      : 
+                        movies.map(movie => (
+                        (<Row className="justify-content-md-center">
+                          <Col xs={8}>
+                          <Card style={{ width: '18rem', margin:'1rem', marginRight: '3rem'}}>
+                        <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+                        </Card>
+                      </Col>
+                      </Row>)
+                    ))
+                
+                      }
+                </div>
+          </Container>
       </div>
     )
   }

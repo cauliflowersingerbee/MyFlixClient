@@ -1,5 +1,22 @@
-$color: steelblue;
+$primary-color: #038C8C;
+$secondary-color: #A8C0CE;
 
-.my-flix {
-  color: $color;
+body {
+  background-color: $primary-color;
 }
+
+.main-view {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.login-card {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.registration-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+

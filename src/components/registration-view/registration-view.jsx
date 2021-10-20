@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import logo from '../../img/KinoNoirLogo.png'
+import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+import img from '../../img/RegistrationImg.jpg';
+
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -14,26 +18,52 @@ export function RegistrationView(props) {
     /* then call props.onLoggedIn(username) */
     props.onRegistration(username);
   };
+
+  
   return (
-    <form>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </label>
-      <label>
-        Birthday:
-        <input type="birthday" value={birthday} onChange={e => setBirthday(e.target.value)} />
-      </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
+    <Container className="registration-card">  
+    <Row>
+      <Col>
+            <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} fluid xs={2}>
+              <Card.Body>
+                  <Form>
+                    <Form.Group controlId="formUsername">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group controlId="formEmail">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBirthday">
+                    <Form.Label>Birthday:</Form.Label>
+                    <Form.Control type="birthday" onChange={e => setBirthday(e.target.value)} />
+                    </Form.Group>
+
+                    <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                  
+                    <div>
+                      <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
+                    </div> 
+                          
+                </Form>  
+            </Card.Body>
+          </Card>
+      </Col>
+      <Col fluid xs={7}>
+        <div className="float-right"> 
+            <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', marginRight: '2rem'}}/>
+        </div>
+      </Col>
+    </Row>
+    </Container>
   );
 }
 

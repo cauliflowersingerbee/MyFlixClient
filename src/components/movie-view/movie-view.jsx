@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
+
 
 export class MovieView extends React.Component {
 
@@ -8,21 +10,31 @@ export class MovieView extends React.Component {
       const { movie, onBackClick } = this.props;
   
       return (
-        <div className="movie-view">
-          <div className="movie-poster">
-            <img src={movie.ImagePath} />
-          </div>
-          <div className="movie-title">
-            <span className="label">Title: </span>
-            <span className="value">{movie.Title}</span>
-          </div>
-          <div className="movie-description">
-            <span className="label">Description: </span>
-            <span className="value">{movie.Description}</span>
-          </div>
-          <button onClick={() => { onBackClick(null); }}>Back</button>
-  
-        </div>
+        <Container>
+          
+            <Row>
+                <Col>
+                    <Card>
+                      <Card.Body>
+                      <div className="movie-view">
+                        <div className="movie-poster">
+                          <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
+                        </div>
+                        <div className="movie-title">
+                          <span className="label">Title: </span>
+                          <span className="value">{movie.Title}</span>
+                        </div>
+                        <div className="movie-description">
+                          <span className="label">Description: </span>
+                          <span className="value">{movie.Description}</span>
+                        </div>
+                        <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
+                      </div>
+                      </Card.Body>
+                    </Card>
+              </Col>
+           </Row>
+        </Container>
       );
     }
   }
