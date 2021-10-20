@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
+import axios from 'axios';
 
 
 export function LoginView(props) {
@@ -13,8 +14,18 @@ export function LoginView(props) {
     e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+
+    axios.post("https://kino-noir.herokuapp.com/login", {
+      Username: username, 
+      Password: password
+    })
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {console.log('no such user')
+    });
+    
   };
   
   return (
@@ -50,13 +61,7 @@ export function LoginView(props) {
           <Col fluid md={9}>
         <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '100%', width: '100%', margin: '2rem'}} />
         </Col>
-          
-        
-        
           </Row>
-        
-          
-         
     </Container>
     </div>
     
