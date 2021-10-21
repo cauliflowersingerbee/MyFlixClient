@@ -15,7 +15,7 @@ export function LoginView(props) {
     console.log(username, password);
     /* Send a request to the server for authentication */
 
-    axios.post("https://kino-noir.herokuapp.com/login", {
+    axios.post('https://kino-noir.herokuapp.com/login', {
       Username: username, 
       Password: password
     })

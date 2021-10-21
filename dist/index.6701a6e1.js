@@ -37515,7 +37515,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
-        /* Send a request to the server for authentication */ _axiosDefault.default.post("https://kino-noir.herokuapp.com/login", {
+        /* Send a request to the server for authentication */ _axiosDefault.default.post('https://kino-noir.herokuapp.com/login', {
             Username: username,
             Password: password
         }).then((response)=>{
