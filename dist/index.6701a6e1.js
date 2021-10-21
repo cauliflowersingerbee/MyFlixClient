@@ -24599,7 +24599,6 @@ function RegistrationView(props) {
                             marginBottom: '1rem',
                             height: '28rem'
                         },
-                        fluid: true,
                         xs: 2,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
@@ -24772,7 +24771,6 @@ function RegistrationView(props) {
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                    fluid: true,
                     xs: 7,
                     __source: {
                         fileName: "src/components/registration-view/registration-view.jsx",
