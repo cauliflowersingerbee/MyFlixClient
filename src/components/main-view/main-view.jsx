@@ -96,7 +96,7 @@ export class MainView extends React.Component {
     <div>
         <Container>
         <Row >
-          <Col fluid xs={3}>
+          <Col xs={3}>
         <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
         </Col>
         </Row>
@@ -114,7 +114,7 @@ export class MainView extends React.Component {
                       </Row>)
                       : 
                         movies.map(movie => (
-                        (<Row className="justify-content-md-center">
+                        (<Row className="justify-content-md-center" key={movie._id} movie={movie}>
                           <Col xs={8}>
                           <Card style={{ width: '18rem', margin:'1rem', marginRight: '3rem'}}>
                         <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>

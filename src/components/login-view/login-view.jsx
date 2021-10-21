@@ -33,7 +33,7 @@ export function LoginView(props) {
         
       <Row>
         
-        <Col fluid md={3}>
+        <Col md={3}>
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                     <Form>
@@ -57,7 +57,7 @@ export function LoginView(props) {
             </Card>
           </Col>
 
-          <Col fluid md={9}>
+          <Col md={9}>
         <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '100%', width: '100%', margin: '2rem'}} />
         </Col>
           </Row>
