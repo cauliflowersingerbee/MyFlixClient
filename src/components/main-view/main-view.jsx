@@ -68,6 +68,14 @@ export class MainView extends React.Component {
     });
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
   onMovieClick(movie) {
     this.setState({
       movie
@@ -84,11 +92,9 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
 
-    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
-    
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
-   
+    
+    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
