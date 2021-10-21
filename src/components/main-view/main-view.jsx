@@ -55,7 +55,6 @@ export class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      // Assign the result to the state
       this.setState({
         movies: response.data
       });
@@ -87,9 +86,9 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, newUser } = this.state;
 
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-    if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
+    //if (!newUser) return <RegistrationView onRegistration={newUser => this.onRegistration(newUser)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
