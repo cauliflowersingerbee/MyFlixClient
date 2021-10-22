@@ -79,8 +79,10 @@ export class MainView extends React.Component {
     });
   }
 
-  //add a logout button somewhere:
+  //1. add a logout button somewhere:
   //<button onClick={() => { this.onLoggedOut() }}>Logout</button>
+
+  //2. add form validation
 
   onMovieClick(movie) {
     this.setState({
@@ -108,32 +110,29 @@ export class MainView extends React.Component {
     <div>
       <Router>
         <Container>
-        <Row >
-          <Col xs={3}>
-        <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
-        </Col>
-        <Col>
-         
-
-        <Route exact path="/" render={() => {
-            return movies.map(m => (
-              <Col md={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))
-          }} />
-          <Route path="/movies/:movieId" render={({ match }) => {
-            return <Col md={8}>
-              <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+          <Row >
+            <Col xs={3}>
+              <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
             </Col>
-          }} />
-
-
-                </Col>
-                </Row>
-          </Container>
-        </Router>
-      </div>
+            <Col>
+                <Route exact path="/" render={() => {
+                  return movies.map(m => (
+                    <Col md={3} key={m._id}>
+                      <MovieCard movie={m} />
+                    </Col>
+                  ))
+                }} />
+                  <Route path="/movies/:movieId" render={({ match }) => {
+                    return 
+                    <Col md={8}>
+                    <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                    </Col>
+                }} />
+            </Col>
+          </Row>
+        </Container>
+      </Router>
+    </div>
     )
   }
 }
