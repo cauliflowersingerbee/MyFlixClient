@@ -39,6 +39,7 @@ export class MainView extends React.Component {
     });
   }
 
+  //refactoring:
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
