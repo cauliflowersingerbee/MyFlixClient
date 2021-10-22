@@ -79,6 +79,9 @@ export class MainView extends React.Component {
     });
   }
 
+  //add a logout button somewhere:
+  //<button onClick={() => { this.onLoggedOut() }}>Logout</button>
+
   onMovieClick(movie) {
     this.setState({
       movie
