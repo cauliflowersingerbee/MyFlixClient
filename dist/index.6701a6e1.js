@@ -22906,6 +22906,42 @@ class MainView extends _reactDefault.default.Component {
                             lineNumber: 119
                         },
                         __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        exact: true,
+                        path: "/genres/:name",
+                        render: ({ match  })=>{
+                            return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                md: 8,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(GenreView, {
+                                    movie: movies.find((m)=>m._id === match.params.genreId
+                                    )
+                                })
+                            }));
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 124
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        exact: true,
+                        path: "/directors/:name",
+                        render: ({ match  })=>{
+                            return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                md: 8,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(DirectorView, {
+                                    movie: movies.find((m)=>m._id === match.params.directorId
+                                    )
+                                })
+                            }));
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 129
+                        },
+                        __self: this
                     })
                 ]
             })

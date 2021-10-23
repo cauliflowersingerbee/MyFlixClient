@@ -121,7 +121,16 @@ export class MainView extends React.Component {
               <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
             </Col>
           }} />
-
+         <Route exact path="/genres/:name" render={({ match }) => {
+           return <Col md={8}>
+           <GenreView movie={movies.find(m => m._id === match.params.genreId)} />
+         </Col>
+         }}/>
+         <Route exact path="/directors/:name" render={({ match }) => {
+            return <Col md={8}>
+              <DirectorView movie={movies.find(m => m._id === match.params.directorId)} />
+            </Col>
+          }} />
         </Row>
       </Router>
     )
