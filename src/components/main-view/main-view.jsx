@@ -107,32 +107,37 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-    <div>
       <Router>
+        <div className="main-view">
         <Container>
-          <Row >
-            <Col xs={3}>
-              <img src={logo} alt="Kino Noir Logo" style={{height: '100%', width: '100%', marginTop: '0.5rem', marginLeft:'20rem', marginBottom: '0.5rem'}} />
-            </Col>
+          <Row>
             <Col>
                 <Route exact path="/" render={() => {
                   return movies.map(m => (
                     <Col md={3} key={m._id}>
-                      <MovieCard movie={m} />
+                        <MovieCard movie={m} />
                     </Col>
                   ))
                 }} />
                   <Route path="/movies/:movieId" render={({ match }) => {
                     return 
                     <Col md={8}>
-                    <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                       <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                     </Col>
                 }} />
+                  <Route exact path="/genres/:name" render={/* genre view*/}/>
+                  <Route path="/directors/:name" render={({ match }) => {
+                      if (movies.length === 0) return <div className="main-view" />;
+                      return <Col md={8}>
+                        <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+                      </Col>
+                    }
+                    } />
             </Col>
           </Row>
         </Container>
+        </div>
       </Router>
-    </div>
     )
   }
 }

@@ -22868,77 +22868,51 @@ class MainView extends _reactDefault.default.Component {
                         lineNumber: 112
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 113
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 114
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                    src: _kinoNoirLogoPngDefault.default,
-                                    alt: "Kino Noir Logo",
-                                    style: {
-                                        height: '100%',
-                                        width: '100%',
-                                        marginTop: '0.5rem',
-                                        marginLeft: '20rem',
-                                        marginBottom: '0.5rem'
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 114
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    exact: true,
+                                    path: "/",
+                                    render: ()=>{
+                                        return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                                md: 3,
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                                                    movie: m
+                                                })
+                                            }, m._id)
+                                        );
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
                                         lineNumber: 115
                                     },
                                     __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    path: "/movies/:movieId",
+                                    render: ({ match  })=>{
+                                        var m;
+                                        return;
+                                    },
+                                    __source: {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 122
+                                    },
+                                    __self: this
                                 })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 117
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                        exact: true,
-                                        path: "/",
-                                        render: ()=>{
-                                            return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                                    md: 3,
-                                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                                        movie: m
-                                                    })
-                                                }, m._id)
-                                            );
-                                        },
-                                        __source: {
-                                            fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 118
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                        path: "/movies/:movieId",
-                                        render: ({ match  })=>{
-                                            var m;
-                                            return;
-                                        },
-                                        __source: {
-                                            fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 125
-                                        },
-                                        __self: this
-                                    })
-                                ]
-                            })
-                        ]
+                            ]
+                        })
                     })
                 })
             })
