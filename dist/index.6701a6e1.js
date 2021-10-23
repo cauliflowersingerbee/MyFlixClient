@@ -22864,7 +22864,7 @@ class MainView extends _reactDefault.default.Component {
                 lineNumber: 110
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+            children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
@@ -22911,11 +22911,14 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/genres/:name",
                         render: ({ match  })=>{
+                            if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "main-view"
+                            }));
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 md: 8,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(GenreView, {
-                                    movie: movies.find((m)=>m._id === match.params.genreId
-                                    )
+                                    genre: movies.find((m)=>m.Genre.Name === match.params.name
+                                    ).Genre
                                 })
                             }));
                         },
@@ -22929,17 +22932,20 @@ class MainView extends _reactDefault.default.Component {
                         exact: true,
                         path: "/directors/:name",
                         render: ({ match  })=>{
+                            if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "main-view"
+                            }));
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 md: 8,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(DirectorView, {
-                                    movie: movies.find((m)=>m._id === match.params.directorId
-                                    )
+                                    director: movies.find((m)=>m.Director.Name === match.params.name
+                                    ).Director
                                 })
                             }));
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 129
+                            lineNumber: 130
                         },
                         __self: this
                     })
