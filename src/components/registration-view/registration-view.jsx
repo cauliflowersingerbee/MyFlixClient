@@ -14,7 +14,7 @@ export function RegistrationView(props) {
   const handleRegister = (e) => {
     e.preventDefault();
     /* Send a request to the server for authentication */
-    axios.post('https://kino-noir.herokuapp.com/register', {
+    axios.post('https://kino-noir.herokuapp.com/users', {
       Username: username,
       Password: password, 
       Email: email,

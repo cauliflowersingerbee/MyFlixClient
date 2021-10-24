@@ -22997,6 +22997,26 @@ class MainView extends _reactDefault.default.Component {
                             lineNumber: 153
                         },
                         __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/users/:username",
+                        render: (history)=>{
+                            if (!user) return;
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                })
+                            });
+                            if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "main-view"
+                            }));
+                            return;
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 164
+                        },
+                        __self: this
                     })
                 ]
             })
@@ -27658,7 +27678,7 @@ function RegistrationView(props) {
     const [birthday, setBirthday] = _react.useState('');
     const handleRegister = (e)=>{
         e.preventDefault();
-        /* Send a request to the server for authentication */ axios.post('https://kino-noir.herokuapp.com/register', {
+        /* Send a request to the server for authentication */ axios.post('https://kino-noir.herokuapp.com/users', {
             Username: username,
             Password: password,
             Email: email,

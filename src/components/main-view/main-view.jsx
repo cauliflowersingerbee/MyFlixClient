@@ -161,6 +161,19 @@ export class MainView extends React.Component {
               <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />/>
             </Col>
           }} />
+          <Route path="/users/:username" render={(history) => {
+          if (!user) return 
+          <Col>
+            <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+          </Col>
+
+          if (movies.length === 0) return <div className="main-view" />;
+          return 
+          <Col>
+          <ProfileView history={history} movies={movies}/>
+          </Col>
+          }} />
+
         </div>
       </Router>
     )
