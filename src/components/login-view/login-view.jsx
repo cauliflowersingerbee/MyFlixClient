@@ -5,7 +5,6 @@ import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { RegistrationView } from '../registration-view/registration-view';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
