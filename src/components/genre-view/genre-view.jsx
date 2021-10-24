@@ -6,36 +6,31 @@ import { Link } from 'react-router-dom';
 export function GenreView (props) {
 
       const { genre } = props;
+      console.log(genre, 'genre')
   
       return (
-        <Container>
+        <>
             <Row>
                 <Col>
                     <Card>
                       <Card.Body>
                       <div className="genre-view">
                          <span className="label">Name: </span>
+                         <span className="value">{genre.Name}</span>
                       </div>
                       <div className="genre-description">
                           <span className="label">Description: </span>
-                        </div>
-                        <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
-
+                          <span className="value">{genre.Description}</span>
+                      </div>
+                      <Link to={`/`}>
+                        <Button style={{marginTop: '1rem'}} variant="primary">Go back to movie list</Button>
+                      </Link>
                       </Card.Body>
                     </Card>
               </Col>
            </Row>
-        </Container>
+        </>
       );
     }
-  }
-
-  MovieView.propTypes = {
-    movie: PropTypes.shape({
-      Title: PropTypes.string,
-      Description: PropTypes.string.isRequired,
-      ImagePath: PropTypes.string.isRequired
-    }).isRequired,
-    onBackClick: PropTypes.func.isRequired
-  };
+  
 
