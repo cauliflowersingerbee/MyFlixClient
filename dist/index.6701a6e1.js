@@ -22763,6 +22763,7 @@ var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
+        //initial state set to null
         this.state = {
             movies: [],
             selectedMovie: null,
@@ -22779,12 +22780,21 @@ class MainView extends _reactDefault.default.Component {
             this.getMovies(accessToken);
         }
     }
-    setSelectedMovie(movie) {
-        this.setState({
-            selectedMovie: movie
+    getMovies(token) {
+        _axiosDefault.default.get('https://kino-noir.herokuapp.com/movies', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            //result becomes state
+            this.setState({
+                movies: response.data
+            });
+        }).catch(function(error) {
+            console.log(error);
         });
     }
-    //refactoring:
+    //upon login, next function updates `user` property in state
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -22794,74 +22804,19 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
     }
-    getMovies(token) {
-        _axiosDefault.default.get('https://kino-noir.herokuapp.com/movies', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            this.setState({
-                movies: response.data
-            });
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-    onRegistration(newUser) {
-        this.setState({
-            newUser
-        });
-    }
-    onLoggedOut() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        this.setState({
-            user: null
-        });
-    }
-    //1. add a logout button somewhere:
-    //<button onClick={() => { this.onLoggedOut() }}>Logout</button>
-    //2. add form validation
-    onMovieClick(movie) {
-        this.setState({
-            movie
-        });
-    }
-    onBackClick(movie) {
-        this.setState({
-            movie
-        });
-    }
     render() {
-        const { movies , selectedMovie , user , newUser  } = this.state;
-        if (!newUser) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-            onRegistration: (newUser1)=>this.onRegistration(newUser1)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 105
-            },
-            __self: this
-        }));
-        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "main-view",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 107
-            },
-            __self: this
-        }));
+        const { movies , user  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 110
+                lineNumber: 72
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 111
+                    lineNumber: 73
                 },
                 __self: this,
                 children: [
@@ -22888,7 +22843,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 112
+                            lineNumber: 74
                         },
                         __self: this
                     }),
@@ -22905,7 +22860,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 125
+                            lineNumber: 87
                         },
                         __self: this
                     }),
@@ -22932,7 +22887,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 131
+                            lineNumber: 93
                         },
                         __self: this
                     }),
@@ -22963,7 +22918,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 142
+                            lineNumber: 104
                         },
                         __self: this
                     }),
@@ -22994,7 +22949,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 153
+                            lineNumber: 115
                         },
                         __self: this
                     }),
@@ -23014,7 +22969,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 164
+                            lineNumber: 126
                         },
                         __self: this
                     })
