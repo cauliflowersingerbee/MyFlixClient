@@ -30,13 +30,12 @@ export function LoginView(props) {
   
   return (
     <div>
-    <Container className="login-card">
-        
-      <Row>
-        
+    <Container className="login-view">
+      <Row className="justify-content-md-center"> 
         <Col md={3}>
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
+                  <Card.Title>Please Login to use Kino Noir</Card.Title>
                     <Form>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
@@ -50,6 +49,11 @@ export function LoginView(props) {
                       <Button style={{marginTop: '1rem'}} variant="primary" type="submit" onClick={handleSubmit}>
                         Submit
                       </Button>
+
+                      <br>New to Kino Noir? Please sign up!</br>
+                       <Link to="/register">
+                       <Button style={{marginTop: '1rem'}} variant="primary" type="button"> Register</Button>
+                       </Link>
                       <div>
                       <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '10rem', marginTop: '0.5rem'}}/>
                       </div>        
