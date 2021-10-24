@@ -11,13 +11,25 @@ export function RegistrationView(props) {
   const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday ] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday );
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onRegistration(username);
+    axios.post('https://kino-noir.herokuapp.com/register', {
+      Username: username,
+      Password: password, 
+      Email: email,
+      Birthday: birthday
+    })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      window.open('/', '_self');
+    })
+    .catch(e => {
+      console.log('Trouble registering user!')
+    });
   };
+  
 
   
   return (

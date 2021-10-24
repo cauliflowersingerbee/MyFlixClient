@@ -12,22 +12,16 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Container >
-        <Row>
-            <Col>
-              <Card>
-                <Card.Img variant="top" src={movie.ImagePath} />
-                <Card.Body>
-                  <Card.Title>{movie.Title}</Card.Title>
-                  <Card.Text>{movie.Description}</Card.Text>
-                  <Link to={`/movies/${movie._id}`}>
-                  <Button variant="link">Open</Button>
-                  </Link>
-                </Card.Body>
-              </Card>
-              </Col>
-        </Row>
-      </Container>
+      <Card>
+        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
+            <Button variant="link">Open</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     );
   }
 }

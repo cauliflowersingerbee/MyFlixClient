@@ -31,6 +31,14 @@ export class MovieView extends React.Component {
                         </div>
                         <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
                       </div>
+                      <Link to={`/directors/${movie.Director.Name}`}>
+                      <Button variant="link">Director</Button>
+                      </Link>
+
+                      <Link to={`/genres/${movie.Genre.Name}`}>
+                        <Button variant="link">Genre</Button>
+                      </Link>
+
                       </Card.Body>
                     </Card>
               </Col>
