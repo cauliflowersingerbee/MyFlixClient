@@ -4,99 +4,21 @@ import logo from '../../img/KinoNoirLogo.png'
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/RegistrationImg.jpg';
 
-export class ProfileView extends React.Component {
-  constructor(props) {
-    super(props);
+export function ProfileView(props) {
 
-    
-  }
+//Allow a user to update their user info 
+//(username, password, email, date of birth
 
-  removeFavouriteMovie(_id) {
-    const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
 
-    console.log(_id, '_id')
-    axios.delete(`https://moviexperts.herokuapp.com/users/${user}/favorites/${_id}` , {
-  
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    .then((response) => {
-      alert ('Favorite was removed')
-      window.location.reload(); 
 
-      
+//Allow a user to deregister
 
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  }
-  deleteUser() {
 
-    const answer = window.confirm("Are you sure you want to delete your account?");
-    if (answer) {
-      const token = localStorage.getItem("token");
-      const user = localStorage.getItem("user");
-        axios.delete( `https://moviexperts.herokuapp.com/users/${user}`,
-          { headers: { Authorization: `Bearer ${token}` } }
-          )
-          .then(() => {
-            alert(user + " has been deleted.");
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
-            window.location.pathname = "/";
-          })
-          .catch(function (error) {
-              console.log(error);
-          })};
-          
-      }
 
-   render() {
-    const { movies, user, username, email, password, birthday, favoriteMovies } = this.props;
+//Display a user's favorite movies
 
-    return(
-      <Container className="ProfileView">
-        <Row className="justify-content-md-center">
-          <Col>
-            <p>Username: {username}</p>
-            <p>Password: *******</p>
-            <p>Email: {email}</p>
-            <p>Birthday: {birthday}</p>
-          </Col>
-        </Row>
-          <Row>
-            <Card.Body>
-              {favoriteMovies.length === 0 && <div className="text-center">Empty.</div>}
-                <Row className="favorites-movies ">
-                  {favoriteMovies.length > 0 &&
-                    movies.map((movie) => {
-                      if (movie._id === favoriteMovies.find((fav) => fav === movie._id)) {
-                        return (
-                          <Col lg={4} key={movie._id}>
-                            <Card className="favorites-item card-content" >
-                              <Card.Img  className="movieCard" variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
-                              <Card.Body>
-                                <Card.Title className="movie-card-title">{movie.title}</Card.Title>
-                                <Button size='sm' className='profile-button remove-favorite' variant='danger' value={movies.title} onClick={() => this.removeFavouriteMovie(movie._id)}>
-                                  Remove
-                                </Button>
-                              </Card.Body>
-                            </Card>
-                          </Col>
-                        )}
-                    })
-                  }
-                  </Row>
-              </Card.Body>
-          </Row>
-          <Row>
-            <Col className="acc-btns mt-1">
-              <Button size="md" variant="outline-danger" type="submit" ml="4" onClick={() => this.deleteUser()} >Delete Account</Button>
-            </Col>
-            
-         </Row>
-     </Container>
-    )
-   }  
+
+
+//Allow a user to remove a movie from their list of favorites
+
 }
