@@ -5,7 +5,7 @@ import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { RegistrationView } from '../registration-view/registration-view';
+
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -30,7 +30,7 @@ export function LoginView(props) {
   
   return (
     <div>
-    <Container className="login-view">
+    <Container className="login-card">
       <Row className="justify-content-md-center"> 
         <Col md={3}>
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
@@ -78,6 +78,6 @@ LoginView.propTypes = {
   user: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   onLoggedIn: PropTypes.func.isRequired,
 };

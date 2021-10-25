@@ -5,7 +5,6 @@ import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/RegistrationImg.jpg';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { LoginView } from "../login-view/login-view";
 
 
 export function RegistrationView(props) {
@@ -32,8 +31,6 @@ export function RegistrationView(props) {
       console.log('Oops! There was trouble registering user!')
     });
   };
-  
-  const login = LoginView;
   
   return (
     <Container className="registration-card">  

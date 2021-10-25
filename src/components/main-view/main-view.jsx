@@ -64,6 +64,13 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
+  onRegistration(user) {
+    console.log(user);
+    this.setState({
+      newUser: user,
+    });
+  }
+
   
   render() {
     const { movies, user } = this.state;
