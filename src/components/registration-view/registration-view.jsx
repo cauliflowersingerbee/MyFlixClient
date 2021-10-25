@@ -45,22 +45,26 @@ export function RegistrationView(props) {
                   <Form>
                     <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
-                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} required
+                      placeholder="Please enter a username"/>
                     </Form.Group>
 
                     <Form.Group controlId="formPassword">
                     <Form.Label>Password:</Form.Label>
-                    <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                    <Form.Control type="password" onChange={e => setPassword(e.target.value)} required minLength="6"
+                      placeholder="Please enter a password"/>
                     </Form.Group>
 
                     <Form.Group controlId="formEmail">
                     <Form.Label>Email:</Form.Label>
-                    <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
+                    <Form.Control type="email" onChange={e => setEmail(e.target.value)} required
+                      placeholder="Please enter an email address"/>
                     </Form.Group>
 
                     <Form.Group controlId="formBirthday">
                     <Form.Label>Birthday:</Form.Label>
-                    <Form.Control type="birthday" onChange={e => setBirthday(e.target.value)} />
+                    <Form.Control type="birthday" onChange={e => setBirthday(e.target.value)} required
+                      placeholder="Please enter your birthday"/>
                     </Form.Group>
 
                     <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
