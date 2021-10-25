@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import logo from '../../img/KinoNoirLogo.png'
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/RegistrationImg.jpg';
+import axios from 'axios';
+import { Link } from "react-router-dom";
+import { LoginView } from "../login-view/login-view";
 
 
 export function RegistrationView(props) {
@@ -11,7 +14,7 @@ export function RegistrationView(props) {
   const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday ] = useState('');
 
-  const handleRegister = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     /* Send a request to the server for authentication */
     axios.post('https://kino-noir.herokuapp.com/users', {
@@ -26,11 +29,11 @@ export function RegistrationView(props) {
       window.open('/', '_self');
     })
     .catch(e => {
-      console.log('Trouble registering user!')
+      console.log('Oops! There was trouble registering user!')
     });
   };
   
-
+  const login = LoginView;
   
   return (
     <Container className="registration-card">  
@@ -38,6 +41,7 @@ export function RegistrationView(props) {
       <Col>
             <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
               <Card.Body>
+                <Card.Title>Please Sign Up for Kino Noir</Card.Title>
                   <Form>
                     <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
@@ -60,7 +64,12 @@ export function RegistrationView(props) {
                     </Form.Group>
 
                     <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-                  
+                    <p>Already signed up? Login here</p>
+                  <Link to="/">
+                    <Button variant="primary" type="button">
+                      Login
+                    </Button>
+                  </Link>
                     <div>
                       <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
                     </div> 
