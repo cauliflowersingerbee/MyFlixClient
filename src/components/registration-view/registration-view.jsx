@@ -68,12 +68,12 @@ export function RegistrationView(props) {
                     </Form.Group>
 
                     <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                    
                     <p>Already signed up? Login here</p>
-                  <Link to="/">
-                    <Button variant="primary" type="button">
-                      Login
-                    </Button>
+                    <Link to="/">
+                    <Button variant="primary" type="button">Login</Button>
                   </Link>
+
                     <div>
                       <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
                     </div> 
@@ -97,6 +97,6 @@ RegistrationView.propTypes = {
   newUser: PropTypes.shape({
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   onRegistration: PropTypes.func.isRequired,
 };

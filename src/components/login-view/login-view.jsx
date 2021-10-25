@@ -5,6 +5,7 @@ import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { RegistrationView } from '../registration-view/registration-view';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -49,7 +50,7 @@ export function LoginView(props) {
                         Submit
                       </Button>
 
-                      <br>New to Kino Noir? Please sign up!</br>
+                      <p>New to Kino Noir? Please sign up!</p>
                        <Link to="/register">
                        <Button style={{marginTop: '1rem'}} variant="primary" type="button"> Register</Button>
                        </Link>
