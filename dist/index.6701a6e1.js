@@ -40735,10 +40735,10 @@ class ProfileView extends _reactDefault.default.Component {
             FavoriteMovies: []
         };
     }
-    //GET user
+    //user info
     componentDidMount() {
         let user = localStorage.getItem("user");
-        let url = `https://movietemple.herokuapp.com/users/profile/${user}`;
+        let url = `https://kino-noir.herokuapp.com/users/profile/${user}`;
         const token = localStorage.getItem("token");
         _axiosDefault.default.get(url, {
             headers: {
@@ -40753,7 +40753,7 @@ class ProfileView extends _reactDefault.default.Component {
     handleDelete() {
         const token = localStorage.getItem("token");
         const user = localStorage.getItem("user");
-        _axiosDefault.default.delete(`https://movietemple.herokuapp.com/users/${user}`, {
+        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

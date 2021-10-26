@@ -16,10 +16,10 @@ export class ProfileView extends React.Component {
     };
   }
 
-  //GET user
+  //user info
   componentDidMount() {
     let user = localStorage.getItem("user");
-    let url = `https://movietemple.herokuapp.com/users/profile/${user}`;
+    let url = `https://kino-noir.herokuapp.com/users/profile/${user}`;
     const token = localStorage.getItem("token");
 
     axios
@@ -35,7 +35,7 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("user");
     axios
-      .delete(`https://movietemple.herokuapp.com/users/${user}`, {
+      .delete(`https://kino-noir.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
