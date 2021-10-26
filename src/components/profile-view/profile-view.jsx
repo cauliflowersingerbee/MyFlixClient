@@ -13,18 +13,16 @@ export class ProfileView extends React.Component {
   }
 
   //display favorite movies
-  getUserInfo(token) {
+  getUserInfo() {
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
+    const user = localStorage.getItem('user');
     axios.get(`https://kino-noir.herokuapp.com/users/${user}/favorites}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
         this.setState({
           Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthdate,
+          FavoriteMovie: response.data.FavoriteMovie 
         });
       })
       .catch(function (error) {
@@ -35,30 +33,64 @@ export class ProfileView extends React.Component {
   
   //updating user account
 
-  handleUpdate() {
-    const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
+  handleUpdate(e, username, password, email, birthday) {
+    this.setState({
+      validated: null,
+    });
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.setState({
+        validated: true,
+      });
+      return;
+    }
+
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
+        data: {
+          Name: newName ? newName : this.state.Name,
+          Username: newUsername ? newUsername : this.state.Username,
+          Password: newPassword ? newPassword : this.state.Password,
+          Email: newEmail ? newEmail : this.state.Email,
+          Birthday: newBirthdate ? newBirthdate : this.state.Birthdate,
+        },
       })
       .then((response) => {
+        alert("Account Updated");
         this.setState({
-          newUsername: response.data.Username,
-          newPassword: response.data.Password,
-          newEmail: response.data.Email,
-          newBirthday: response.data.Birthdate,
-        })
-
-        
-
-        alert("Account successfully deleted");
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-        window.location.pathname = "/";
-      }) 
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthdate: response.data.Birthdate,
+        });
+        localStorage.setItem("user", this.state.Username);
+        window.open(`/users/${username}`, "_self");
+      })
       .catch(function (error) {
         console.log(error);
       });
+  }
+  setName(input) {
+    this.Name = input;
+  }
+
+  setUsername(input) {
+    this.Username = input;
+  }
+
+  setPassword(input) {
+    this.Password = input;
+  }
+
+  setEmail(input) {
+    this.Email = input;
+  }
+
+  setBirthday(input) {
+    this.Birthdate = input;
   }
 
   //removing user
@@ -98,51 +130,57 @@ export class ProfileView extends React.Component {
   }
 
   render() {
-    
-    const { user, username, movies } = this.props;
-    console.log("movies", movies);
-    console.log("log user", user);
 
-    return (
-      <Container>
-        <Card className="card" xs={8} md={4}>
-          <Card.Body className="card-body">
-            <Card.Title>Profile Information </Card.Title>
-            <Card.Text>Username: {`${user.Username}`} </Card.Text>
-            <Card.Text>Password: {`${user.Password}`}</Card.Text>
-            <Card.Text>Email: {`${user.Email}`}</Card.Text>
-            {user.Birthday && <Card.Text>Birthdate: {`${user.Birthday}`}</Card.Text>}
-            <Link to={`/users/update/${user.Username}`}>
-              <Button className="button-update" variant="link">
-                Update Profile
-              </Button>
-            </Link>
-
-            <Link to={`/users/${user}`}>
-              <Button
-                className="button-deregister"
-                user={username}
-                variant="link"
-                onClick={() => {
-                  this.handleDelete();
-                }}
-              >
-                Deregister
-              </Button>
-            </Link>
-          </Card.Body>
-        </Card>
-        <Row className="justify-content-center">
-          <h3>Favourite Films</h3>
-        </Row>
-        <Row className="favourite-movies">
-       {movies.map((movie) => {
-          if (this.state.FavoriteMovies.includes(movie._id)) {
-            return <MovieCard key={movie._id} movie={movie} />;
-          }
-        })}
-        </Row>
-      </Container>
-    );
+      return  (
+       <Container className="profile-view">  
+       <Row>
+         <Col>
+               <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
+                 <Card.Body>
+                   <Card.Title>Please Update Your User Details</Card.Title>
+                     <Form>
+                       <Form.Group controlId="formUsername">
+                       <Form.Label>Username:</Form.Label>
+                       <Form.Control type="text" onChange={e => handleUpdate(e)} required
+                         placeholder="Please enter a username"/>
+                       </Form.Group>
+   
+                       <Form.Group controlId="formPassword">
+                       <Form.Label>Password:</Form.Label>
+                       <Form.Control type="password" onChange={e => handleUpdate(e)} required minLength="6"
+                         placeholder="Please enter a password"/>
+                       </Form.Group>
+   
+                       <Form.Group controlId="formEmail">
+                       <Form.Label>Email:</Form.Label>
+                       <Form.Control type="email" onChange={e => handleUpdate(e)} required
+                         placeholder="Please enter an email address"/>
+                       </Form.Group>
+   
+                       <Form.Group controlId="formBirthday">
+                       <Form.Label>Birthday:</Form.Label>
+                       <Form.Control type="birthday" onChange={e => handleUpdate(e)} required
+                         placeholder="Please enter your birthday"/>
+                       </Form.Group>
+   
+                       <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                       
+                       <div>
+                         <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
+                       </div> 
+                             
+                   </Form>  
+               </Card.Body>
+             </Card>
+         </Col>
+         <Col xs={7}>
+           <div className="float-right"> 
+               <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', marginRight: '2rem'}}/>
+           </div>
+         </Col>
+       </Row>
+       </Container>
+      );
+   
+   }
   }
-}
