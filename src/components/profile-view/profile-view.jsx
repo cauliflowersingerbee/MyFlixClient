@@ -8,28 +8,59 @@ import { Link } from "react-router-dom";
 
 
 export class ProfileView extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      FavoriteMovies: [],
-    };
+  constructor(props) {
+    super(props);
   }
 
   //user info
-  componentDidMount() {
-    let user = localStorage.getItem("user");
-    let url = `https://kino-noir.herokuapp.com/users/profile/${user}`;
-    const token = localStorage.getItem("token");
-
-    axios
-      .get(url, { headers: { Authorization: `Bearer ${token}` } })
+  getUserInfo(token) {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    axios.get(`https://kino-noir.herokuapp.com/users/${username}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((response) => {
         this.setState({
-          FavoriteMovies: response.data.FavoriteMovies,
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthdate,
         });
+      })
+      .catch(function (error) {
+        console.log(error);
       });
   }
+
+
+
+  handleUpdate() {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.setState({
+          newUsername: response.data.Username,
+          newPassword: response.data.Password,
+          newEmail: response.data.Email,
+          newBirthday: response.data.Birthdate,
+        })
+
+
+
+
+        alert("Account successfully deleted");
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.pathname = "/";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
 
   handleDelete() {
     const token = localStorage.getItem("token");
@@ -39,7 +70,7 @@ export class ProfileView extends React.Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
-        alert("Account has been deleted");
+        alert("Account successfully deleted");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         window.location.pathname = "/";
@@ -47,6 +78,28 @@ export class ProfileView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
+  }
+
+  removeFavouriteMovie(_id) {
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+    const url = `https://moviexperts.herokuapp.com/users/${user}/favorites/${_id}`;
+
+    console.log(_id,)
+    axios.delete( url, {
+  
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then((response) => {
+      alert ('Favorite movie deleted')
+      window.location.pathname = "/";
+
+      
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
   render() {
