@@ -8,6 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -51,6 +52,13 @@ export class MainView extends React.Component {
     });
   }
 
+  onRegistration(user) {
+    console.log(user);
+    this.setState({
+      newUser: user,
+    });
+  }
+
   //upon login, next function updates `user` property in state
 
   onLoggedIn(authData) {
@@ -64,16 +72,20 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onRegistration(user) {
-    console.log(user);
+  onLoggedOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     this.setState({
-      newUser: user,
+      user: null,
     });
   }
+
+ 
 
   
   render() {
     const { movies, user } = this.state;
+    
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
@@ -88,11 +100,23 @@ export class MainView extends React.Component {
               </Col>
             ))
           }} />
-          <Route path="/register" render={() => {
+          <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
             return <Col>
               <RegistrationView />
             </Col>
+          }} />
+
+          <Route path="/users/profile/:username" render={({ match, history}) => {
+            if (!user) return 
+            <Col>
+            <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+              if (movies.length === 0) return <div className="main-view" />;
+              return 
+              <Col md={8}>
+               <ProfileView user={user} movies={movies}/>
+              </Col>
           }} />
 
           <Route path="/movies/:movieId" render={({ match, history }) => {
