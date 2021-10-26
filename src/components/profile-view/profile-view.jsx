@@ -12,11 +12,11 @@ export class ProfileView extends React.Component {
     super(props);
   }
 
-  //user info
+  //display favorite movies
   getUserInfo(token) {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-    axios.get(`https://kino-noir.herokuapp.com/users/${username}`, {
+    axios.get(`https://kino-noir.herokuapp.com/users/${user}/favorites}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
@@ -32,7 +32,8 @@ export class ProfileView extends React.Component {
       });
   }
 
-
+  
+  //updating user account
 
   handleUpdate() {
     const token = localStorage.getItem('token');
@@ -48,25 +49,23 @@ export class ProfileView extends React.Component {
           newBirthday: response.data.Birthdate,
         })
 
-
-
+        
 
         alert("Account successfully deleted");
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         window.location.pathname = "/";
-      })
+      }) 
       .catch(function (error) {
         console.log(error);
       });
   }
 
-
+  //removing user
   handleDelete() {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("user");
-    axios
-      .delete(`https://kino-noir.herokuapp.com/users/${user}`, {
+    axios.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -80,26 +79,22 @@ export class ProfileView extends React.Component {
       });
   }
 
-  removeFavouriteMovie(_id) {
+  //removing favorite movie
+  deleteFavoriteMovie(_id) {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    const url = `https://moviexperts.herokuapp.com/users/${user}/favorites/${_id}`;
+    const url = `https://kino-noir.herokuapp.com/users/${user}/favorites/${_id}`;
 
-    console.log(_id,)
     axios.delete( url, {
-  
       headers: { Authorization: `Bearer ${token}` }
     })
     .then((response) => {
-      alert ('Favorite movie deleted')
+      alert ('Movie removed from favorites')
       window.location.pathname = "/";
-
-      
-
     })
     .catch(function (error) {
       console.log(error);
-    })
+    });
   }
 
   render() {
