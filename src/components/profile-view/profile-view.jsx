@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 
 
 export class ProfileView extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   //display favorite movies
-  getUserInfo() {
+  FavoriteMovie() {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     axios.get(`https://kino-noir.herokuapp.com/users/${user}/favorites}`, {
@@ -72,26 +72,26 @@ export class ProfileView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-  setName(input) {
-    this.Name = input;
-  }
+        }
+        setName(input) {
+          this.Name = input;
+        }
 
-  setUsername(input) {
-    this.Username = input;
-  }
+        setUsername(input) {
+          this.Username = input;
+        }
 
-  setPassword(input) {
-    this.Password = input;
-  }
+        setPassword(input) {
+          this.Password = input;
+        }
 
-  setEmail(input) {
-    this.Email = input;
-  }
+        setEmail(input) {
+          this.Email = input;
+        }
 
-  setBirthday(input) {
-    this.Birthdate = input;
-  }
+        setBirthday(input) {
+          this.Birthdate = input;
+        }
 
   //removing user
   handleDelete() {
@@ -129,58 +129,122 @@ export class ProfileView extends React.Component {
     });
   }
 
-  render() {
-
-      return  (
-       <Container className="profile-view">  
-       <Row>
-         <Col>
-               <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
-                 <Card.Body>
-                   <Card.Title>Please Update Your User Details</Card.Title>
-                     <Form>
-                       <Form.Group controlId="formUsername">
-                       <Form.Label>Username:</Form.Label>
-                       <Form.Control type="text" onChange={e => handleUpdate(e)} required
-                         placeholder="Please enter a username"/>
-                       </Form.Group>
-   
-                       <Form.Group controlId="formPassword">
-                       <Form.Label>Password:</Form.Label>
-                       <Form.Control type="password" onChange={e => handleUpdate(e)} required minLength="6"
-                         placeholder="Please enter a password"/>
-                       </Form.Group>
-   
-                       <Form.Group controlId="formEmail">
-                       <Form.Label>Email:</Form.Label>
-                       <Form.Control type="email" onChange={e => handleUpdate(e)} required
-                         placeholder="Please enter an email address"/>
-                       </Form.Group>
-   
-                       <Form.Group controlId="formBirthday">
-                       <Form.Label>Birthday:</Form.Label>
-                       <Form.Control type="birthday" onChange={e => handleUpdate(e)} required
-                         placeholder="Please enter your birthday"/>
-                       </Form.Group>
-   
-                       <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-                       
-                       <div>
-                         <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
-                       </div> 
-                             
-                   </Form>  
-               </Card.Body>
-             </Card>
-         </Col>
-         <Col xs={7}>
-           <div className="float-right"> 
-               <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', marginRight: '2rem'}}/>
-           </div>
-         </Col>
-       </Row>
-       </Container>
-      );
-   
-   }
+   // get user 
+   getUser(token) {
+    const username = localStorage.getItem('user');
+    axios.get(`https://kino-noir.herokuapp.com/users/${username}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        this.setState({
+          Name: response.data.Name,
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthdate,
+          FavoriteMovie: response.data.FavoriteMovies,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
+
+  render() {
+    const { FavoriteMovie } = this.state;
+    const { movies } = this.props;
+
+    return (
+      <Div className="profile-view">
+        <Row>
+        <Card className="profile-card">
+
+        <h1>'Hello' + {user}</h1>
+        
+        <div className="favorites-movies">
+
+        if {FavoriteMovie.length === 0 } 
+        return 
+        <h2>You have no favorites movies.</h2>
+
+
+        if {FavoriteMovie.length > 0}
+        return 
+        <h2>Your favorite movies are:</h2>
+
+        {movies.map((movie) => {
+                if (movie._id === FavoriteMovie.find((favMovie) => favMovie === movie._id)) {
+                  return (
+                    <CardDeck key={movie._id} className="movie-card-deck">
+                      <Card className="fav-movie" style={{ width: '16rem' }} key={movie._id}>
+                        <Card.Img style={{ width: '18rem', 'padding-top': '10px' }} className="movieCard" variant="top" src={movie.ImageURL} />
+                        <Card.Title className="movie-card-title">{movie.Title}</Card.Title>
+                        <Button size='sm' className='profile-button remove-favorite' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie)}>
+                          Remove
+                        </Button>
+                      </Card>
+                    </CardDeck>
+                  );
+                }
+              })}
+          </div>
+
+          <h2>Your account details are:</h2>
+
+          {getUser}
+
+          <h2> Would you like to update your profile?</h2>
+          
+          <div className="Profile">
+          <Form noValidate validated={validated} className="update-form" onSubmit={(e) => this.handleUpdate(e, this.Name, this.Username, this.Password, this.Email, this.Birthdate)}>
+
+            <Form.Group controlId="formName">
+              <Form.Label className="form-label">Name</Form.Label>
+              <Form.Control type="text" placeholder="Change Name" onChange={(e) => this.setName(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="formUsername">
+              <Form.Label className="form-label">Username</Form.Label>
+              <Form.Control type="text" placeholder="Change Username" onChange={(e) => this.setUsername(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="formPassword">
+              <Form.Label className="form-label">
+                Password<span className="required">*</span>
+              </Form.Label>
+              <Form.Control type="password" placeholder="New Password" onChange={(e) => this.setPassword(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="formEmail">
+              <Form.Label className="form-label">Email</Form.Label>
+              <Form.Control type="email" placeholder="Change Email" onChange={(e) => this.setEmail(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="formBirthdate">
+              <Form.Label className="form-label">Birthdate</Form.Label>
+              <Form.Control type="date" placeholder="Change Birthdate" onChange={(e) => this.setBirthdate(e.target.value)} />
+            </Form.Group>
+
+            <Button variant='danger' type="submit">
+              Update
+            </Button>
+
+            <h3>Delete your Account</h3>
+            <Button variant='danger' onClick={(e) => this.handleDeleteUser(e)}>
+              Delete Account
+            </Button>
+          </Form>
+
+          </div>
+          
+          <p>
+          'Not' + {user} '?' + 'Please log out!'
+          </p>
+          
+          <button onClick={() => { this.onLoggedOut() }}>Logout</button>
+        </Card>
+        </Row>
+      </Div>
+    );
+  }
+}

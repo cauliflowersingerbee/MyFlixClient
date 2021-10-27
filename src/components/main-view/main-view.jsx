@@ -93,30 +93,17 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (movies.length === 0) return <div className="main-view" />;
-            return movies.map(m => (
-              <Col md={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))
+            if (user) return <Col>
+            <ProfileView />
+          </Col>
+            
           }} />
           <Route exact path="/register" render={() => {
-            if (user) return <Redirect to="/" />
+            if (user) return 
+            <Redirect to="/" />
             return <Col>
               <RegistrationView />
             </Col>
-          }} />
-
-          <Route path="/users/profile/:username" render={({ match, history}) => {
-            if (!user) return 
-            <Col>
-            <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-            </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return 
-              <Col md={8}>
-               <ProfileView user={user} movies={movies}/>
-              </Col>
           }} />
 
           <Route path="/movies/:movieId" render={({ match, history }) => {
