@@ -13,41 +13,28 @@ export class UserUpdateView extends React.Component {
     super();
 
         this.state = {
-          user: Username,
-          password: Password,
-          email: Email,
-          birthday: Birthday
+          token = localStorage.getItem('token'),
+          user = localStorage.getItem('user')
         }
-     }
    }
 
    handleUpdate() {
 
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      <h3>Please fill in form</h3>
-      return this.setState({
-        validated: true,
-      });
-    }
-
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
         data: {
-          Username: newUsername ? newUsername : this.state.Username,
-          Password: newPassword ? newPassword : this.state.Password,
-          Email: newEmail ? newEmail : this.state.Email,
-          Birthday: newBirthday ? newBirthday : this.state.Birthday,
+          Username: setUsername,
+          Password: setPassword,
+          Email: setEmail,
+          Birthday: setBirthday,
         },
       })
       .then((response) => {
+        const data = response.data;
+        console.log(data);
+        this.setState({ data });
         alert("Account Updated");
-        this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-        });
+        
         localStorage.setItem("user", this.state.Username);
         window.open(`/users/${username}`, "_self");
       })
@@ -58,16 +45,18 @@ export class UserUpdateView extends React.Component {
         }
 
         render() {
-          const { validated } = this.state;
-          if (validated === true) return <div className="main-view" />;
+          const { data } = this.state;
+          if (data === false) return <div className="login-view" />;
+          if (data === true) return <div className="main-view" />;
           if (movies.length === 0) return <div className="main-view" />;
           return movies.map(m => (
             <Col md={3} key={m._id}>
               <MovieCard movie={m} />
             </Col>
             ))
+            
          }
-
+      
    }
 
- 
+  
