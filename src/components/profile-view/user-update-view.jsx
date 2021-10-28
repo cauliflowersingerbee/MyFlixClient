@@ -18,16 +18,19 @@ export class UserUpdateView extends React.Component {
         };
       }
 
-   handleUpdate = () => {
+   handleUpdate = (e) => {
     e.preventDefault();
+    console.log('this is:', this);
+  
 
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
         data: {
-          Username: setUsername,
-          Password: setPassword,
-          Email: setEmail,
-          Birthday: setBirthday,
+          Username: setUsername(e.target.value),
+          Password: setPassword(e.target.value),
+          Email: setEmail(e.target.value),
+          Birthday: setBirthday(e.target.value)          
+          
         },
       })
       .then((response) => {
@@ -53,7 +56,7 @@ export class UserUpdateView extends React.Component {
           <Col>
                 <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
                   <Card.Body>
-                    <Card.Title>Please Update Your Account</Card.Title>
+                    <Card.Title>Account Update</Card.Title>
                       <Form>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
@@ -79,7 +82,7 @@ export class UserUpdateView extends React.Component {
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
-                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleUpdate}>Submit</Button>
+                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={() => this.handleUpdate()}>Submit</Button>
 
                         <div>
                           <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
