@@ -16,8 +16,7 @@ export class RealProfileView extends React.Component {
     super();
 
     this.state = {
-        user = Username,
-        password = Password
+        user: localStorage.getItem('user')
       }
   }
 
@@ -27,7 +26,19 @@ export class RealProfileView extends React.Component {
       this.setState({
         user: localStorage.getItem('user')
       });
-      this.getUser;
+      <UserView getUser={user => this.getUser(user)} />
     }
   }
+
+  render () {
+
+  const { user } = this.state;
+
+  return (<Col>
+  <h1>Hello {user} !</h1>
+</Col>)
+   
+  
+ }
 }
+

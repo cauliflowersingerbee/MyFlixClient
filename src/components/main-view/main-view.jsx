@@ -64,7 +64,7 @@ export class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      data: authData.user.Username
     });
   
     localStorage.setItem('token', authData.token);
@@ -93,12 +93,9 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (movies.length === 0) return <div className="main-view" />;
-            return movies.map(m => (
-              <Col md={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))
+            if (user) return <Col>
+            <RealProfileView />
+          </Col>
           }} />
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />

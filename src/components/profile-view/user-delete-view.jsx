@@ -13,8 +13,7 @@ export class UserDeleteView extends React.Component {
     super();
 
         this.state = {
-          token = localStorage.getItem('token'),
-          user = localStorage.getItem('user')
+          user
         }
    }
 

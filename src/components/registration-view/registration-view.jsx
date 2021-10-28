@@ -94,6 +94,6 @@ RegistrationView.propTypes = {
   newUser: PropTypes.shape({
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   onRegistration: PropTypes.func.isRequired,
 };

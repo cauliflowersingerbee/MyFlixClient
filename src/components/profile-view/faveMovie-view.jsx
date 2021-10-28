@@ -11,7 +11,7 @@ export class FaveMoviesView extends React.Component {
   constructor() {
     super();
     this.state = {
-        FavoriteMovie = []
+        FavoriteMovie : []
     }
   }
 
@@ -54,13 +54,14 @@ export class FaveMoviesView extends React.Component {
 
     render() {
      const { FavoriteMovie } = this.state;
-     if (FavoriteMovie.length === 0) return <div className="main-view" />;
-     if (movies.length === 0) return <div className="main-view" />;
-     return movies.map(m => (
+
+     return (movies.map(m => (
        <Col md={3} key={m._id}>
          <MovieCard movie={m} />
        </Col>
        ))
+     );
     }
   }
+
 
