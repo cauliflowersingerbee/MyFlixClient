@@ -34,9 +34,18 @@ export class RealProfileView extends React.Component {
 
   const { user } = this.state;
 
-  return (<Col>
-  <h1>Hello {user} !</h1>
-</Col>)
+  return <>
+  <Col>
+  <h1>Welcome {user} !</h1>
+    </Col>
+    <Col>
+    <h2>You can update your user information below:</h2>
+    <UserUpdateView />
+    </Col>
+</>
+  
+
+
    
   
  }
