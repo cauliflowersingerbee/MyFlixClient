@@ -8,7 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { ProfileView } from '../profile-view/profile-view';
+import { RealProfileView } from '../profile-view/real-profile-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -93,14 +93,15 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (user) return <Col>
-            <ProfileView />
-          </Col>
-            
+            if (movies.length === 0) return <div className="main-view" />;
+            return movies.map(m => (
+              <Col md={3} key={m._id}>
+                <MovieCard movie={m} />
+              </Col>
+            ))
           }} />
           <Route exact path="/register" render={() => {
-            if (user) return 
-            <Redirect to="/" />
+            if (user) return <Redirect to="/" />
             return <Col>
               <RegistrationView />
             </Col>

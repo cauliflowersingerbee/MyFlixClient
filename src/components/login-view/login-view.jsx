@@ -29,7 +29,7 @@ export function LoginView(props) {
   
   
   return (
-    <div>
+    <div className="login-view">
     <Container className="login-card">
       <Row className="justify-content-md-center"> 
         <Col md={3}>

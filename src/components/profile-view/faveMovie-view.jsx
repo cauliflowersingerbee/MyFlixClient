@@ -19,6 +19,7 @@ export class FaveMoviesView extends React.Component {
   FavoriteMovie() {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
+    
     axios.get(`https://kino-noir.herokuapp.com/users/${user}/favorites}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -31,6 +32,24 @@ export class FaveMoviesView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
+  }
+
+  //removing favorite movie
+  deleteFavoriteMovie(_id) {
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+    const url = `https://kino-noir.herokuapp.com/users/${user}/favorites/${_id}`;
+
+    axios.delete( url, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    .then((response) => {
+      alert ('Movie removed from favorites')
+      window.location.pathname = "/";
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
     render() {

@@ -193,7 +193,7 @@ export class ProfileView extends React.Component {
 
           {getUser}
 
-          <h2> Would you like to update your profile?</h2>
+          <h2> Would you like to update your user profile?</h2>
           
           <div className="Profile">
           <Form noValidate validated={validated} className="update-form" onSubmit={(e) => this.handleUpdate(e, this.Name, this.Username, this.Password, this.Email, this.Birthdate)}>
