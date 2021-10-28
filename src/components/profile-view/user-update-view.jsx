@@ -5,6 +5,7 @@ import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { LoginView } from '../login-view/login-view';
 
 
 export class UserUpdateView extends React.Component {
@@ -13,11 +14,11 @@ export class UserUpdateView extends React.Component {
     super();
 
         this.state = {
-          user
-        }
-   }
+          user: localStorage.getItem('user')
+        };
+      }
 
-   handleUpdate() {
+   handleUpdate = () => {
     e.preventDefault();
 
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
@@ -42,10 +43,11 @@ export class UserUpdateView extends React.Component {
         console.log(error);
       });
 
-        }
+    }  
 
     render() {
-     <div className="update-user">
+     
+     return (<div className="update-user">
       <Container>  
         <Row>
           <Col>
@@ -77,7 +79,7 @@ export class UserUpdateView extends React.Component {
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
-                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleUpdate}>Submit</Button>
 
                         <div>
                           <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
@@ -95,6 +97,8 @@ export class UserUpdateView extends React.Component {
         </Row>
         </Container>
         </div>
-    };
-  }
-  
+      );
+    }
+  };
+
+

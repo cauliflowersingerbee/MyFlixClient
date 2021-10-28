@@ -35,7 +35,7 @@ export class UserView extends React.Component {
 
   render() {
     const { user } = this.state;
-    const data =  response.data
+    const { data } =  response.data
 
     if (user === null) return <Col>
     <h1>No such user!</h1>
