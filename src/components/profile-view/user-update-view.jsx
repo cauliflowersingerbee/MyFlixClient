@@ -54,7 +54,7 @@ export class UserUpdateView extends React.Component {
       <Container>  
         <Row>
           <Col>
-                <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
+                <Card style={{ width: '15rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
                   <Card.Body>
                     <Card.Title>Account Update</Card.Title>
                       <Form>
@@ -91,11 +91,6 @@ export class UserUpdateView extends React.Component {
                     </Form>  
                 </Card.Body>
               </Card>
-          </Col>
-          <Col xs={7}>
-            <div className="float-right"> 
-                <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', marginRight: '2rem'}}/>
-            </div>
           </Col>
         </Row>
         </Container>
