@@ -9,6 +9,7 @@ import { UserDeleteView } from './user-delete-view';
 import { FaveMoviesView } from './faveMovie-view';
 import { UserUpdateView } from './user-update-view';
 import { UserView } from './user-view';
+import InfiniteScroll from './scrollView';
 
 
 export class RealProfileView extends React.Component {
@@ -41,6 +42,9 @@ export class RealProfileView extends React.Component {
     <Col>
     <h2>You can update your user information below:</h2>
     <UserUpdateView />
+    </Col>
+    <Col>
+    <h2></h2>
     </Col>
 </>
   
