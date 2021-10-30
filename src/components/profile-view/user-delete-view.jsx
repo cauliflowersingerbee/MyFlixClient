@@ -13,12 +13,14 @@ export class UserDeleteView extends React.Component {
     super();
 
         this.state = {
-          user
+          user: localStorage.getItem('user')
         }
    }
 
 //removing user
-  handleDelete() {
+  handleDelete= (e) => {
+    e.preventDefault();
+    
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     axios.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
@@ -27,12 +29,13 @@ export class UserDeleteView extends React.Component {
       .then(() => {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
+        console.log('yeah')
 
-        this.setState({
-            user: null,
-            token: null
-          });
         
+        this.setState({
+          user: null,
+          token: null
+        });
         alert("Account successfully deleted");
         window.location.pathname = "/";
       })
@@ -43,9 +46,17 @@ export class UserDeleteView extends React.Component {
 
   render() {
     const { user } = this.state;
-    if (user === null) return <Col>
-              <RegistrationView />
-            </Col>
+    if (user ) return <>
+    <Row>
+      <Col>
+      <p>Would you like to delete your account?</p>
+      </Col>
+      </Row>
+      <Row>
+
+      <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={() => this.handleDelete()}>Submit</Button>
+            </Row>
+            </>
     
    }
 

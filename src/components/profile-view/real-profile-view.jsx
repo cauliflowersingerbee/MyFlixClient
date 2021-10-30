@@ -15,6 +15,7 @@ import userIcon from './profile-img/user-icon.png'
 import { left } from '@popperjs/core';
 
 
+
 export class RealProfileView extends React.Component {
   constructor() {
     super();
@@ -60,7 +61,7 @@ export class RealProfileView extends React.Component {
     <div className="userSettingImg">
     <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
     </div>
-    <UserUpdateView />
+    <UserDeleteView />
     </Card>
     </Col>
 

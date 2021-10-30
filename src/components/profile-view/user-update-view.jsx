@@ -12,32 +12,38 @@ export class UserUpdateView extends React.Component {
 
   constructor() {
     super();
+    
+    this.state = {value: ''};
 
-        this.state = {
-          user: localStorage.getItem('user')
-        };
-      }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+  
+    handleChange = (e) => {
+    this.setState({value: e.target.value});
+  }
 
    handleUpdate = (e) => {
-    e.preventDefault();
-    console.log('this is:', this);
-  
-
+    
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
+
         data: {
           Username: setUsername(e.target.value),
           Password: setPassword(e.target.value),
           Email: setEmail(e.target.value),
-          Birthday: setBirthday(e.target.value)          
-          
+          Birthday: setBirthday(e.target.value)         
         },
+        
+
       })
       .then((response) => {
+        alert("Account Updated");
+        e.preventDefault();
         const data = response.data;
         console.log(data);
         this.setState({ data });
-        alert("Account Updated");
+        
         
         localStorage.setItem("user", this.state.Username);
         window.open(`/users/${username}`, "_self");
@@ -57,28 +63,28 @@ export class UserUpdateView extends React.Component {
                 <Card style={{ width: '15rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
                   <Card.Body>
                     <Card.Title>Account Update</Card.Title>
-                      <Form>
+                      <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" onChange={e => setUsername(e.target.value)} required
+                        <Form.Control type="text" onChange={this.handleChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" onChange={e => setPassword(e.target.value)} required minLength="6"
+                        <Form.Control type="password" onChange={this.handleChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" onChange={e => setEmail(e.target.value)} required
+                        <Form.Control type="email" onChange={this.handleChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="birthday" onChange={e => setBirthday(e.target.value)} required
+                        <Form.Control type="birthday" onChange={this.handleChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
