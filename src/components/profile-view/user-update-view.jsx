@@ -28,12 +28,12 @@ export class UserUpdateView extends React.Component {
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
 
-        data: {
+        
           Username: setUsername(e.target.value),
           Password: setPassword(e.target.value),
           Email: setEmail(e.target.value),
           Birthday: setBirthday(e.target.value)         
-        },
+        
         
 
       })

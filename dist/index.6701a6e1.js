@@ -39978,7 +39978,8 @@ function LoginView(props) {
                                                 },
                                                 variant: "primary",
                                                 type: "submit",
-                                                onClick: this.handleSubmit,
+                                                onClick: ()=>this.handleSubmit()
+                                                ,
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
                                                     lineNumber: 49
@@ -39989,7 +39990,7 @@ function LoginView(props) {
                                             /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 53
+                                                    lineNumber: 51
                                                 },
                                                 __self: this,
                                                 children: "New to Kino Noir? Please sign up!"
@@ -39998,7 +39999,7 @@ function LoginView(props) {
                                                 to: "/register",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 54
+                                                    lineNumber: 52
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -40009,7 +40010,7 @@ function LoginView(props) {
                                                     type: "button",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 55
+                                                        lineNumber: 53
                                                     },
                                                     __self: this,
                                                     children: " Register"
@@ -40018,7 +40019,7 @@ function LoginView(props) {
                                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 57
+                                                    lineNumber: 55
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40031,7 +40032,7 @@ function LoginView(props) {
                                                     },
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 58
+                                                        lineNumber: 56
                                                     },
                                                     __self: this
                                                 })
@@ -40046,7 +40047,7 @@ function LoginView(props) {
                         md: 9,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 65
+                            lineNumber: 63
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40059,7 +40060,7 @@ function LoginView(props) {
                             },
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 66
+                                lineNumber: 64
                             },
                             __self: this
                         })
@@ -41060,7 +41061,7 @@ class RealProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./scrollView":"11iX8","./profile-img/user-setting.png":"9eOHg","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"lDCvg":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./scrollView":"11iX8","./profile-img/user-setting.png":"9eOHg","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz"}],"lDCvg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$86e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41307,12 +41308,10 @@ class UserUpdateView extends _reactDefault.default.Component {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            data: {
-                Username: setUsername(e.target.value),
-                Password: setPassword(e.target.value),
-                Email: setEmail(e.target.value),
-                Birthday: setBirthday(e.target.value)
-            }
+            Username: setUsername(e.target.value),
+            Password: setPassword(e.target.value),
+            Email: setEmail(e.target.value),
+            Birthday: setBirthday(e.target.value)
         }).then((response)=>{
             alert("Account Updated");
             e.preventDefault();
