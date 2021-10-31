@@ -38,7 +38,7 @@ export function LoginView(props) {
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                   <Card.Title>Please Login to use Kino Noir</Card.Title>
-                    <Form>
+                    <Form onSubmit={this.handleSubmit}>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
                         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
@@ -48,7 +48,7 @@ export function LoginView(props) {
                         <Form.Label>Password:</Form.Label>
                         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                       </Form.Group>
-                      <Button style={{marginTop: '1rem'}} variant="primary" type="submit" onClick={() =>handleSubmit()}>Submit</Button>
+                      <Button style={{marginTop: '1rem'}} variant="primary" type="submit">Submit</Button>
 
                       <p>New to Kino Noir? Please sign up!</p>
                        <Link to="/register">

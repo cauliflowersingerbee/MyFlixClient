@@ -55,8 +55,10 @@ export class MainView extends React.Component {
   onRegistration(user) {
     console.log(user);
     this.setState({
-      newUser: user,
+      user: authData.user.Username
     });
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
   }
 
   //upon login, next function updates `user` property in state
@@ -69,7 +71,7 @@ export class MainView extends React.Component {
   
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token);
+  
   }
 
   onLoggedOut() {
@@ -91,10 +93,16 @@ export class MainView extends React.Component {
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             if (!user) return <Col>
-              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+              <LoginView />
             </Col>
             if (user) return <Col>
             <RealProfileView />
+          </Col>
+          }} />
+          <Route exact path="/login" render={() => {
+            if (user) return <Redirect to="/" />
+            return <Col>
+            <LoginView />
           </Col>
           }} />
           <Route exact path="/register" render={() => {
