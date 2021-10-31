@@ -24,15 +24,17 @@ export class UserUpdateView extends React.Component {
   }
 
    handleUpdate = (e) => {
+
+
     
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
 
-        
-          Username: setUsername(e.target.value),
-          Password: setPassword(e.target.value),
-          Email: setEmail(e.target.value),
-          Birthday: setBirthday(e.target.value)         
+  
+          Username: {e.target.value},
+          Password: {e.target.value},
+          Email: {e.target.value},
+          Birthday: {e.target.value}         
         
         
 
@@ -66,25 +68,25 @@ export class UserUpdateView extends React.Component {
                       <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" onChange={this.handleChange} required
+                        <Form.Control type="text" value={this.state.value} onChange={this.handleChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" onChange={this.handleChange} required minLength="6"
+                        <Form.Control type="password" value={this.state.value} onChange={this.handleChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" onChange={this.handleChange} required
+                        <Form.Control type="email" value={this.state.value} onChange={this.handleChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="birthday" onChange={this.handleChange} required
+                        <Form.Control type="date" value={this.state.value} onChange={this.handleChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 

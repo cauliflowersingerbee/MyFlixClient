@@ -41308,10 +41308,16 @@ class UserUpdateView extends _reactDefault.default.Component {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            Username: setUsername(e.target.value),
-            Password: setPassword(e.target.value),
-            Email: setEmail(e.target.value),
-            Birthday: setBirthday(e.target.value)
+            Username: {
+                value: e.target.value
+            },
+            Password: {
+                value: e.target.value
+            },
+            Email: {
+                value: e.target.value
+            },
+            Birthday: this.Birthday
         }).then((response)=>{
             alert("Account Updated");
             e.preventDefault();
