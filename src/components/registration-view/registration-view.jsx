@@ -23,7 +23,6 @@ export function RegistrationView(props) {
     })
     .then(response => {
       const data = response.data;
-      props.onRegistration(data);
       console.log(data);
       window.open('/', '_self');
     })
@@ -39,7 +38,7 @@ export function RegistrationView(props) {
             <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
               <Card.Body>
                 <Card.Title>Please Sign Up for Kino Noir</Card.Title>
-                  <Form onSubmit={this.handleSubmit}>
+                  <Form onSubmit={() => handleSubmit()}>
                     <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control type="text" onChange={e => setUsername(e.target.value)} required
@@ -64,7 +63,7 @@ export function RegistrationView(props) {
                       placeholder="YYYY-MM-DD"/>
                     </Form.Group>
 
-                    <Button style={{marginTop: '1rem', }} variant="primary" type="submit">Submit</Button>
+                    <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                     
                     <p>Already signed up? Login here</p>
                     <Link to="/">
@@ -90,7 +89,7 @@ export function RegistrationView(props) {
 }
 
 
-onRegistrationView.propTypes = {
+RegistrationView.propTypes = {
   newUser: PropTypes.shape({
     username: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
