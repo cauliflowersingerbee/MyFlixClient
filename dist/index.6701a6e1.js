@@ -22805,7 +22805,7 @@ class MainView extends _reactDefault.default.Component {
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
-            data: authData.user.Username
+            user: authData.user.Username
         });
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
@@ -39840,7 +39840,7 @@ function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const handleSubmit = (e)=>{
+    handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
         _axiosDefault.default.post('https://kino-noir.herokuapp.com/login', {
@@ -39857,21 +39857,21 @@ function LoginView(props) {
         className: "login-view",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 32
+            lineNumber: 34
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             className: "login-card",
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 33
+                lineNumber: 35
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 className: "justify-content-md-center",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 34
+                    lineNumber: 36
                 },
                 __self: this,
                 children: [
@@ -39879,7 +39879,7 @@ function LoginView(props) {
                         md: 3,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 35
+                            lineNumber: 37
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
@@ -39891,20 +39891,20 @@ function LoginView(props) {
                             },
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 36
+                                lineNumber: 38
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 37
+                                    lineNumber: 39
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 38
+                                            lineNumber: 40
                                         },
                                         __self: this,
                                         children: "Please Login to use Kino Noir"
@@ -39912,7 +39912,7 @@ function LoginView(props) {
                                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 39
+                                            lineNumber: 41
                                         },
                                         __self: this,
                                         children: [
@@ -39920,14 +39920,14 @@ function LoginView(props) {
                                                 controlId: "formUsername",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 40
+                                                    lineNumber: 42
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 41
+                                                            lineNumber: 43
                                                         },
                                                         __self: this,
                                                         children: "Username:"
@@ -39938,7 +39938,7 @@ function LoginView(props) {
                                                         ,
                                                         __source: {
                                                             fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 42
+                                                            lineNumber: 44
                                                         },
                                                         __self: this
                                                     })
@@ -39948,14 +39948,14 @@ function LoginView(props) {
                                                 controlId: "formPassword",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 45
+                                                    lineNumber: 47
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 46
+                                                            lineNumber: 48
                                                         },
                                                         __self: this,
                                                         children: "Password:"
@@ -39966,7 +39966,7 @@ function LoginView(props) {
                                                         ,
                                                         __source: {
                                                             fileName: "src/components/login-view/login-view.jsx",
-                                                            lineNumber: 47
+                                                            lineNumber: 49
                                                         },
                                                         __self: this
                                                     })
@@ -39982,7 +39982,7 @@ function LoginView(props) {
                                                 ,
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 49
+                                                    lineNumber: 51
                                                 },
                                                 __self: this,
                                                 children: "Submit"
@@ -39990,7 +39990,7 @@ function LoginView(props) {
                                             /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 51
+                                                    lineNumber: 53
                                                 },
                                                 __self: this,
                                                 children: "New to Kino Noir? Please sign up!"
@@ -39999,7 +39999,7 @@ function LoginView(props) {
                                                 to: "/register",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 52
+                                                    lineNumber: 54
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -40010,7 +40010,7 @@ function LoginView(props) {
                                                     type: "button",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 53
+                                                        lineNumber: 55
                                                     },
                                                     __self: this,
                                                     children: " Register"
@@ -40019,7 +40019,7 @@ function LoginView(props) {
                                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 55
+                                                    lineNumber: 57
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40032,7 +40032,7 @@ function LoginView(props) {
                                                     },
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 56
+                                                        lineNumber: 58
                                                     },
                                                     __self: this
                                                 })
@@ -40047,7 +40047,7 @@ function LoginView(props) {
                         md: 9,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 63
+                            lineNumber: 65
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40060,7 +40060,7 @@ function LoginView(props) {
                             },
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 64
+                                lineNumber: 66
                             },
                             __self: this
                         })
@@ -41061,7 +41061,7 @@ class RealProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./scrollView":"11iX8","./profile-img/user-setting.png":"9eOHg","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz"}],"lDCvg":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./scrollView":"11iX8","./profile-img/user-setting.png":"9eOHg","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"lDCvg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$86e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41304,20 +41304,19 @@ class UserUpdateView extends _reactDefault.default.Component {
         });
     };
     handleUpdate = (e)=>{
+        const target = e.target;
+        const Username = target.value;
+        const Password = target.value;
+        const Email = target.value;
+        const Birthday = target.value;
         _axiosDefault.default.put(`https://kino-noir.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            Username: {
-                value: e.target.value
-            },
-            Password: {
-                value: e.target.value
-            },
-            Email: {
-                value: e.target.value
-            },
-            Birthday: this.Birthday
+            Username: Username,
+            Password: Password,
+            Email: Email,
+            Birthday: Birthday
         }).then((response)=>{
             alert("Account Updated");
             e.preventDefault();
@@ -41337,25 +41336,25 @@ class UserUpdateView extends _reactDefault.default.Component {
             className: "update-user",
             __source: {
                 fileName: "src/components/profile-view/user-update-view.jsx",
-                lineNumber: 59
+                lineNumber: 64
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/profile-view/user-update-view.jsx",
-                    lineNumber: 60
+                    lineNumber: 65
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-update-view.jsx",
-                        lineNumber: 61
+                        lineNumber: 66
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
                             fileName: "src/components/profile-view/user-update-view.jsx",
-                            lineNumber: 62
+                            lineNumber: 67
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
@@ -41368,20 +41367,20 @@ class UserUpdateView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/user-update-view.jsx",
-                                lineNumber: 63
+                                lineNumber: 68
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                    lineNumber: 64
+                                    lineNumber: 69
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                         __source: {
                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                            lineNumber: 65
+                                            lineNumber: 70
                                         },
                                         __self: this,
                                         children: "Account Update"
@@ -41390,7 +41389,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                         onSubmit: this.handleUpdate,
                                         __source: {
                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                            lineNumber: 66
+                                            lineNumber: 71
                                         },
                                         __self: this,
                                         children: [
@@ -41398,26 +41397,27 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formUsername",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 67
+                                                    lineNumber: 72
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 68
+                                                            lineNumber: 73
                                                         },
                                                         __self: this,
                                                         children: "Username:"
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "text",
+                                                        value: this.state.value,
                                                         onChange: this.handleChange,
                                                         required: true,
                                                         placeholder: "johndoe",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 69
+                                                            lineNumber: 74
                                                         },
                                                         __self: this
                                                     })
@@ -41427,27 +41427,28 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formPassword",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 73
+                                                    lineNumber: 78
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 74
+                                                            lineNumber: 79
                                                         },
                                                         __self: this,
                                                         children: "Password:"
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "password",
+                                                        value: this.state.value,
                                                         onChange: this.handleChange,
                                                         required: true,
                                                         minLength: "6",
                                                         placeholder: "min 8 characters",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 75
+                                                            lineNumber: 80
                                                         },
                                                         __self: this
                                                     })
@@ -41457,26 +41458,27 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formEmail",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 79
+                                                    lineNumber: 84
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 80
+                                                            lineNumber: 85
                                                         },
                                                         __self: this,
                                                         children: "Email:"
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "email",
+                                                        value: this.state.value,
                                                         onChange: this.handleChange,
                                                         required: true,
                                                         placeholder: "johndoe@examplemail.com",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 81
+                                                            lineNumber: 86
                                                         },
                                                         __self: this
                                                     })
@@ -41486,26 +41488,27 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formBirthday",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 85
+                                                    lineNumber: 90
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 86
+                                                            lineNumber: 91
                                                         },
                                                         __self: this,
                                                         children: "Birthday:"
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
-                                                        type: "birthday",
+                                                        type: "date",
+                                                        value: this.state.value,
                                                         onChange: this.handleChange,
                                                         required: true,
                                                         placeholder: "YYYY-MM-DD",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 87
+                                                            lineNumber: 92
                                                         },
                                                         __self: this
                                                     })
@@ -41521,7 +41524,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 ,
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 91
+                                                    lineNumber: 96
                                                 },
                                                 __self: this,
                                                 children: "Submit"
@@ -41529,7 +41532,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 93
+                                                    lineNumber: 98
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41542,7 +41545,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     },
                                                     __source: {
                                                         fileName: "src/components/profile-view/user-update-view.jsx",
-                                                        lineNumber: 94
+                                                        lineNumber: 99
                                                     },
                                                     __self: this
                                                 })

@@ -24,19 +24,22 @@ export class UserUpdateView extends React.Component {
   }
 
    handleUpdate = (e) => {
-
+   
+    const target = e.target;
+    const Username = target.value;
+    const Password = target.value;
+    const Email = target.value;
+    const Birthday = target.value;
 
     
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
 
   
-          Username: {e.target.value},
-          Password: {e.target.value},
-          Email: {e.target.value},
-          Birthday: {e.target.value}         
-        
-        
+          Username: Username,
+          Password: Password,
+          Email: Email,
+          Birthday: Birthday        
 
       })
       .then((response) => {
