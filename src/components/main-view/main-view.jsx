@@ -9,6 +9,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { RealProfileView } from '../profile-view/real-profile-view';
+import { UserDeleteView } from '../profile-view/user-delete-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -96,7 +97,7 @@ export class MainView extends React.Component {
               <LoginView />
             </Col>
             if (user) return <Col>
-            <RealProfileView />
+            <UserDeleteView />
           </Col>
           }} />
           <Route exact path="/login" render={() => {

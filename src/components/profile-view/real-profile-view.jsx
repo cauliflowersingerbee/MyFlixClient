@@ -9,8 +9,8 @@ import { UserDeleteView } from './user-delete-view';
 import { FaveMoviesView } from './faveMovie-view';
 import { UserUpdateView } from './user-update-view';
 import { UserView } from './user-view';
-import settingsIcon from './profile-img/user-setting.png'
-import userIcon from './profile-img/user-icon.png'
+import settingsIcon from '../../img/settings-icon-img.png'
+import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
 
 
@@ -34,13 +34,12 @@ export class RealProfileView extends React.Component {
       this.setState({
         user: localStorage.getItem('user')
       });
-      <UserView getUser={user => this.getUser(user)} />
     }
   }
 
-  render () {
 
-  const { user } = this.state;
+
+  render () {
 
   return <>
   <Container>
@@ -50,48 +49,12 @@ export class RealProfileView extends React.Component {
   </Row>
   <Row>
 
-    <Col md={4}>
-    <Card style={{ width: '18rem'}}>
-    <div className="userSettingImg">
-    <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
-    </div>
-    <UserUpdateView />
-    </Card>
-    </Col>
 
     <Col md={4}>
     <Card style={{ width: '18rem'}}>
-    <div className="userSettingImg">
-    <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
-    </div>
+    <div className="userDelete">
     <UserDeleteView />
-    </Card>
-    </Col>
-
-    <Col md={4}>
-    <Card style={{ width: '18rem'}}>
-    <div className="userSettingImg">
-    <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
     </div>
-    <UserUpdateView />
-    </Card>
-    </Col>
-
-    <Col md={4}>
-    <Card style={{ width: '18rem'}}>
-    <div className="userSettingImg">
-    <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
-    </div>
-    <UserUpdateView />
-    </Card>
-    </Col>
-
-    <Col md={4}>
-    <Card style={{ width: '18rem'}}>
-    <div className="userSettingImg">
-    <img src={settingsIcon} alt="User Icon" style={{height: '5rem', width: '5rem', marginTop: '1rem', marginLeft: '6rem'}}/>
-    </div>
-    <UserUpdateView />
     </Card>
     </Col>
 

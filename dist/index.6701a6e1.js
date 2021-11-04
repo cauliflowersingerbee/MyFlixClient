@@ -22758,6 +22758,7 @@ var _movieView = require("../movie-view/movie-view");
 var _genreView = require("../genre-view/genre-view");
 var _directorView = require("../director-view/director-view");
 var _realProfileView = require("../profile-view/real-profile-view");
+var _userDeleteView = require("../profile-view/user-delete-view");
 var _reactBootstrap = require("react-bootstrap");
 var _kinoNoirLogoPng = require("../../img/KinoNoirLogo.png");
 var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
@@ -22824,14 +22825,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 92
+                lineNumber: 93
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 93
+                    lineNumber: 94
                 },
                 __self: this,
                 children: [
@@ -22844,13 +22845,13 @@ class MainView extends _reactDefault.default.Component {
                                 })
                             }));
                             if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_realProfileView.RealProfileView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
                                 })
                             }));
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 94
+                            lineNumber: 95
                         },
                         __self: this
                     }),
@@ -22868,7 +22869,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 102
+                            lineNumber: 103
                         },
                         __self: this
                     }),
@@ -22886,7 +22887,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 108
+                            lineNumber: 109
                         },
                         __self: this
                     }),
@@ -22912,7 +22913,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 115
+                            lineNumber: 116
                         },
                         __self: this
                     }),
@@ -22938,7 +22939,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 125
+                            lineNumber: 126
                         },
                         __self: this
                     }),
@@ -22964,7 +22965,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 136
+                            lineNumber: 137
                         },
                         __self: this
                     })
@@ -22979,7 +22980,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/real-profile-view":"NCg6q","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/real-profile-view":"NCg6q","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../profile-view/user-delete-view":"lDCvg"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -27953,7 +27954,45 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/registration-img.png":"8FZMh","../../img/kino-noir-logo.png":"9KG93"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../../img/kino-noir-logo.png":"9KG93","react-bootstrap":"h2YVd","../../img/registration-img.png":"8FZMh","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9KG93":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -39683,7 +39722,10 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"i1KfJ":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"8FZMh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"i1KfJ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -39803,48 +39845,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"jZiql"}],"8FZMh":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9KG93":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"054li":[function(require,module,exports) {
+},{"react-refresh/runtime":"jZiql"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40120,8 +40121,7 @@ LoginView.propTypes = {
     user: _propTypesDefault.default.shape({
         Username: _propTypesDefault.default.string.isRequired,
         Password: _propTypesDefault.default.string.isRequired
-    }),
-    onLoggedIn: _propTypesDefault.default.func.isRequired
+    })
 };
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -40131,7 +40131,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-login-img.d171f66c.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"6EiBJ":[function(require,module,exports) {
@@ -40752,9 +40752,9 @@ var _userDeleteView = require("./user-delete-view");
 var _faveMovieView = require("./faveMovie-view");
 var _userUpdateView = require("./user-update-view");
 var _userView = require("./user-view");
-var _userSettingPng = require("./profile-img/user-setting.png");
-var _userSettingPngDefault = parcelHelpers.interopDefault(_userSettingPng);
-var _userIconPng = require("./profile-img/user-icon.png");
+var _settingsIconImgPng = require("../../img/settings-icon-img.png");
+var _settingsIconImgPngDefault = parcelHelpers.interopDefault(_settingsIconImgPng);
+var _userIconPng = require("../../img/user-icon.png");
 var _userIconPngDefault = parcelHelpers.interopDefault(_userIconPng);
 var _core = require("@popperjs/core");
 class RealProfileView extends _reactDefault.default.Component {
@@ -40770,28 +40770,16 @@ class RealProfileView extends _reactDefault.default.Component {
     }
     componentDidMount() {
         const accessToken = localStorage.getItem('token');
-        if (accessToken !== null) {
-            this.setState({
-                user: localStorage.getItem('user')
-            });
-            /*#__PURE__*/ _jsxRuntime.jsx(_userView.UserView, {
-                getUser: (user)=>this.getUser(user)
-                ,
-                __source: {
-                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                    lineNumber: 37
-                },
-                __self: this
-            });
-        }
+        if (accessToken !== null) this.setState({
+            user: localStorage.getItem('user')
+        });
     }
     render() {
-        const { user  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                    lineNumber: 46
+                    lineNumber: 45
                 },
                 __self: this,
                 children: [
@@ -40804,7 +40792,7 @@ class RealProfileView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/profile-view/real-profile-view.jsx",
-                            lineNumber: 47
+                            lineNumber: 46
                         },
                         __self: this,
                         children: [
@@ -40819,14 +40807,14 @@ class RealProfileView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 48
+                                    lineNumber: 47
                                 },
                                 __self: this
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 49
+                                    lineNumber: 48
                                 },
                                 __self: this,
                                 children: [
@@ -40837,264 +40825,45 @@ class RealProfileView extends _reactDefault.default.Component {
                             })
                         ]
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/real-profile-view.jsx",
-                            lineNumber: 51
+                            lineNumber: 50
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            md: 4,
+                            __source: {
+                                fileName: "src/components/profile-view/real-profile-view.jsx",
+                                lineNumber: 53
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                                style: {
+                                    width: '18rem'
+                                },
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 53
+                                    lineNumber: 54
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "userDelete",
                                     __source: {
                                         fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 54
+                                        lineNumber: 55
                                     },
                                     __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 55
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 56
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 58
-                                            },
-                                            __self: this
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
-                                __source: {
-                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 62
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 63
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 64
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 65
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 67
-                                            },
-                                            __self: this
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
-                                __source: {
-                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 71
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 72
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 73
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 74
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 76
-                                            },
-                                            __self: this
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
-                                __source: {
-                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 80
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 81
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 82
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 83
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 85
-                                            },
-                                            __self: this
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
-                                __source: {
-                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 89
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 90
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 91
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 92
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 94
-                                            },
-                                            __self: this
-                                        })
-                                    ]
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
+                                        __source: {
+                                            fileName: "src/components/profile-view/real-profile-view.jsx",
+                                            lineNumber: 56
+                                        },
+                                        __self: this
+                                    })
                                 })
                             })
-                        ]
+                        })
                     })
                 ]
             })
@@ -41107,7 +40876,7 @@ class RealProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./profile-img/user-setting.png":"9eOHg","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"6elRi":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/settings-icon-img.png":"14DkE","../../img/user-icon.png":"9foY4"}],"6elRi":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "LoginImg.156abf33.jpg";
 
 },{"./helpers/bundle-url":"bS8Px"}],"cqMek":[function(require,module,exports) {
@@ -41137,12 +40906,24 @@ var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
+var _delIconPng = require("../../img/del-icon.png");
+var _delIconPngDefault = parcelHelpers.interopDefault(_delIconPng);
 class UserDeleteView extends _reactDefault.default.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            user: localStorage.getItem('user')
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthdate: null,
+            FavoriteMovies: []
         };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        if (accessToken !== null) this.setState({
+            user: localStorage.getItem('user')
+        });
     }
     //removing user
     handleDelete = (e)=>{
@@ -41156,47 +40937,70 @@ class UserDeleteView extends _reactDefault.default.Component {
         }).then(()=>{
             localStorage.removeItem("user");
             localStorage.removeItem("token");
-            console.log('yeah');
+            console.log('deleting...');
+            alert("Account successfully deleted");
             this.setState({
                 user: null,
                 token: null
             });
-            alert("Account successfully deleted");
             window.location.pathname = "/";
-        }).catch(function(error) {
+        }).catch((e1)=>{
             console.log(error);
         });
     };
     render() {
-        const { user  } = this.state;
-        if (user) return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                        lineNumber: 50
+                        lineNumber: 67
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        __source: {
-                            fileName: "src/components/profile-view/user-delete-view.jsx",
-                            lineNumber: 51
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            xs: 3,
                             __source: {
                                 fileName: "src/components/profile-view/user-delete-view.jsx",
-                                lineNumber: 52
+                                lineNumber: 68
                             },
                             __self: this,
-                            children: "Would you like to delete your account?"
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                src: _delIconPngDefault.default,
+                                alt: "Kino Noir delete icon",
+                                style: {
+                                    height: '7rem',
+                                    width: '10rem',
+                                    marginTop: '15rem'
+                                },
+                                __source: {
+                                    fileName: "src/components/profile-view/user-delete-view.jsx",
+                                    lineNumber: 69
+                                },
+                                __self: this
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            __source: {
+                                fileName: "src/components/profile-view/user-delete-view.jsx",
+                                lineNumber: 71
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                __source: {
+                                    fileName: "src/components/profile-view/user-delete-view.jsx",
+                                    lineNumber: 72
+                                },
+                                __self: this,
+                                children: "Would you like to delete your account?"
+                            })
                         })
-                    })
+                    ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                        lineNumber: 55
+                        lineNumber: 75
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -41205,14 +41009,14 @@ class UserDeleteView extends _reactDefault.default.Component {
                         },
                         variant: "primary",
                         type: "submit",
-                        onClick: ()=>this.handleDelete()
+                        onClick: (e)=>handleDelete(e)
                         ,
                         __source: {
                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                            lineNumber: 57
+                            lineNumber: 77
                         },
                         __self: this,
-                        children: "Submit"
+                        children: "Delete"
                     })
                 })
             ]
@@ -41225,7 +41029,10 @@ class UserDeleteView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"2Za4F":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/del-icon.png":"kFnoy"}],"kFnoy":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "del-icon.0af8231e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"2Za4F":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fed9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41710,13 +41517,7 @@ class UserView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9eOHg":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "user-setting.c9b407cf.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"3LQqX":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "user-icon.38399ef1.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"ePjUz":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"ePjUz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "popperGenerator", ()=>_createPopperJs.popperGenerator
@@ -41921,6 +41722,12 @@ var createPopper = /*#__PURE__*/ _createPopperJs.popperGenerator({
     defaultModifiers: defaultModifiers
 }); // eslint-disable-next-line import/no-unused-modules
 
-},{"./createPopper.js":"eWRl5","./modifiers/eventListeners.js":"gK2qK","./modifiers/popperOffsets.js":"767Ci","./modifiers/computeStyles.js":"eNeWb","./modifiers/applyStyles.js":"iCp47","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"jUTZ8":[function() {},{}]},["1Uwvp","dAWoV","dLPEP"], "dLPEP", "parcelRequire6ba1")
+},{"./createPopper.js":"eWRl5","./modifiers/eventListeners.js":"gK2qK","./modifiers/popperOffsets.js":"767Ci","./modifiers/computeStyles.js":"eNeWb","./modifiers/applyStyles.js":"iCp47","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"14DkE":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "settings-icon-img.b60feb0e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"9foY4":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "user-icon.4b125b80.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"jUTZ8":[function() {},{}]},["1Uwvp","dAWoV","dLPEP"], "dLPEP", "parcelRequire6ba1")
 
 //# sourceMappingURL=index.6701a6e1.js.map
