@@ -5,6 +5,7 @@ import img from '../../img/kino-noir-login-img.png';
 import logo from '../../img/kino-noir-logo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { UserDeleteView } from '../profile-view/user-delete-view';
 
 
 export function LoginView(props) {
@@ -22,7 +23,7 @@ export function LoginView(props) {
     .then(response => {
       const data = response.data;
       console.log(data);
-      <RealProfileView />;
+      <UserDeleteView />;
     })
     .catch(e => {
       console.log('Something went wrong!')

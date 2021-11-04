@@ -74,7 +74,7 @@ export class UserDeleteView extends React.Component {
         </Row>
         <Row>
   
-        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete</Button>
+        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
               </Row>
               </>
 
