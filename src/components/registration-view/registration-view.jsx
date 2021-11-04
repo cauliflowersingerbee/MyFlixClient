@@ -35,7 +35,10 @@ export function RegistrationView(props) {
   return (
     <Container className="registration-card">  
     <Row>
-      <Col>
+      <Col xs={2}>
+      <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
+      </Col>
+      <Col xs={4}>
             <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
               <Card.Body>
                 <Card.Title>Please Sign Up for Kino Noir</Card.Title>
@@ -72,17 +75,15 @@ export function RegistrationView(props) {
                     <Button variant="primary" type="button">Login</Button>
                   </Link>
 
-                    <div>
-                      <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', borderTop: '10rem'}}/>
-                    </div> 
+                    
                           
                 </Form>  
             </Card.Body>
           </Card>
       </Col>
-      <Col xs={7}>
+      <Col xs={6}>
         <div className="float-right"> 
-            <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%'}}/>
+            <img src={img} alt="Illustration of person riding a bicycle with a cat and a tv in the front and back baskets" style={{height: '100%', width: '100%', marginTop: '5rem'}}/>
         </div>
       </Col>
     </Row>
