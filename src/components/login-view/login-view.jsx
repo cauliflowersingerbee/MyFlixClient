@@ -5,14 +5,14 @@ import img from '../../img/LoginImg.jpg';
 import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { MainView } from '../main-view/main-view';
 
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
-  
-  
 
+  
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
@@ -21,8 +21,7 @@ export function LoginView(props) {
       Password: password
     })
     .then(response => {
-      const data = response.data;
-      props.onLoggedIn(data);
+      props.onLoggedIn(authData);
     })
     .catch(e => {
       console.log('no such user')
@@ -38,7 +37,7 @@ export function LoginView(props) {
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                   <Card.Title>Please Login to use Kino Noir</Card.Title>
-                    <Form onSubmit={this.handleSubmit}>
+                    <Form onSubmit={()=>{this.handleSubmit()}}>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
                         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
@@ -78,5 +77,6 @@ LoginView.propTypes = {
   user: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
-  }), onLoggedIn: PropTypes.func.isRequired,
+  }), 
+  onLoggedIn: PropTypes.func.isRequired,
 };
