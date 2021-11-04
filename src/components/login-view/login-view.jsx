@@ -20,10 +20,12 @@ export function LoginView(props) {
       Password: password
     })
     .then(response => {
-      props.onLoggedIn(authData);
+      const data = response.data;
+      console.log(data);
+      <RealProfileView />;
     })
     .catch(e => {
-      console.log('no such user')
+      console.log('Something went wrong!')
     });
   };
   
@@ -32,22 +34,22 @@ export function LoginView(props) {
     <div className="login-view">
     <Container className="login-card">
       <Row className="justify-content-md-center"> 
-      <Col xs={2}>
+      <Col xs={1}>
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
       </Col>
-        <Col md={4}>
+        <Col md={3}>
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                   <Card.Title>Please Login to use Kino Noir</Card.Title>
-                    <Form onSubmit={()=>{handleSubmit()}}>
+                    <Form onSubmit={(e)=>{handleSubmit(e)}}>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                        <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
                       </Form.Group>
                       
                       <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                        <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
                       </Form.Group>
                       <Button style={{marginTop: '1rem'}} variant="primary" type="submit">Submit</Button>
 
@@ -60,7 +62,7 @@ export function LoginView(props) {
             </Card>
           </Col>
 
-          <Col md={6}>
+          <Col md={8}>
         <img src={img} alt="Cool woman wearing sunglasses sitting in front of TV" style={{height: '100%', width: '100%', margin: '2rem'}} />
         </Col>
           </Row>
