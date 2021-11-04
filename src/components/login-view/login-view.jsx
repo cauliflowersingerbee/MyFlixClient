@@ -37,7 +37,7 @@ export function LoginView(props) {
             <Card style={{ width: '15rem', height:'25rem', marginTop: '15rem', marginLeft: '1rem'}}>
                 <Card.Body>
                   <Card.Title>Please Login to use Kino Noir</Card.Title>
-                    <Form onSubmit={()=>{this.handleSubmit()}}>
+                    <Form onSubmit={()=>{handleSubmit()}}>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
                         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
