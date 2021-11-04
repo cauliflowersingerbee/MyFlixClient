@@ -68,7 +68,7 @@ export function RegistrationView(props) {
                       placeholder="YYYY-MM-DD"/>
                     </Form.Group>
 
-                    <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+                    <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
                     
                     <p>Already signed up? Login here</p>
                     <Link to="/">

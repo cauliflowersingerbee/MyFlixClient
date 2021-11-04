@@ -27869,7 +27869,7 @@ function RegistrationView(props) {
                                                 lineNumber: 71
                                             },
                                             __self: this,
-                                            children: "Submit"
+                                            children: "Register"
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
@@ -27953,45 +27953,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../../img/kino-noir-logo.png":"9KG93","react-bootstrap":"h2YVd","../../img/registration-img.png":"8FZMh","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9KG93":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/registration-img.png":"8FZMh","../../img/kino-noir-logo.png":"9KG93"}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -39721,10 +39683,7 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"8FZMh":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"i1KfJ":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"i1KfJ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -39844,7 +39803,48 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"jZiql"}],"054li":[function(require,module,exports) {
+},{"react-refresh/runtime":"jZiql"}],"8FZMh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"9KG93":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40044,13 +40044,13 @@ function LoginView(props) {
                                                     marginTop: '1rem'
                                                 },
                                                 variant: "primary",
-                                                type: "submit",
+                                                type: "Login",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
                                                     lineNumber: 54
                                                 },
                                                 __self: this,
-                                                children: "Submit"
+                                                children: "Login"
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                 __source: {
@@ -40131,7 +40131,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-login-img.d171f66c.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"6EiBJ":[function(require,module,exports) {
@@ -40752,22 +40752,24 @@ var _userDeleteView = require("./user-delete-view");
 var _faveMovieView = require("./faveMovie-view");
 var _userUpdateView = require("./user-update-view");
 var _userView = require("./user-view");
-var _scrollView = require("./scrollView");
-var _scrollViewDefault = parcelHelpers.interopDefault(_scrollView);
 var _userSettingPng = require("./profile-img/user-setting.png");
 var _userSettingPngDefault = parcelHelpers.interopDefault(_userSettingPng);
 var _userIconPng = require("./profile-img/user-icon.png");
 var _userIconPngDefault = parcelHelpers.interopDefault(_userIconPng);
 var _core = require("@popperjs/core");
 class RealProfileView extends _reactDefault.default.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            user: localStorage.getItem('user')
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthdate: null,
+            FavoriteMovies: []
         };
     }
     componentDidMount() {
-        let accessToken = localStorage.getItem('token');
+        const accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
             this.setState({
                 user: localStorage.getItem('user')
@@ -40777,7 +40779,7 @@ class RealProfileView extends _reactDefault.default.Component {
                 ,
                 __source: {
                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                    lineNumber: 34
+                    lineNumber: 37
                 },
                 __self: this
             });
@@ -40789,7 +40791,7 @@ class RealProfileView extends _reactDefault.default.Component {
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                    lineNumber: 43
+                    lineNumber: 46
                 },
                 __self: this,
                 children: [
@@ -40802,7 +40804,7 @@ class RealProfileView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/profile-view/real-profile-view.jsx",
-                            lineNumber: 44
+                            lineNumber: 47
                         },
                         __self: this,
                         children: [
@@ -40817,14 +40819,14 @@ class RealProfileView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 45
+                                    lineNumber: 48
                                 },
                                 __self: this
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 46
+                                    lineNumber: 49
                                 },
                                 __self: this,
                                 children: [
@@ -40838,7 +40840,7 @@ class RealProfileView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/real-profile-view.jsx",
-                            lineNumber: 48
+                            lineNumber: 51
                         },
                         __self: this,
                         children: [
@@ -40846,7 +40848,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                 md: 4,
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 50
+                                    lineNumber: 53
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -40855,7 +40857,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 51
+                                        lineNumber: 54
                                     },
                                     __self: this,
                                     children: [
@@ -40863,7 +40865,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                             className: "userSettingImg",
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 52
+                                                lineNumber: 55
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40877,7 +40879,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                                 },
                                                 __source: {
                                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 53
+                                                    lineNumber: 56
                                                 },
                                                 __self: this
                                             })
@@ -40885,7 +40887,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 55
+                                                lineNumber: 58
                                             },
                                             __self: this
                                         })
@@ -40896,7 +40898,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                 md: 4,
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 59
+                                    lineNumber: 62
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -40905,7 +40907,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 60
+                                        lineNumber: 63
                                     },
                                     __self: this,
                                     children: [
@@ -40913,7 +40915,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                             className: "userSettingImg",
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 61
+                                                lineNumber: 64
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40927,7 +40929,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                                 },
                                                 __source: {
                                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 62
+                                                    lineNumber: 65
                                                 },
                                                 __self: this
                                             })
@@ -40935,7 +40937,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 64
+                                                lineNumber: 67
                                             },
                                             __self: this
                                         })
@@ -40946,7 +40948,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                 md: 4,
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 68
+                                    lineNumber: 71
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -40955,66 +40957,16 @@ class RealProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 69
+                                        lineNumber: 72
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 70
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                src: _userSettingPngDefault.default,
-                                                alt: "User Icon",
-                                                style: {
-                                                    height: '5rem',
-                                                    width: '5rem',
-                                                    marginTop: '1rem',
-                                                    marginLeft: '6rem'
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 71
-                                                },
-                                                __self: this
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
                                                 lineNumber: 73
                                             },
-                                            __self: this
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                md: 4,
-                                __source: {
-                                    fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 77
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                                    style: {
-                                        width: '18rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 78
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            className: "userSettingImg",
-                                            __source: {
-                                                fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 79
-                                            },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                                                 src: _userSettingPngDefault.default,
@@ -41027,16 +40979,66 @@ class RealProfileView extends _reactDefault.default.Component {
                                                 },
                                                 __source: {
                                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 80
+                                                    lineNumber: 74
                                                 },
                                                 __self: this
                                             })
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
+                                            __source: {
+                                                fileName: "src/components/profile-view/real-profile-view.jsx",
+                                                lineNumber: 76
+                                            },
+                                            __self: this
+                                        })
+                                    ]
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                md: 4,
+                                __source: {
+                                    fileName: "src/components/profile-view/real-profile-view.jsx",
+                                    lineNumber: 80
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                                    style: {
+                                        width: '18rem'
+                                    },
+                                    __source: {
+                                        fileName: "src/components/profile-view/real-profile-view.jsx",
+                                        lineNumber: 81
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                            className: "userSettingImg",
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
                                                 lineNumber: 82
                                             },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                                src: _userSettingPngDefault.default,
+                                                alt: "User Icon",
+                                                style: {
+                                                    height: '5rem',
+                                                    width: '5rem',
+                                                    marginTop: '1rem',
+                                                    marginLeft: '6rem'
+                                                },
+                                                __source: {
+                                                    fileName: "src/components/profile-view/real-profile-view.jsx",
+                                                    lineNumber: 83
+                                                },
+                                                __self: this
+                                            })
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
+                                            __source: {
+                                                fileName: "src/components/profile-view/real-profile-view.jsx",
+                                                lineNumber: 85
+                                            },
                                             __self: this
                                         })
                                     ]
@@ -41046,7 +41048,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                 md: 4,
                                 __source: {
                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                    lineNumber: 86
+                                    lineNumber: 89
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41055,7 +41057,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/real-profile-view.jsx",
-                                        lineNumber: 87
+                                        lineNumber: 90
                                     },
                                     __self: this,
                                     children: [
@@ -41063,7 +41065,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                             className: "userSettingImg",
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 88
+                                                lineNumber: 91
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41077,7 +41079,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                                 },
                                                 __source: {
                                                     fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                    lineNumber: 89
+                                                    lineNumber: 92
                                                 },
                                                 __self: this
                                             })
@@ -41085,7 +41087,7 @@ class RealProfileView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
                                             __source: {
                                                 fileName: "src/components/profile-view/real-profile-view.jsx",
-                                                lineNumber: 91
+                                                lineNumber: 94
                                             },
                                             __self: this
                                         })
@@ -41105,7 +41107,7 @@ class RealProfileView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./scrollView":"11iX8","./profile-img/user-setting.png":"9eOHg","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"6elRi":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","./user-view":"fkW4I","./profile-img/user-setting.png":"9eOHg","./profile-img/user-icon.png":"3LQqX","@popperjs/core":"ePjUz","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"6elRi":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "LoginImg.156abf33.jpg";
 
 },{"./helpers/bundle-url":"bS8Px"}],"cqMek":[function(require,module,exports) {
@@ -41708,115 +41710,7 @@ class UserView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"11iX8":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0089 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0089.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-// styling post container
-const divStyle = {
-    color: 'blue',
-    height: '250px',
-    textAlign: 'center',
-    padding: '5px 10px',
-    background: '#eee',
-    marginTop: '15px'
-};
-// styling container wrapper
-const containerStyle = {
-    maxWidth: '1280px',
-    margin: '0 auto'
-};
-const InfiniteScroll = ()=>{
-    _s();
-    // initialize list of posts
-    const [postList, setPostList] = _react.useState({
-        list: [
-            1,
-            2,
-            3,
-            4
-        ]
-    });
-    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-        className: "container",
-        style: containerStyle,
-        __source: {
-            fileName: "src/components/profile-view/scrollView.jsx",
-            lineNumber: 25
-        },
-        __self: undefined,
-        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "post-list",
-            __source: {
-                fileName: "src/components/profile-view/scrollView.jsx",
-                lineNumber: 26
-            },
-            __self: undefined,
-            children: [
-                postList.list.map((post, index)=>{
-                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        className: "post",
-                        style: divStyle,
-                        __source: {
-                            fileName: "src/components/profile-view/scrollView.jsx",
-                            lineNumber: 29
-                        },
-                        __self: undefined,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
-                            __source: {
-                                fileName: "src/components/profile-view/scrollView.jsx",
-                                lineNumber: 32
-                            },
-                            __self: undefined,
-                            children: [
-                                " ",
-                                post,
-                                " "
-                            ]
-                        })
-                    }, index));
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "loading",
-                    __source: {
-                        fileName: "src/components/profile-view/scrollView.jsx",
-                        lineNumber: 36
-                    },
-                    __self: undefined,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                        __source: {
-                            fileName: "src/components/profile-view/scrollView.jsx",
-                            lineNumber: 37
-                        },
-                        __self: undefined,
-                        children: "Load More"
-                    })
-                })
-            ]
-        })
-    }));
-};
-_s(InfiniteScroll, "CWmUgMjv1aOMuIDx/wFMTCouNH8=");
-_c = InfiniteScroll;
-exports.default = InfiniteScroll;
-var _c;
-$RefreshReg$(_c, "InfiniteScroll");
-
-  $parcel$ReactRefreshHelpers$0089.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9eOHg":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9eOHg":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "user-setting.c9b407cf.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"3LQqX":[function(require,module,exports) {

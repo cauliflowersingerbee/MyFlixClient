@@ -9,7 +9,6 @@ import { UserDeleteView } from './user-delete-view';
 import { FaveMoviesView } from './faveMovie-view';
 import { UserUpdateView } from './user-update-view';
 import { UserView } from './user-view';
-import InfiniteScroll from './scrollView';
 import settingsIcon from './profile-img/user-setting.png'
 import userIcon from './profile-img/user-icon.png'
 import { left } from '@popperjs/core';
@@ -17,16 +16,20 @@ import { left } from '@popperjs/core';
 
 
 export class RealProfileView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-        user: localStorage.getItem('user')
+        Username: null,
+        Password: null,
+        Email: null,
+        Birthdate: null,
+        FavoriteMovies: [],
       }
   }
 
   componentDidMount() {
-    let accessToken = localStorage.getItem('token');
+    const accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')

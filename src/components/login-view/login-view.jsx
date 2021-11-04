@@ -51,7 +51,7 @@ export function LoginView(props) {
                         <Form.Label>Password:</Form.Label>
                         <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
                       </Form.Group>
-                      <Button style={{marginTop: '1rem'}} variant="primary" type="submit">Submit</Button>
+                      <Button style={{marginTop: '1rem'}} variant="primary" type="Login">Login</Button>
 
                       <p>New to Kino Noir? Please sign up!</p>
                        <Link to="/register">
