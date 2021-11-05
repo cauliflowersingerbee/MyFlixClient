@@ -25,7 +25,7 @@ export function RegistrationView(props) {
     .then(response => {
       const data = response.data;
       console.log(data);
-      <RealProfileView />;
+      <MainView />;
     })
     .catch(e => {
       console.log('Something went wrong!')
@@ -39,7 +39,7 @@ export function RegistrationView(props) {
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
       </Col>
       <Col xs={4}>
-            <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
+            <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '32rem'}} xs={2}>
               <Card.Body>
                 <Card.Title>Please Sign Up for Kino Noir</Card.Title>
                   <Form className="register justify-content-md-center" onSubmit={(e) => handleSubmit(e)}>
@@ -70,7 +70,7 @@ export function RegistrationView(props) {
 
                     <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
                     
-                    <p>Already signed up? Login here</p>
+                    <p>Already signed up? Login below:</p>
                     <Link to="/">
                     <Button variant="primary" type="button">Login</Button>
                   </Link>
