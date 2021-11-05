@@ -64,7 +64,7 @@ export class MainView extends React.Component {
 
   //upon login, next function updates `user` property in state
 
-  onLoggedIn() {
+  onLoggedIn(authData) {
     console.log(authData);
     this.setState({
       user: authData.user.Username
@@ -72,8 +72,6 @@ export class MainView extends React.Component {
   
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-
-    const onLoggedIn = {onLoggedIn}
   
   }
 
@@ -96,9 +94,9 @@ export class MainView extends React.Component {
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             if (!user) return <Col>
-              <LoginView />
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (user) return <Col>
+            if (movies.length === 0) return <Col> <div className="main-view" />;
             <MainView />
           </Col>
           }} />
