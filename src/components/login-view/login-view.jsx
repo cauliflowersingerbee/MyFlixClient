@@ -5,14 +5,13 @@ import img from '../../img/kino-noir-login-img.png';
 import logo from '../../img/kino-noir-logo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { UserDeleteView } from '../profile-view/user-delete-view';
 
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  function handleSubmit (e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
     axios.post('https://kino-noir.herokuapp.com/login', {
