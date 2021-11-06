@@ -11,6 +11,7 @@ import { DirectorView } from '../director-view/director-view';
 import { RealProfileView } from '../profile-view/real-profile-view';
 import { UserUpdateView } from '../profile-view/user-update-view';
 import { UserDeleteView } from '../profile-view/user-delete-view';
+import { FaveMoviesView } from '../profile-view/faveMovie-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -102,7 +103,7 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-             return <UserUpdateView />
+             return <FaveMoviesView />
           
           }} />
           <Route exact path="/register" render={() => {
