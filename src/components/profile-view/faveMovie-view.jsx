@@ -15,17 +15,16 @@ export class FaveMoviesView extends React.Component {
     }
   }
 
-  //display favorite movies
-  FavoriteMovie() {
-    const token = localStorage.getItem('token');
+
+  componentDidMount() {
     const user = localStorage.getItem('user');
     
+    if (user !== null) {
     axios.get(`https://kino-noir.herokuapp.com/users/${user}/favorites}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
         this.setState({
-          Username: response.data.Username,
           FavoriteMovie: response.data.FavoriteMovie 
         });
       })
@@ -34,8 +33,7 @@ export class FaveMoviesView extends React.Component {
       });
   }
 
-      render() {
-     const { FavoriteMovie } = this.state;
+  render() {
 
      return (movies.map(m => (
        <Col md={3} key={m._id}>
