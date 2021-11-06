@@ -9,7 +9,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { RealProfileView } from '../profile-view/real-profile-view';
-import { UserUpdateView } from '../profile-view/user-delete-view';
+import { UserUpdateView } from '../profile-view/user-update-view';
+import { UserDeleteView } from '../profile-view/user-delete-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -21,15 +22,12 @@ export class MainView extends React.Component {
     super(props);
 
     this.state = {
-      movies: [], 
-      selectedMovie: null,
-      user: null, 
-      newUser: null
+      user: null
     }
   }
 
   componentDidMount() {
-    let accessToken = localStorage.getItem('token');
+    const accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user')
@@ -52,6 +50,14 @@ export class MainView extends React.Component {
       console.log(error);
     });
   }
+
+  
+  setSelectedMovie(newSelectedMovie) {
+    this.setState({
+      selectedMovie: newSelectedMovie,
+    });
+  }
+
 
   onRegistration(user) {
     console.log(user);
@@ -96,7 +102,7 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            return <UserUpdateView />
+             return <UserDeleteView />
           
           }} />
           <Route exact path="/register" render={() => {

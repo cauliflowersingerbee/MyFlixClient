@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
@@ -14,23 +14,12 @@ export class UserUpdateView extends React.Component {
     super(props);
     
     this.state = {
-        Username: null,
-        Password: null,
-        Email: null,
-        Birthday: null,
+      user : localStorage.getItem('user')
     };
+    
 
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-  }
-
-  componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-    }
   }
 
     handleChange (e) {
@@ -43,7 +32,6 @@ export class UserUpdateView extends React.Component {
  
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
-
   
           Username: username,
           Password: password,
@@ -52,14 +40,10 @@ export class UserUpdateView extends React.Component {
 
       })
       .then((response) => {
-
-        const data = response.data;
-        console.log(data);   
-        this.setState(data);     
         
-        localStorage.setItem('user', 'token');
+        const user = localStorage.getItem('user');
+        localStorage.setItem('user', user);
         alert('Account Updated');
-        window.open('/register', "_self");
       })
       .catch(function (error) {
         console.log('Something went wrong!');
@@ -101,7 +85,7 @@ export class UserUpdateView extends React.Component {
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
-                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={() => this.handleUpdate()}>Submit</Button>
+                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={this.handleUpdate}>Submit</Button>
 
                         <div>
                           <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>

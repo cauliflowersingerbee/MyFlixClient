@@ -34,13 +34,15 @@ export class RealProfileView extends React.Component {
       this.setState({
         user: localStorage.getItem('user')
       });
+
     }
   }
 
 
 
   render () {
-
+  const user = localStorage.getItem('user');
+  
   return <>
   <Container>
   <Row style={{height: '8rem', width: '50rem', marginLeft: '0.5rem', justifyContent: 'center'}}>
@@ -50,13 +52,12 @@ export class RealProfileView extends React.Component {
   <Row>
 
 
-    <Col md={4}>
-    <Card style={{ width: '18rem'}}>
-    <div className="userDelete">
-    <UserDeleteView />
-    </div>
-    </Card>
-    </Col>
+  if (movies.length === 0) return <div className="main-view" />;
+    return movies.map(m => (
+      <Col md={4} key={m._Id}>
+        <MovieCard movie={m} />
+      </Col>
+    ))
 
     
     

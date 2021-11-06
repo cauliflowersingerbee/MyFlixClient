@@ -14,11 +14,7 @@ export class UserDeleteView extends React.Component {
     super(props);
 
         this.state = {
-        Username: null,
-        Password: null,
-        Email: null,
-        Birthdate: null,
-        FavoriteMovies: [],
+        User: null,
         }
    }
 
@@ -41,18 +37,12 @@ export class UserDeleteView extends React.Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
         console.log('deleting...')
         alert("Account successfully deleted");
-
-        
-        this.setState({
-          user: null,
-          token: null
-        });
         window.location.pathname = "/";
-      })
+        })
       .catch(e => {
         console.log(error);
       });
