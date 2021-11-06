@@ -21,7 +21,7 @@ export function LoginView(props) {
     .then(response => {
       const data = response.data;
       console.log(data);
-      props.onLoggedIn(user);
+      props.onLoggedIn(data);
     })
     .catch(e => {
       console.log('Something went wrong!')

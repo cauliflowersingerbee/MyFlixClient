@@ -10,51 +10,59 @@ import { LoginView } from '../login-view/login-view';
 
 export class UserUpdateView extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
-    this.state = {value: ''};
+    this.state = {
+        Username: null,
+        Password: null,
+        Email: null,
+        Birthday: null,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
   }
-  
-    handleChange = (e) => {
+
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+    }
+  }
+
+    handleChange (e) {
     this.setState({value: e.target.value});
   }
 
-   handleUpdate = (e) => {
-   
-    const target = e.target;
-    const Username = target.value;
-    const Password = target.value;
-    const Email = target.value;
-    const Birthday = target.value;
-
-    
+   handleUpdate (e) {
+    e.preventDefault();
+    console.log(user);
+ 
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
 
   
-          Username: Username,
-          Password: Password,
-          Email: Email,
-          Birthday: Birthday        
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday        
 
       })
       .then((response) => {
-        alert("Account Updated");
-        e.preventDefault();
+
         const data = response.data;
-        console.log(data);
-        this.setState({ data });
+        console.log(data);   
+        this.setState(data);     
         
-        
-        localStorage.setItem("user", this.state.Username);
-        window.open(`/users/${username}`, "_self");
+        localStorage.setItem('user', 'token');
+        alert('Account Updated');
+        window.open('/register', "_self");
       })
       .catch(function (error) {
-        console.log(error);
+        console.log('Something went wrong!');
       });
 
     }  
@@ -71,25 +79,25 @@ export class UserUpdateView extends React.Component {
                       <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="text" value={username} onChange={this.handleChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={this.state.value} onChange={this.handleChange} required minLength="6"
+                        <Form.Control type="password" value={password} onChange={this.handleChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="email" value={email} onChange={this.handleChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="date" value={birthday} onChange={this.handleChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 

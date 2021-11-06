@@ -23,7 +23,7 @@ export class RealProfileView extends React.Component {
         Username: null,
         Password: null,
         Email: null,
-        Birthdate: null,
+        Birthday: null,
         FavoriteMovies: [],
       }
   }

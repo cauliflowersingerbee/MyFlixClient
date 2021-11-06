@@ -9,7 +9,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { RealProfileView } from '../profile-view/real-profile-view';
-import { UserDeleteView } from '../profile-view/user-delete-view';
+import { UserUpdateView } from '../profile-view/user-delete-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
 
@@ -17,9 +17,9 @@ import logo from '../../img/KinoNoirLogo.png'
 
 export class MainView extends React.Component {
 
-  constructor(){
-    super();
-    //initial state set to null
+  constructor(props){
+    super(props);
+
     this.state = {
       movies: [], 
       selectedMovie: null,
@@ -72,7 +72,7 @@ export class MainView extends React.Component {
   
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-  
+    this.getMovies(authData.token);
   }
 
   onLoggedOut() {
@@ -96,21 +96,12 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-            if (movies.length === 0) return <Col> <div className="main-view" />;
-            <MainView />
-          </Col>
-          }} />
-          <Route exact path="/login" render={() => {
-            if (user) return <Redirect to="/" />
-            return <Col>
-            <LoginView />
-          </Col>
+            return <UserUpdateView />
+          
           }} />
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
-            return <Col>
-              <RegistrationView />
-            </Col>
+            return <RegistrationView />
           }} />
 
           <Route path="/movies/:movieId" render={({ match, history }) => {
@@ -119,7 +110,7 @@ export class MainView extends React.Component {
             </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+              <MovieView movie={movies.find(m => m._Id === match.params.movieId)} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 

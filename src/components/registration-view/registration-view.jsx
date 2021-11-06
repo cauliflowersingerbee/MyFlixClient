@@ -25,7 +25,7 @@ export function RegistrationView(props) {
     .then(response => {
       const data = response.data;
       console.log(data);
-      <MainView />;
+      window.open('/', '_self');
     })
     .catch(e => {
       console.log('Something went wrong!')
@@ -33,7 +33,9 @@ export function RegistrationView(props) {
   };
   
   return (
-    <Container className="registration-card">  
+    <>
+    <Container>
+    <div className="registration-card">  
     <Row>
       <Col xs={2}>
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
@@ -87,7 +89,9 @@ export function RegistrationView(props) {
         </div>
       </Col>
     </Row>
+    </div>
     </Container>
+    </>
   );
 }
 
