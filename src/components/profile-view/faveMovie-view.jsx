@@ -41,19 +41,22 @@ handleDelete() {
   return (
 
     <>
-    <Row>
-    <Col xs={3}>
-      <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
-      </Col>
-      <Col>
-      <p>Would you like to delete your favorite movie?</p>
-      </Col>
-      </Row>
       <Row>
-
-      <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
-            </Row>
-            </>
+      <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
+        <Row>
+           <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
+        </Row>
+      <Card.Title>
+        <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
+           <p>Would you like to delete your favorite movie?</p>
+        </Row>
+      </Card.Title>
+        <Row>
+           <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
+        </Row>
+        </Card>
+      </Row>
+    </>
 
  );
 

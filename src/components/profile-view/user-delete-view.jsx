@@ -55,17 +55,24 @@ export class UserDeleteView extends React.Component {
 
       <>
       <Row>
-      <Col xs={3}>
-        <img src={deleteIcon} alt="Kino Noir delete icon" style={{height: '7rem', width: '10rem', marginTop: '15rem'}}/>
-        </Col>
         <Col>
-        <p>Would you like to delete your account?</p>
-        </Col>
-        </Row>
+        <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
+
+          <Row>
+             <img src={deleteIcon} alt="Kino Noir delete icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
+          </Row>
+          <Card.Title>
+          <Row style={{marginLeft: '1rem', marginTop: '2rem'}}>
+             <p>Would you like to delete your account?</p>
+          </Row>
+          </Card.Title>
         <Row>
   
-        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
+        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
               </Row>
+        </Card>
+        </Col>
+      </Row>
               </>
 
    );

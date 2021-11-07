@@ -8,7 +8,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { RealProfileView } from '../profile-view/real-profile-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { UserUpdateView } from '../profile-view/user-update-view';
 import { UserDeleteView } from '../profile-view/user-delete-view';
 import { FaveMoviesView } from '../profile-view/faveMovie-view';
@@ -103,7 +103,7 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-             return <FaveMoviesView />
+             return <ProfileView />
           
           }} />
           <Route exact path="/register" render={() => {
