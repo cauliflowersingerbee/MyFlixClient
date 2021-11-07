@@ -27942,7 +27942,45 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/registration-img.png":"8FZMh","../../img/kino-noir-logo.png":"9KG93"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../../img/kino-noir-logo.png":"9KG93","react-bootstrap":"h2YVd","../../img/registration-img.png":"8FZMh","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9KG93":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -39672,7 +39710,10 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"i1KfJ":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"8FZMh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"i1KfJ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -39792,48 +39833,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"jZiql"}],"8FZMh":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9KG93":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"054li":[function(require,module,exports) {
+},{"react-refresh/runtime":"jZiql"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40111,7 +40111,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/kino-noir-login-img.png":"1xjmj","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"1xjmj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-login-img.d171f66c.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"6EiBJ":[function(require,module,exports) {
@@ -41178,7 +41178,7 @@ class UserDeleteView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/del-icon.png":"kFnoy"}],"kFnoy":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/del-icon.png":"kFnoy","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"kFnoy":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "del-icon.0af8231e.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"2Za4F":[function(require,module,exports) {
@@ -41399,7 +41399,7 @@ class ProfileView extends _reactDefault.default.Component {
                         style: {
                             height: '8rem',
                             width: '50rem',
-                            marginLeft: '0.5rem',
+                            marginLeft: '7rem',
                             justifyContent: 'center'
                         },
                         __source: {
@@ -41445,7 +41445,7 @@ class ProfileView extends _reactDefault.default.Component {
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 2,
+                                xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 48
@@ -41457,7 +41457,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     style: {
                                         height: '7rem',
                                         width: '10rem',
-                                        marginTop: '15rem'
+                                        marginTop: '10rem'
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
@@ -41467,6 +41467,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 51
@@ -41481,6 +41482,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 55
@@ -41495,6 +41497,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 59
