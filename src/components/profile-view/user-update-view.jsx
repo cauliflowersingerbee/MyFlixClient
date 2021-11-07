@@ -13,7 +13,12 @@ export class UserUpdateView extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state = {value: ''};
+    this.state = {
+      Username: '',
+      Password: '',
+      Email: '',
+      Birthday: ''
+     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -24,32 +29,41 @@ export class UserUpdateView extends React.Component {
   }
 
    handleUpdate (e) {
-    this.state.value;
     e.preventDefault();
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+     
  
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
-  
-          Username: username,
-          Password: password,
-          Email: email,
-          Birthday: birthday        
+        
+          Username: this.state.username,
+          Password: this.state.password,
+          Email: this.state.email,
+          Birthday: this.state.birthday        
 
       })
       .then((response) => {
         
-        const user = localStorage.getItem('user');
-        localStorage.setItem('user', user);
-        alert('Account Updated');
+        this.setState({
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthday,
+        
+      });
+        localStorage.setItem('user', this.state.Username);
+        const data = response.data;
+        alert(username + " has been updated!");
       })
       .catch(function (error) {
         console.log('Something went wrong!');
       });
-
     }  
 
     render() {
-     
+     const { username, password, email, birthday} = this.state
+
      return (<div className="update-user">
       <Container>  
         <Row>
@@ -63,25 +77,25 @@ export class UserUpdateView extends React.Component {
                       <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="text" value={username} onChange={this.handleChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={this.state.value} onChange={this.handleChange} required minLength="6"
+                        <Form.Control type="password" value={password} onChange={this.handleChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="email" value={email} onChange={this.handleChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={this.state.value} onChange={this.handleChange} required
+                        <Form.Control type="date" value={birthday} onChange={this.handleChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
