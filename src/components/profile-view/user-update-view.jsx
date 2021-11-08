@@ -21,44 +21,68 @@ export class UserUpdateView extends React.Component {
      }
   }
 
-  
-    handleChange = e => {
+    handleUsernameChange = e => {
     this.setState({
-      username: e.target.value,
-      password: e.target.value,
-      email: e.target.value,
-      birthday: e.target.value
+      username: e.target.value
     });
   }
+
+    handlePasswordChange = e => {
+      this.setState({
+        password: e.target.value
+    });
+  }
+
+    handleEmailChange = e => {
+      this.setState({
+        email: e.target.value
+    });
+    }
+    handleBirthdayChange = e => {
+      this.setState({
+        birthday: e.target.value
+    });
+  }
+        
   
 
    handleUpdate = e => {
+
      alert(`${this.state.username} ${this.state.password} ${this.state.email} ${this.state.birthday}`)
      
-     e.preventDefault();    
- 
-    axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
-        headers: { Authorization: `Bearer ${token}` },
+     e.preventDefault()   
+    
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.put(`https://kino-noir.herokuapp.com/users/${username}`, 
+    
+    {
         
           username: this.state.username,
           password: this.state.password,
           email: this.state.email,
           birthday: this.state.birthday        
 
-      })
-      .then((response) => {
+    },
+    {headers: { Authorization: `Bearer ${token}` },
 
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
-
-        localStorage.setItem(token);
-        localStorage.setItem(user);
-    
       })
-      .catch(function (error) {
-        console.log('Something went wrong!')
-      });
-    }  
+      .then(response => {
+        this.setState({
+          username: response.data.username,
+          password: response.data.password,
+          email: response.data.email,
+          birthday: response.data.birthday
+        });
+        localStorage.setItem('user', response.data.username);
+        alert("Account Details updated.");
+      })
+      .catch(error => {
+        alert ('Error Updating Account')
+        console.log(error.response.data);
+      })
+  }
 
     render() {
      const { username, password, email, birthday} = this.state
@@ -76,25 +100,25 @@ export class UserUpdateView extends React.Component {
                       <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={username} onChange={this.handleChange} required
+                        <Form.Control type="text" value={username} onChange={this.handleUsernameChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={password} onChange={this.handleChange} required minLength="6"
+                        <Form.Control type="password" value={password} onChange={this.handlePasswordChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={email} onChange={this.handleChange} required
+                        <Form.Control type="email" value={email} onChange={this.handleEmailChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={birthday} onChange={this.handleChange} required
+                        <Form.Control type="date" value={birthday} onChange={this.handleBirthdayChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 

@@ -41261,32 +41261,52 @@ class UserUpdateView extends _reactDefault.default.Component {
             birthday: ''
         };
     }
-    handleChange = (e)=>{
+    handleUsernameChange = (e)=>{
         this.setState({
-            username: e.target.value,
-            password: e.target.value,
-            email: e.target.value,
+            username: e.target.value
+        });
+    };
+    handlePasswordChange = (e)=>{
+        this.setState({
+            password: e.target.value
+        });
+    };
+    handleEmailChange = (e)=>{
+        this.setState({
+            email: e.target.value
+        });
+    };
+    handleBirthdayChange = (e)=>{
+        this.setState({
             birthday: e.target.value
         });
     };
     handleUpdate = (e)=>{
         alert(`${this.state.username} ${this.state.password} ${this.state.email} ${this.state.birthday}`);
         e.preventDefault();
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
         _axiosDefault.default.put(`https://kino-noir.herokuapp.com/users/${username}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
             username: this.state.username,
             password: this.state.password,
             email: this.state.email,
             birthday: this.state.birthday
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         }).then((response)=>{
-            const token = localStorage.getItem('token');
-            const user = localStorage.getItem('user');
-            localStorage.setItem(token);
-            localStorage.setItem(user);
-        }).catch(function(error) {
-            console.log('Something went wrong!');
+            this.setState({
+                username: response.data.username,
+                password: response.data.password,
+                email: response.data.email,
+                birthday: response.data.birthday
+            });
+            localStorage.setItem('user', response.data.username);
+            alert("Account Details updated.");
+        }).catch((error)=>{
+            alert('Error Updating Account');
+            console.log(error.response.data);
         });
     };
     render() {
@@ -41295,25 +41315,25 @@ class UserUpdateView extends _reactDefault.default.Component {
             className: "update-user",
             __source: {
                 fileName: "src/components/profile-view/user-update-view.jsx",
-                lineNumber: 66
+                lineNumber: 90
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/profile-view/user-update-view.jsx",
-                    lineNumber: 67
+                    lineNumber: 91
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-update-view.jsx",
-                        lineNumber: 68
+                        lineNumber: 92
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
                             fileName: "src/components/profile-view/user-update-view.jsx",
-                            lineNumber: 69
+                            lineNumber: 93
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
@@ -41326,20 +41346,20 @@ class UserUpdateView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/user-update-view.jsx",
-                                lineNumber: 70
+                                lineNumber: 94
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                 __source: {
                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                    lineNumber: 71
+                                    lineNumber: 95
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                         __source: {
                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                            lineNumber: 72
+                                            lineNumber: 96
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41354,7 +41374,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                             },
                                             __source: {
                                                 fileName: "src/components/profile-view/user-update-view.jsx",
-                                                lineNumber: 73
+                                                lineNumber: 97
                                             },
                                             __self: this
                                         })
@@ -41362,7 +41382,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                         __source: {
                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                            lineNumber: 75
+                                            lineNumber: 99
                                         },
                                         __self: this,
                                         children: "Would you like to update your account?"
@@ -41371,7 +41391,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                         onSubmit: this.handleUpdate,
                                         __source: {
                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                            lineNumber: 76
+                                            lineNumber: 100
                                         },
                                         __self: this,
                                         children: [
@@ -41379,14 +41399,14 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formUsername",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 77
+                                                    lineNumber: 101
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 78
+                                                            lineNumber: 102
                                                         },
                                                         __self: this,
                                                         children: "Username:"
@@ -41394,12 +41414,12 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "text",
                                                         value: username,
-                                                        onChange: this.handleChange,
+                                                        onChange: this.handleUsernameChange,
                                                         required: true,
                                                         placeholder: "johndoe",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 79
+                                                            lineNumber: 103
                                                         },
                                                         __self: this
                                                     })
@@ -41409,14 +41429,14 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formPassword",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 83
+                                                    lineNumber: 107
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 84
+                                                            lineNumber: 108
                                                         },
                                                         __self: this,
                                                         children: "Password:"
@@ -41424,13 +41444,13 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "password",
                                                         value: password,
-                                                        onChange: this.handleChange,
+                                                        onChange: this.handlePasswordChange,
                                                         required: true,
                                                         minLength: "6",
                                                         placeholder: "min 8 characters",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 85
+                                                            lineNumber: 109
                                                         },
                                                         __self: this
                                                     })
@@ -41440,14 +41460,14 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formEmail",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 89
+                                                    lineNumber: 113
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 90
+                                                            lineNumber: 114
                                                         },
                                                         __self: this,
                                                         children: "Email:"
@@ -41455,12 +41475,12 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "email",
                                                         value: email,
-                                                        onChange: this.handleChange,
+                                                        onChange: this.handleEmailChange,
                                                         required: true,
                                                         placeholder: "johndoe@examplemail.com",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 91
+                                                            lineNumber: 115
                                                         },
                                                         __self: this
                                                     })
@@ -41470,14 +41490,14 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 controlId: "formBirthday",
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 95
+                                                    lineNumber: 119
                                                 },
                                                 __self: this,
                                                 children: [
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 96
+                                                            lineNumber: 120
                                                         },
                                                         __self: this,
                                                         children: "Birthday:"
@@ -41485,12 +41505,12 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "date",
                                                         value: birthday,
-                                                        onChange: this.handleChange,
+                                                        onChange: this.handleBirthdayChange,
                                                         required: true,
                                                         placeholder: "YYYY-MM-DD",
                                                         __source: {
                                                             fileName: "src/components/profile-view/user-update-view.jsx",
-                                                            lineNumber: 97
+                                                            lineNumber: 121
                                                         },
                                                         __self: this
                                                     })
@@ -41505,7 +41525,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                 onClick: this.handleUpdate,
                                                 __source: {
                                                     fileName: "src/components/profile-view/user-update-view.jsx",
-                                                    lineNumber: 101
+                                                    lineNumber: 125
                                                 },
                                                 __self: this,
                                                 children: "Submit"
