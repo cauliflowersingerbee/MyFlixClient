@@ -22963,7 +22963,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../profile-view/user-update-view":"lN3py","../profile-view/user-delete-view":"lDCvg","../profile-view/faveMovie-view":"2Za4F","../profile-view/profile-view":"2E7Aw"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","../profile-view/user-update-view":"lN3py","../profile-view/user-delete-view":"lDCvg","../profile-view/faveMovie-view":"2Za4F","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -27942,7 +27942,45 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/registration-img.png":"8FZMh","../../img/kino-noir-logo.png":"9KG93"}],"h2YVd":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../../img/kino-noir-logo.png":"9KG93","react-bootstrap":"h2YVd","../../img/registration-img.png":"8FZMh","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9KG93":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -39672,7 +39710,10 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"i1KfJ":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","./helpers":"S1Bw1","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"8FZMh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"i1KfJ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -39792,48 +39833,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"jZiql"}],"8FZMh":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9KG93":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"054li":[function(require,module,exports) {
+},{"react-refresh/runtime":"jZiql"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40111,7 +40111,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93","../../img/kino-noir-login-img.png":"1xjmj"}],"1xjmj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/kino-noir-login-img.png":"1xjmj","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"1xjmj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-login-img.d171f66c.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"6EiBJ":[function(require,module,exports) {
@@ -40703,8 +40703,528 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"cqMek":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"2E7Aw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$58c6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _loginImgJpg = require("../../img/LoginImg.jpg");
+var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
+var _kinoNoirLogoPng = require("../../img/kino-noir-logo.png");
+var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _userDeleteView = require("./user-delete-view");
+var _faveMovieView = require("./faveMovie-view");
+var _userUpdateView = require("./user-update-view");
+var _settingsIconImgPng = require("../../img/settings-icon-img.png");
+var _settingsIconImgPngDefault = parcelHelpers.interopDefault(_settingsIconImgPng);
+var _userIconPng = require("../../img/user-icon.png");
+var _userIconPngDefault = parcelHelpers.interopDefault(_userIconPng);
+var _core = require("@popperjs/core");
+var _movieCard = require("../movie-card/movie-card");
+class ProfileView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            User: null
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        if (accessToken !== null) this.setState({
+            user: localStorage.getItem('user')
+        });
+    }
+    render() {
+        const user = localStorage.getItem('user');
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                __source: {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 42
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                        style: {
+                            height: '8rem',
+                            width: '50rem',
+                            marginLeft: '7rem',
+                            justifyContent: 'center'
+                        },
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 43
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                src: _userIconPngDefault.default,
+                                alt: "Kino Noir User Icon",
+                                style: {
+                                    height: '5rem',
+                                    width: '5rem',
+                                    marginTop: '0.5rem',
+                                    float: _core.left
+                                },
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 44
+                                },
+                                __self: this
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 45
+                                },
+                                __self: this,
+                                children: [
+                                    "Welcome ",
+                                    user,
+                                    " !"
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 47
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 48
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                    src: _kinoNoirLogoPngDefault.default,
+                                    alt: "Kino Noir Logo",
+                                    style: {
+                                        height: '7rem',
+                                        width: '10rem',
+                                        marginTop: '10rem'
+                                    },
+                                    __source: {
+                                        fileName: "src/components/profile-view/profile-view.jsx",
+                                        lineNumber: 49
+                                    },
+                                    __self: this
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 51
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/profile-view.jsx",
+                                        lineNumber: 52
+                                    },
+                                    __self: this
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 55
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/profile-view.jsx",
+                                        lineNumber: 56
+                                    },
+                                    __self: this
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                xs: 3,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 59
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_faveMovieView.FaveMoviesView, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/profile-view.jsx",
+                                        lineNumber: 60
+                                    },
+                                    __self: this
+                                })
+                            })
+                        ]
+                    })
+                ]
+            })
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$58c6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","../../img/settings-icon-img.png":"14DkE","../../img/user-icon.png":"9foY4","@popperjs/core":"ePjUz","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"6elRi":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "LoginImg.156abf33.jpg";
+
+},{"./helpers/bundle-url":"bS8Px"}],"lDCvg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$86e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$86e2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserDeleteView", ()=>UserDeleteView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _loginImgJpg = require("../../img/LoginImg.jpg");
+var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
+var _kinoNoirLogoPng = require("../../img/KinoNoirLogo.png");
+var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _delIconPng = require("../../img/del-icon.png");
+var _delIconPngDefault = parcelHelpers.interopDefault(_delIconPng);
+class UserDeleteView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            User: null
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        if (accessToken !== null) this.setState({
+            user: localStorage.getItem('user')
+        });
+    }
+    //removing user
+    handleDelete = (e)=>{
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(()=>{
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+            console.log('deleting...');
+            alert("Account successfully deleted");
+            window.location.pathname = "/";
+        }).catch((e1)=>{
+            console.log(error);
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/profile-view/user-delete-view.jsx",
+                        lineNumber: 57
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                        __source: {
+                            fileName: "src/components/profile-view/user-delete-view.jsx",
+                            lineNumber: 58
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                            style: {
+                                width: '15rem',
+                                marginTop: '0.5rem',
+                                marginBottom: '1rem',
+                                height: '28rem',
+                                alignItems: 'center'
+                            },
+                            xs: 2,
+                            __source: {
+                                fileName: "src/components/profile-view/user-delete-view.jsx",
+                                lineNumber: 59
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/user-delete-view.jsx",
+                                        lineNumber: 61
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        src: _delIconPngDefault.default,
+                                        alt: "Kino Noir delete icon",
+                                        style: {
+                                            height: '8rem',
+                                            width: '8rem',
+                                            marginTop: '2rem'
+                                        },
+                                        __source: {
+                                            fileName: "src/components/profile-view/user-delete-view.jsx",
+                                            lineNumber: 62
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/user-delete-view.jsx",
+                                        lineNumber: 64
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                        style: {
+                                            marginLeft: '1rem',
+                                            marginTop: '2rem'
+                                        },
+                                        __source: {
+                                            fileName: "src/components/profile-view/user-delete-view.jsx",
+                                            lineNumber: 65
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            __source: {
+                                                fileName: "src/components/profile-view/user-delete-view.jsx",
+                                                lineNumber: 66
+                                            },
+                                            __self: this,
+                                            children: "Would you like to delete your account?"
+                                        })
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                    __source: {
+                                        fileName: "src/components/profile-view/user-delete-view.jsx",
+                                        lineNumber: 69
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                        style: {
+                                            marginTop: '2rem'
+                                        },
+                                        variant: "primary",
+                                        type: "submit",
+                                        onClick: (e)=>handleDelete(e)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/profile-view/user-delete-view.jsx",
+                                            lineNumber: 71
+                                        },
+                                        __self: this,
+                                        children: "Delete Account"
+                                    })
+                                })
+                            ]
+                        })
+                    })
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$86e2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/del-icon.png":"kFnoy","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"cqMek":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "KinoNoirLogo.cd48bdaa.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"kFnoy":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "del-icon.0af8231e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"2Za4F":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fed9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fed9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FaveMoviesView", ()=>FaveMoviesView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _loginImgJpg = require("../../img/LoginImg.jpg");
+var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
+var _kinoNoirLogoPng = require("../../img/KinoNoirLogo.png");
+var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _favoritesIconPng = require("../../img/favorites-icon.png");
+var _favoritesIconPngDefault = parcelHelpers.interopDefault(_favoritesIconPng);
+class FaveMoviesView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            FavoriteMovie: []
+        };
+    }
+    //removing favorite movie
+    handleDelete() {
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        const url = `https://kino-noir.herokuapp.com/users/${user}/favorites/${_id}`;
+        _axiosDefault.default.delete(url, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            alert('Movie removed from favorites');
+            window.location.pathname = "/";
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                        lineNumber: 44
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                        style: {
+                            width: '15rem',
+                            marginTop: '0.5rem',
+                            marginBottom: '1rem',
+                            height: '28rem',
+                            alignItems: 'center'
+                        },
+                        xs: 2,
+                        __source: {
+                            fileName: "src/components/profile-view/faveMovie-view.jsx",
+                            lineNumber: 45
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                __source: {
+                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                    lineNumber: 46
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                    src: _favoritesIconPngDefault.default,
+                                    alt: "Kino Noir favorite movie icon",
+                                    style: {
+                                        height: '8rem',
+                                        width: '8rem',
+                                        marginTop: '2rem'
+                                    },
+                                    __source: {
+                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                        lineNumber: 47
+                                    },
+                                    __self: this
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                __source: {
+                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                    lineNumber: 49
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                    style: {
+                                        marginLeft: '1rem',
+                                        marginTop: '2rem'
+                                    },
+                                    __source: {
+                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                        lineNumber: 50
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                            lineNumber: 51
+                                        },
+                                        __self: this,
+                                        children: "Would you like to delete your favorite movie?"
+                                    })
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                __source: {
+                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                    lineNumber: 54
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                    style: {
+                                        marginTop: '2rem'
+                                    },
+                                    variant: "primary",
+                                    type: "submit",
+                                    onClick: (e)=>handleDelete(e)
+                                    ,
+                                    __source: {
+                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                        lineNumber: 55
+                                    },
+                                    __self: this,
+                                    children: "Delete Account"
+                                })
+                            })
+                        ]
+                    })
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$fed9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"lN3py":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8cbe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -41012,530 +41532,10 @@ class UserUpdateView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/settings-icon-img.png":"14DkE","../login-view/login-view":"054li"}],"6elRi":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "LoginImg.156abf33.jpg";
-
-},{"./helpers/bundle-url":"bS8Px"}],"14DkE":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/settings-icon-img.png":"14DkE","axios":"iYoWk","react-router-dom":"cpyQW","../login-view/login-view":"054li","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"14DkE":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "settings-icon-img.b60feb0e.png";
 
-},{"./helpers/bundle-url":"bS8Px"}],"lDCvg":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$86e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$86e2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "UserDeleteView", ()=>UserDeleteView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-var _loginImgJpg = require("../../img/LoginImg.jpg");
-var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
-var _kinoNoirLogoPng = require("../../img/KinoNoirLogo.png");
-var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _delIconPng = require("../../img/del-icon.png");
-var _delIconPngDefault = parcelHelpers.interopDefault(_delIconPng);
-class UserDeleteView extends _reactDefault.default.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            User: null
-        };
-    }
-    componentDidMount() {
-        const accessToken = localStorage.getItem('token');
-        if (accessToken !== null) this.setState({
-            user: localStorage.getItem('user')
-        });
-    }
-    //removing user
-    handleDelete = (e)=>{
-        e.preventDefault();
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
-        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then(()=>{
-            localStorage.removeItem('user');
-            localStorage.removeItem('token');
-            console.log('deleting...');
-            alert("Account successfully deleted");
-            window.location.pathname = "/";
-        }).catch((e1)=>{
-            console.log(error);
-        });
-    };
-    render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                    __source: {
-                        fileName: "src/components/profile-view/user-delete-view.jsx",
-                        lineNumber: 57
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                        __source: {
-                            fileName: "src/components/profile-view/user-delete-view.jsx",
-                            lineNumber: 58
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                            style: {
-                                width: '15rem',
-                                marginTop: '0.5rem',
-                                marginBottom: '1rem',
-                                height: '28rem',
-                                alignItems: 'center'
-                            },
-                            xs: 2,
-                            __source: {
-                                fileName: "src/components/profile-view/user-delete-view.jsx",
-                                lineNumber: 59
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 61
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                        src: _delIconPngDefault.default,
-                                        alt: "Kino Noir delete icon",
-                                        style: {
-                                            height: '8rem',
-                                            width: '8rem',
-                                            marginTop: '2rem'
-                                        },
-                                        __source: {
-                                            fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 62
-                                        },
-                                        __self: this
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 64
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                        style: {
-                                            marginLeft: '1rem',
-                                            marginTop: '2rem'
-                                        },
-                                        __source: {
-                                            fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 65
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                            __source: {
-                                                fileName: "src/components/profile-view/user-delete-view.jsx",
-                                                lineNumber: 66
-                                            },
-                                            __self: this,
-                                            children: "Would you like to delete your account?"
-                                        })
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 69
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                        style: {
-                                            marginTop: '2rem'
-                                        },
-                                        variant: "primary",
-                                        type: "submit",
-                                        onClick: (e)=>handleDelete(e)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 71
-                                        },
-                                        __self: this,
-                                        children: "Delete Account"
-                                    })
-                                })
-                            ]
-                        })
-                    })
-                })
-            ]
-        }));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$86e2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/del-icon.png":"kFnoy"}],"kFnoy":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "del-icon.0af8231e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"2Za4F":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fed9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$fed9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "FaveMoviesView", ()=>FaveMoviesView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-var _loginImgJpg = require("../../img/LoginImg.jpg");
-var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
-var _kinoNoirLogoPng = require("../../img/KinoNoirLogo.png");
-var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _favoritesIconPng = require("../../img/favorites-icon.png");
-var _favoritesIconPngDefault = parcelHelpers.interopDefault(_favoritesIconPng);
-class FaveMoviesView extends _reactDefault.default.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            FavoriteMovie: []
-        };
-    }
-    //removing favorite movie
-    handleDelete() {
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
-        const url = `https://kino-noir.herokuapp.com/users/${user}/favorites/${_id}`;
-        _axiosDefault.default.delete(url, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            alert('Movie removed from favorites');
-            window.location.pathname = "/";
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-    render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                    __source: {
-                        fileName: "src/components/profile-view/faveMovie-view.jsx",
-                        lineNumber: 44
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                        style: {
-                            width: '15rem',
-                            marginTop: '0.5rem',
-                            marginBottom: '1rem',
-                            height: '28rem',
-                            alignItems: 'center'
-                        },
-                        xs: 2,
-                        __source: {
-                            fileName: "src/components/profile-view/faveMovie-view.jsx",
-                            lineNumber: 45
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                __source: {
-                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                    lineNumber: 46
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                    src: _favoritesIconPngDefault.default,
-                                    alt: "Kino Noir favorite movie icon",
-                                    style: {
-                                        height: '8rem',
-                                        width: '8rem',
-                                        marginTop: '2rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 47
-                                    },
-                                    __self: this
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                                __source: {
-                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                    lineNumber: 49
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                    style: {
-                                        marginLeft: '1rem',
-                                        marginTop: '2rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 50
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                        __source: {
-                                            fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 51
-                                        },
-                                        __self: this,
-                                        children: "Would you like to delete your favorite movie?"
-                                    })
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                __source: {
-                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                    lineNumber: 54
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    style: {
-                                        marginTop: '2rem'
-                                    },
-                                    variant: "primary",
-                                    type: "submit",
-                                    onClick: (e)=>handleDelete(e)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 55
-                                    },
-                                    __self: this,
-                                    children: "Delete Account"
-                                })
-                            })
-                        ]
-                    })
-                })
-            ]
-        }));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$fed9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","react/jsx-runtime":"8xIwr","../../img/favorites-icon.png":"faWu1"}],"faWu1":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"2E7Aw":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$58c6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-var _loginImgJpg = require("../../img/LoginImg.jpg");
-var _loginImgJpgDefault = parcelHelpers.interopDefault(_loginImgJpg);
-var _kinoNoirLogoPng = require("../../img/kino-noir-logo.png");
-var _kinoNoirLogoPngDefault = parcelHelpers.interopDefault(_kinoNoirLogoPng);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _userDeleteView = require("./user-delete-view");
-var _faveMovieView = require("./faveMovie-view");
-var _userUpdateView = require("./user-update-view");
-var _settingsIconImgPng = require("../../img/settings-icon-img.png");
-var _settingsIconImgPngDefault = parcelHelpers.interopDefault(_settingsIconImgPng);
-var _userIconPng = require("../../img/user-icon.png");
-var _userIconPngDefault = parcelHelpers.interopDefault(_userIconPng);
-var _core = require("@popperjs/core");
-var _movieCard = require("../movie-card/movie-card");
-class ProfileView extends _reactDefault.default.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            User: null
-        };
-    }
-    componentDidMount() {
-        const accessToken = localStorage.getItem('token');
-        if (accessToken !== null) this.setState({
-            user: localStorage.getItem('user')
-        });
-    }
-    render() {
-        const user = localStorage.getItem('user');
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
-                __source: {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 42
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
-                        style: {
-                            height: '8rem',
-                            width: '50rem',
-                            marginLeft: '7rem',
-                            justifyContent: 'center'
-                        },
-                        __source: {
-                            fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 43
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                src: _userIconPngDefault.default,
-                                alt: "Kino Noir User Icon",
-                                style: {
-                                    height: '5rem',
-                                    width: '5rem',
-                                    marginTop: '0.5rem',
-                                    float: _core.left
-                                },
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 44
-                                },
-                                __self: this
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 45
-                                },
-                                __self: this,
-                                children: [
-                                    "Welcome ",
-                                    user,
-                                    " !"
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
-                        __source: {
-                            fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 47
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 48
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                    src: _kinoNoirLogoPngDefault.default,
-                                    alt: "Kino Noir Logo",
-                                    style: {
-                                        height: '7rem',
-                                        width: '10rem',
-                                        marginTop: '10rem'
-                                    },
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 49
-                                    },
-                                    __self: this
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 51
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 52
-                                    },
-                                    __self: this
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 55
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 56
-                                    },
-                                    __self: this
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
-                                __source: {
-                                    fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 59
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_faveMovieView.FaveMoviesView, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 60
-                                    },
-                                    __self: this
-                                })
-                            })
-                        ]
-                    })
-                ]
-            })
-        }));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$58c6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","axios":"iYoWk","react-router-dom":"cpyQW","./user-delete-view":"lDCvg","./faveMovie-view":"2Za4F","./user-update-view":"lN3py","../../img/settings-icon-img.png":"14DkE","../../img/user-icon.png":"9foY4","@popperjs/core":"ePjUz","../movie-card/movie-card":"6EiBJ","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93"}],"9foY4":[function(require,module,exports) {
+},{"./helpers/bundle-url":"bS8Px"}],"9foY4":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "user-icon.4b125b80.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"ePjUz":[function(require,module,exports) {
