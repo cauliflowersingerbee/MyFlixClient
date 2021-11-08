@@ -18,51 +18,81 @@ export class UserUpdateView extends React.Component {
       Password: '',
       Email: '',
       Birthday: ''
-     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
+     }
   }
 
-    handleChange (e) {
-    this.setState({value: e.target.value});
-  }
-
-   handleUpdate (e) {
-    e.preventDefault();
-    const user = localStorage.getItem('user');
+  componentDidMount() {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    this.getUser(token, username);
+  }
+
+  
+  getUser(token, username) {
+    const url = `https://kino-noir.herokuapp.com/users/${username}`;
+    axios.get(url, {headers: {Authorization: `Bearer ${token}`},
+  })
+  .then((response) => {
+    console.log("response", response);
+    this.setState({
+      Username: response.data.Username,
+      Password: response.data.Password,
+      Email: response.data.Email,
+      Birthdate: response.data.Birthday,
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+    handleChange = e => {
+    this.setState({
+      Username: e.target.value,
+      Password: e.target.value,
+      Email: e.target.value,
+      Birthday: e.target.value
+    })
+  }
+  
+
+   handleUpdate = e => {
+     alert(`${this.state.Username} ${this.state.Password} ${this.state.Email} ${this.state.Birthday}`)
      
+     e.preventDefault();    
+    
+     const token = window.localStorage.getItem('token');
+     
+     const userUpdate = {
+      Username: this.state.Username,
+      Password: this.state.Password,
+      Email: this.state.Email,
+      Birthday: this.state.Birthday
+    }
+
  
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
         
-          Username: this.state.Username,
-          Password: this.state.Password,
-          Email: this.state.Email,
-          Birthday: this.state.Birthday        
+          Username: userUpdate.Username,
+          Password: userUpdate.Password,
+          Email: userUpdate.Email,
+          Birthday: userUpdate.Birthday        
 
       })
       .then((response) => {
-        
-        this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-        
-      });
-        localStorage.setItem('user', this.state.Username);
-        const data = response.data;
-        alert(username + " has been updated!");
+
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.username);
+    
       })
       .catch(function (error) {
-        console.log('Something went wrong!');
+        console.log('Something went wrong!')
       });
     }  
 
     render() {
-     const { username, password, email, birthday} = this.state
+     const { Username, Password, Email, Birthday} = this.state
 
      return (<div className="update-user">
       <Container>  
@@ -77,25 +107,25 @@ export class UserUpdateView extends React.Component {
                       <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={username} onChange={this.handleChange} required
+                        <Form.Control type="text" value={Username} onChange={this.handleChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={password} onChange={this.handleChange} required minLength="6"
+                        <Form.Control type="password" value={Password} onChange={this.handleChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={email} onChange={this.handleChange} required
+                        <Form.Control type="email" value={Email} onChange={this.handleChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="date" value={birthday} onChange={this.handleChange} required
+                        <Form.Control type="date" value={Birthday} onChange={this.handleChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
