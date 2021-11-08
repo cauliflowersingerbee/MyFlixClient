@@ -54,6 +54,7 @@ export class UserUpdateView extends React.Component {
     
     const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
+    
 
     axios.put(`https://kino-noir.herokuapp.com/users/${username}`, 
     
@@ -68,7 +69,7 @@ export class UserUpdateView extends React.Component {
     {headers: { Authorization: `Bearer ${token}` },
 
       })
-      .then(response => {
+      .then (response => {
         this.setState({
           username: response.data.username,
           password: response.data.password,
@@ -78,7 +79,7 @@ export class UserUpdateView extends React.Component {
         localStorage.setItem('user', response.data.username);
         alert("Account Details updated.");
       })
-      .catch(error => {
+      .catch (error => {
         alert ('Error Updating Account')
         console.log(error.response.data);
       })
