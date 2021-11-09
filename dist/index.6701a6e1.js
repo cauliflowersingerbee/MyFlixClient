@@ -41279,54 +41279,54 @@ class UserUpdateView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            username: '',
-            password: '',
-            email: '',
-            birthday: ''
+            Username: '',
+            Password: '',
+            Email: '',
+            Birthday: ''
         };
     }
     handleUsernameChange = (e)=>{
         this.setState({
-            username: e.target.value
+            Username: e.target.value
         });
     };
     handlePasswordChange = (e)=>{
         this.setState({
-            password: e.target.value
+            Password: e.target.value
         });
     };
     handleEmailChange = (e)=>{
         this.setState({
-            email: e.target.value
+            Email: e.target.value
         });
     };
     handleBirthdayChange = (e)=>{
         this.setState({
-            birthday: e.target.value
+            Birthday: e.target.value
         });
     };
     handleUpdate = (e)=>{
-        alert(`${this.state.username} ${this.state.password} ${this.state.email} ${this.state.birthday}`);
+        alert(`${this.state.Username} ${this.state.Password} ${this.state.Email} ${this.state.Birthday}`);
         e.preventDefault();
-        const username = localStorage.getItem('user');
-        const token = localStorage.getItem('token');
-        _axiosDefault.default.put(`https://kino-noir.herokuapp.com/users/${username}`, {
-            username: this.state.username,
-            password: this.state.password,
-            email: this.state.email,
-            birthday: this.state.birthday
+        const Username = localStorage.getItem('user');
+        const Token = localStorage.getItem('token');
+        _axiosDefault.default.put(`https://kino-noir.herokuapp.com/users/${Username}`, {
+            Username: this.state.Username,
+            Password: this.state.Password,
+            Email: this.state.Email,
+            Birthday: this.state.Birthday
         }, {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${Token}`
             }
         }).then((response)=>{
             this.setState({
-                username: response.data.username,
-                password: response.data.password,
-                email: response.data.email,
-                birthday: response.data.birthday
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday
             });
-            localStorage.setItem('user', response.data.username);
+            localStorage.setItem('user', response.data.Username);
             alert("Account Details Updated.");
         }).catch((error)=>{
             alert('Error Updating Account');
@@ -41334,7 +41334,7 @@ class UserUpdateView extends _reactDefault.default.Component {
         });
     };
     render() {
-        const { username , password , email , birthday  } = this.state;
+        const { Username , Password , Email , Birthday  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "update-user",
             __source: {
@@ -41437,7 +41437,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "text",
-                                                        value: username,
+                                                        value: Username,
                                                         onChange: this.handleUsernameChange,
                                                         required: true,
                                                         placeholder: "johndoe",
@@ -41467,7 +41467,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "password",
-                                                        value: password,
+                                                        value: Password,
                                                         onChange: this.handlePasswordChange,
                                                         required: true,
                                                         minLength: "6",
@@ -41498,7 +41498,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "email",
-                                                        value: email,
+                                                        value: Email,
                                                         onChange: this.handleEmailChange,
                                                         required: true,
                                                         placeholder: "johndoe@examplemail.com",
@@ -41528,7 +41528,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                                                     }),
                                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                         type: "date",
-                                                        value: birthday,
+                                                        value: Birthday,
                                                         onChange: this.handleBirthdayChange,
                                                         required: true,
                                                         placeholder: "YYYY-MM-DD",
