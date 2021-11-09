@@ -31,10 +31,11 @@ export class UserDeleteView extends React.Component {
   handleDelete= (e) => {
     e.preventDefault();
     
-    const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
-    axios.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
-        headers: { Authorization: `Bearer ${token}` },
+    const Token = localStorage.getItem('token');
+    const Username = localStorage.getItem('user');
+
+    axios.delete(`https://kino-noir.herokuapp.com/users/${Username}`, {
+        headers: { Authorization: `Bearer ${Token}` },
       })
       .then(() => {
         localStorage.removeItem('user');
