@@ -41311,10 +41311,10 @@ class UserUpdateView extends _reactDefault.default.Component {
         const Username = localStorage.getItem('user');
         const Token = localStorage.getItem('token');
         _axiosDefault.default.put(`https://kino-noir.herokuapp.com/users/${Username}`, {
-            Username: this.state.Username,
-            Password: this.state.Password,
-            Email: this.state.Email,
-            Birthday: this.state.Birthday
+            Username: newUsername ? newUsername : this.state.Username,
+            Password: newPassword ? newPassword : this.state.Password,
+            Email: newEmail ? newEmail : this.state.Email,
+            Birthday: newBirthday ? newBirthday : this.state.Birthday
         }, {
             headers: {
                 Authorization: `Bearer ${Token}`
@@ -41326,7 +41326,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                 Email: response.data.Email,
                 Birthday: response.data.Birthday
             });
-            localStorage.setItem('user', response.data.Username);
+            localStorage.setItem('user', this.state.Username);
             alert("Account Details Updated.");
         }).catch((error)=>{
             alert('Error Updating Account');
