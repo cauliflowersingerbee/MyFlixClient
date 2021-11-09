@@ -78,11 +78,12 @@ export class UserUpdateView extends React.Component {
           Birthday: response.data.Birthday
         });
         localStorage.setItem('user', this.state.Username);
+        localStorage.setItem('token');
+
         alert("Account Details Updated.");
       })
       .catch (error => {
         alert ('Error Updating Account')
-        console.log(error.response.data);
       })
   }
 
