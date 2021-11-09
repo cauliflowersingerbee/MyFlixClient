@@ -78,12 +78,8 @@ export class UserUpdateView extends React.Component {
           Birthday: response.data.Birthday
         });
 
-        const Username = response.data.Username;
-        
-
         localStorage.setItem('user', this.state.Username);
         
-
         alert("Account Details Updated.");
       })
       .catch (error => {
