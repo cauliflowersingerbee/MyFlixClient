@@ -8,15 +8,15 @@ import { Link } from "react-router-dom";
 
 
 export function LoginView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
+  const [ Username, setUsername ] = useState('');
+  const [ Password, setPassword ] = useState('');
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
+    console.log(Username, Password);
     axios.post('https://kino-noir.herokuapp.com/login', {
-      Username: username,
-      Password: password
+      Username: Username,
+      Password: Password
     })
     .then(response => {
       const data = response.data;
@@ -43,12 +43,12 @@ export function LoginView(props) {
                     <Form onSubmit={(e)=>{handleSubmit(e)}}>
                       <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                        <Form.Control type="text" value={Username} onChange={e => setUsername(e.target.value)} />
                       </Form.Group>
                       
                       <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <Form.Control type="password" value={Password} onChange={e => setPassword(e.target.value)} />
                       </Form.Group>
                       <Button style={{marginTop: '1rem'}} variant="primary" type="Login">Login</Button>
 

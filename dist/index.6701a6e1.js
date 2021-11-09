@@ -22951,6 +22951,30 @@ class MainView extends _reactDefault.default.Component {
                             lineNumber: 135
                         },
                         __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        exact: true,
+                        path: "/users/:username",
+                        render: ({ history  })=>{
+                            if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                className: "login-view",
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                                })
+                            }));
+                            if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "main-view"
+                            }));
+                            return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                history: history,
+                                movies: movies
+                            }));
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 146
+                        },
+                        __self: this
                     })
                 ]
             })
@@ -39860,14 +39884,14 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
+    const [Username, setUsername] = _react.useState('');
+    const [Password, setPassword] = _react.useState('');
     handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password);
+        console.log(Username, Password);
         _axiosDefault.default.post('https://kino-noir.herokuapp.com/login', {
-            Username: username,
-            Password: password
+            Username: Username,
+            Password: Password
         }).then((response)=>{
             const data = response.data;
             console.log(data);
@@ -39977,7 +40001,7 @@ function LoginView(props) {
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                             type: "text",
-                                                            value: username,
+                                                            value: Username,
                                                             onChange: (e)=>setUsername(e.target.value)
                                                             ,
                                                             __source: {
@@ -40006,7 +40030,7 @@ function LoginView(props) {
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                             type: "password",
-                                                            value: password,
+                                                            value: Password,
                                                             onChange: (e)=>setPassword(e.target.value)
                                                             ,
                                                             __source: {
@@ -40094,7 +40118,7 @@ function LoginView(props) {
         ]
     }));
 }
-_s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
+_s(LoginView, "F0KNa4WU+CLZaSc0fDS4xoJP4yg=");
 _c = LoginView;
 LoginView.propTypes = {
     user: _propTypesDefault.default.shape({
