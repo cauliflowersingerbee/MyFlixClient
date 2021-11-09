@@ -40958,19 +40958,19 @@ class UserDeleteView extends _reactDefault.default.Component {
     handleDelete = (e)=>{
         e.preventDefault();
         const Token = localStorage.getItem('token');
-        const Username = localStorage.getItem('user');
-        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${Username}`, {
+        const User = localStorage.getItem('user');
+        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${User}`, {
             headers: {
                 Authorization: `Bearer ${Token}`
             }
         }).then(()=>{
-            localStorage.removeItem('user');
-            localStorage.removeItem('token');
+            localStorage.removeItem('User');
+            localStorage.removeItem('Token');
             console.log('deleting...');
             alert("Account successfully deleted");
             window.location.pathname = "/";
         }).catch((e1)=>{
-            console.log(error);
+            console.log(e1);
         });
     };
     render() {
@@ -41062,8 +41062,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         variant: "primary",
                                         type: "submit",
-                                        onClick: (e)=>handleDelete(e)
-                                        ,
+                                        onClick: this.handleDelete,
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
                                             lineNumber: 72
