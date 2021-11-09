@@ -41303,7 +41303,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                 birthday: response.data.birthday
             });
             localStorage.setItem('user', response.data.username);
-            alert("Account Details updated.");
+            alert("Account Details Updated.");
         }).catch((error)=>{
             alert('Error Updating Account');
             console.log(error.response.data);
