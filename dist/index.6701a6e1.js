@@ -40957,18 +40957,18 @@ class UserDeleteView extends _reactDefault.default.Component {
     //removing user
     handleDelete = (e)=>{
         e.preventDefault();
-        const Token = localStorage.getItem('token');
-        const User = localStorage.getItem('user');
-        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${User}`, {
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
             headers: {
-                Authorization: `Bearer ${Token}`
+                Authorization: `Bearer ${token}`
             }
         }).then(()=>{
-            localStorage.removeItem('User');
-            localStorage.removeItem('Token');
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
             console.log('deleting...');
             alert("Account successfully deleted");
-            window.location.pathname = "/";
+            window.open(`/`, "_self");
         }).catch((e1)=>{
             console.log(e1);
         });
@@ -40979,13 +40979,13 @@ class UserDeleteView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                        lineNumber: 58
+                        lineNumber: 60
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                            lineNumber: 59
+                            lineNumber: 61
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -40999,14 +40999,14 @@ class UserDeleteView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/user-delete-view.jsx",
-                                lineNumber: 60
+                                lineNumber: 62
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 62
+                                        lineNumber: 64
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41019,7 +41019,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 63
+                                            lineNumber: 65
                                         },
                                         __self: this
                                     })
@@ -41027,7 +41027,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 65
+                                        lineNumber: 67
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
@@ -41037,13 +41037,13 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 66
+                                            lineNumber: 68
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/profile-view/user-delete-view.jsx",
-                                                lineNumber: 67
+                                                lineNumber: 69
                                             },
                                             __self: this,
                                             children: "Would you like to delete your account?"
@@ -41053,7 +41053,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 70
+                                        lineNumber: 72
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -41065,7 +41065,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         onClick: this.handleDelete,
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 72
+                                            lineNumber: 74
                                         },
                                         __self: this,
                                         children: "Delete Account"
