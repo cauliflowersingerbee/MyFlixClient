@@ -40921,7 +40921,7 @@ class UserDeleteView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            User: null
+            user: null
         };
     }
     componentDidMount() {

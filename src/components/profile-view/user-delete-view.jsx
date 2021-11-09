@@ -14,7 +14,7 @@ export class UserDeleteView extends React.Component {
     super(props);
 
         this.state = {
-        User: null,
+        user: null,
         }
    }
 
