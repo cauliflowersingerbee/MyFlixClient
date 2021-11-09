@@ -60,10 +60,11 @@ export class UserUpdateView extends React.Component {
     
     {
         
-          Username: newUsername ? newUsername : this.state.Username,
-          Password: newPassword ? newPassword : this.state.Password,
-          Email: newEmail ? newEmail : this.state.Email,
-          Birthday: newBirthday ? newBirthday : this.state.Birthday,       
+          
+      Username: this.state.Username,
+      Password: this.state.Password,
+      Email: this.state.Email,
+      Birthday: this.state.Birthday         
 
     },
     {headers: { Authorization: `Bearer ${Token}` }
