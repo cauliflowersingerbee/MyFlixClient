@@ -25,7 +25,7 @@ export function LoginView(props) {
     })
     .catch(e => {
       console.log('Something went wrong!')
-      alert('No Such User. Please Try Again.')
+      alert('No such user. Please check details and try again.')
     });
   };
   
