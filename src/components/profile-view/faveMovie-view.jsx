@@ -40,7 +40,8 @@ export class FaveMoviesView extends React.Component {
   
 
   render () {
-    const FavoriteMovie = this.state
+    const FavoriteMovie = this.state;
+    const movieItems = FavoriteMovie.map
 
   return (
 
@@ -53,12 +54,26 @@ export class FaveMoviesView extends React.Component {
       <Card.Title>
         <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
 
+
+
+        
         {FavoriteMovie.length < 0 && 
-        <h2>You have no favorite movies</h2>
+        <h2>You have no favorite movies</h2>}
+        
+        {
+          FavoriteMovie.length > 0 &&
+        
+        
+        <h5>Your favorite movies are: </h5>
+        <li key={FavoriteMovie._id}>{FavoriteMovie}</li>
+        
         }
+        
         </Row>
-        <p>Your favorite movies are: {FavoriteMovie}</p>
       </Card.Title>
+
+        }
+      
       
         </Card>
       </Row>
