@@ -17,56 +17,42 @@ export class FaveMoviesView extends React.Component {
     }
   }
 
-  getFaveMovie= () => {
-    const user = localStorage.getItem('user');
-    const accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-     
-    axios.get(`https://kino-noir.herokuapp.com/users/${user}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((response) => {
-          this.setState({          
-            FavoriteMovie: response.data.FavoriteMovie
-          });
-        })
-        .catch(function (error) {
-          console.log(error);
+   //GET user
+   componentDidMount() {
+    let user = localStorage.getItem('user');
+    let url = `https://kino-noir.herokuapp.com/users/${user}`;
+    const token = localStorage.getItem("token");
+
+    axios
+      .get(url, { headers: { Authorization: `Bearer ${token}` } })
+      .then((response) => {
+        this.setState({
+          FavoriteMovie: response.data.FavoriteMovie,
         });
-    }
-    
+      });
   }
 
 
   render () {
-  const FavoriteMovie = this.state;
+  const {movies} = this.props;
 
 
   return (
   <>
     <Row>
-      <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
+     
+    <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
           <Row>
             <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
           </Row>
-         <Card.Title>
-          <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
-            <h6>Your Favorite Movies Are:</h6>
-            </Row>
-            <Row>
-           <div>
-             {
-               FavoriteMovie.map(movie => <h6>{name}</h6>)
-             }
-           </div>
-            
+          {movies.map(movie => {
+            if (this.state.FavoriteMovies.includes(movie._id)) {
+              return <MovieCard key={movie._id} movie={movie} />;
+          }})
+          }
           
-          </Row>
-        </Card.Title>
-
-        
-        
       </Card>
+
     </Row>
   </>
 
