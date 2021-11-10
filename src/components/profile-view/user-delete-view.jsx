@@ -28,23 +28,26 @@ export class UserDeleteView extends React.Component {
   }
 
 //removing user
-  handleDelete= (e) => {
+  handleDelete= e => {
     e.preventDefault();
     
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
+
     axios.delete(`https://kino-noir.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
+
         console.log('deleting...')
+        
         alert("Account successfully deleted");
-        window.location.pathname = "/";
+        window.open(`/`, "_self");
         })
-      .catch(e => {
-        console.log(error);
+      .catch ((e) => {
+        console.log(e);
       });
   }
 
@@ -67,8 +70,8 @@ export class UserDeleteView extends React.Component {
           </Row>
           </Card.Title>
         <Row>
-  
-        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
+                                                                              
+        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={this.handleDelete}>Delete Account</Button>
               </Row>
         </Card>
         </Col>

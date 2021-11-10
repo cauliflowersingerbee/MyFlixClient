@@ -40969,9 +40969,9 @@ class UserDeleteView extends _reactDefault.default.Component {
             localStorage.removeItem('token');
             console.log('deleting...');
             alert("Account successfully deleted");
-            window.location.pathname = "/";
+            window.open(`/`, "_self");
         }).catch((e1)=>{
-            console.log(error);
+            console.log(e1);
         });
     };
     render() {
@@ -40980,13 +40980,13 @@ class UserDeleteView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                        lineNumber: 57
+                        lineNumber: 60
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         __source: {
                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                            lineNumber: 58
+                            lineNumber: 61
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41000,14 +41000,14 @@ class UserDeleteView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/user-delete-view.jsx",
-                                lineNumber: 59
+                                lineNumber: 62
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 61
+                                        lineNumber: 64
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41020,7 +41020,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 62
+                                            lineNumber: 65
                                         },
                                         __self: this
                                     })
@@ -41028,7 +41028,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 64
+                                        lineNumber: 67
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
@@ -41038,13 +41038,13 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 65
+                                            lineNumber: 68
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/profile-view/user-delete-view.jsx",
-                                                lineNumber: 66
+                                                lineNumber: 69
                                             },
                                             __self: this,
                                             children: "Would you like to delete your account?"
@@ -41054,7 +41054,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/user-delete-view.jsx",
-                                        lineNumber: 69
+                                        lineNumber: 72
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -41063,11 +41063,10 @@ class UserDeleteView extends _reactDefault.default.Component {
                                         },
                                         variant: "primary",
                                         type: "submit",
-                                        onClick: (e)=>handleDelete(e)
-                                        ,
+                                        onClick: this.handleDelete,
                                         __source: {
                                             fileName: "src/components/profile-view/user-delete-view.jsx",
-                                            lineNumber: 71
+                                            lineNumber: 74
                                         },
                                         __self: this,
                                         children: "Delete Account"
@@ -45718,8 +45717,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"c1LuA","./lib/_stream_writable.js":"14IMz","./lib/_stream_duplex.js":"6Qn9N","./lib/_stream_transform.js":"8ph77","./lib/_stream_passthrough.js":"drXaO","./lib/internal/streams/end-of-stream.js":"3h35a","./lib/internal/streams/pipeline.js":"4AtC7"}],"c1LuA":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -50238,8 +50237,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"5jXhY","./lib/_stream_writable.js":"lNfHu","./lib/_stream_duplex.js":"fBskt","./lib/_stream_transform.js":"ltVi8","./lib/_stream_passthrough.js":"2gWfD","./lib/internal/streams/end-of-stream.js":"dKH0m","./lib/internal/streams/pipeline.js":"cabht"}],"5jXhY":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -51638,8 +51637,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"5jXhY","./_stream_writable":"lNfHu","inherits":"fjm9h"}],"lNfHu":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -60978,8 +60977,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"1LQMq","./lib/_stream_writable.js":"NavxL","./lib/_stream_duplex.js":"6DuDV","./lib/_stream_transform.js":"7CK1j","./lib/_stream_passthrough.js":"jY8Ll","./lib/internal/streams/end-of-stream.js":"hWqfZ","./lib/internal/streams/pipeline.js":"1tzau"}],"1LQMq":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -62378,8 +62377,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"1LQMq","./_stream_writable":"NavxL","inherits":"fjm9h"}],"NavxL":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -84004,8 +84003,8 @@ function compare(a, b) {
 }
 
 },{"parse-asn1":"j8BKF","./mgf":"dPNej","./xor":"a8Ou9","bn.js":"htNGe","browserify-rsa":"eEZfA","create-hash":"iuV6a","./withPublic":"ibTFq","safe-buffer":"cby1Z"}],"bCPsL":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 'use strict';
 function oldBrowser() {
     throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11');
