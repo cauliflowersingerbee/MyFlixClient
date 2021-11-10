@@ -56,9 +56,8 @@ export class FaveMoviesView extends React.Component {
         {FavoriteMovie.length < 0 && 
         <h2>You have no favorite movies</h2>
         }
-            
-        <p>Your favorite movies are: {FavoriteMovie}</p>
         </Row>
+        <p>Your favorite movies are: {FavoriteMovie}</p>
       </Card.Title>
       
         </Card>
