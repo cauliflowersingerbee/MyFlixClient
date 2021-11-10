@@ -16,27 +16,31 @@ export class FaveMoviesView extends React.Component {
     }
   }
 
+  
+  getFaveMovie= () => {
 
-//removing favorite movie
-handleDelete() {
-  const token = localStorage.getItem('token');
-  const user = localStorage.getItem('user');
-  const url = `https://kino-noir.herokuapp.com/users/${user}/favorites/${_id}`;
+    const accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+     
+    axios.get(`https://kino-noir.herokuapp.com/users/${user}/${movies}/${FavoriteMovie}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          this.setState({          
+            FavoriteMovie: response.data
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    
+  }
 
-  axios.delete( url, {
-    headers: { Authorization: `Bearer ${token}` }
-  })
-  .then((response) => {
-    alert ('Movie removed from favorites')
-    window.location.pathname = "/";
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
- }
+  
 
- render () {
-
+  render () {
+    const FavoriteMovie = this.state
 
   return (
 
@@ -48,17 +52,19 @@ handleDelete() {
         </Row>
       <Card.Title>
         <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
-           <p>Would you like to delete your favorite movie?</p>
+
+        {FavoriteMovie.length < 0 && 
+        <h2>You have no favorite movies</h2>
+        }
+            
+        <p>Your favorite movies are: {FavoriteMovie}</p>
         </Row>
       </Card.Title>
-        <Row>
-           <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
-        </Row>
+      
         </Card>
       </Row>
     </>
 
- );
-
-}
+  );
+ }
 }
