@@ -6,6 +6,7 @@ import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import faveIcon from '../../img/favorites-icon.png';
+import { name } from 'file-loader';
 
 
 export class FaveMoviesView extends React.Component {
@@ -16,18 +17,17 @@ export class FaveMoviesView extends React.Component {
     }
   }
 
-  
   getFaveMovie= () => {
-
+    const user = localStorage.getItem('user');
     const accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
      
-    axios.get(`https://kino-noir.herokuapp.com/users/${user}/${movies}/${FavoriteMovie}`, {
+    axios.get(`https://kino-noir.herokuapp.com/users/${user}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
           this.setState({          
-            FavoriteMovie: response.data
+            FavoriteMovie: response.data.FavoriteMovie
           });
         })
         .catch(function (error) {
@@ -37,48 +37,40 @@ export class FaveMoviesView extends React.Component {
     
   }
 
-  
 
   render () {
-    const FavoriteMovie = this.state;
-    const movieItems = FavoriteMovie.map
+  const FavoriteMovie = this.state;
+
 
   return (
-
-    <>
-      <Row>
+  <>
+    <Row>
       <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
-        <Row>
-           <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
-        </Row>
-      <Card.Title>
-        <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
+          <Row>
+            <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
+          </Row>
+         <Card.Title>
+          <Row style={{ marginLeft: '1rem', marginTop: '2rem'}}>
+            <h6>Your Favorite Movies Are:</h6>
+            </Row>
+            <Row>
+           <div>
+             {
+               FavoriteMovie.map(movie => <h6>{name}</h6>)
+             }
+           </div>
+            
+          
+          </Row>
+        </Card.Title>
 
-
-
-        
-        {FavoriteMovie.length < 0 && 
-        <h2>You have no favorite movies</h2>}
-        
-        {
-          FavoriteMovie.length > 0 &&
         
         
-        <h5>Your favorite movies are: </h5>
-        <li key={FavoriteMovie._id}>{FavoriteMovie}</li>
-        
-        }
-        
-        </Row>
-      </Card.Title>
-
-        }
-      
-      
-        </Card>
-      </Row>
-    </>
+      </Card>
+    </Row>
+  </>
 
   );
- }
-}
+ };
+};
+
