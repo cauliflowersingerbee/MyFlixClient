@@ -38,6 +38,7 @@ export class FaveMoviesView extends React.Component {
   render () {
   const {movies} = this.props;
 
+  const FavoriteMovie = this.state;
 
   return (
   <>
@@ -47,11 +48,16 @@ export class FaveMoviesView extends React.Component {
           <Row>
             <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
           </Row>
-          {movies.map(movie => {
-            if (this.state.FavoriteMovies.includes(movie._id)) {
-              return <MovieCard key={movie._id} movie={movie} />;
-          }})
-          }
+          <Row>
+          <div>
+            {FavoriteMovie.length === 0 && 
+           <h5>You have no favorite movies</h5>}
+           </div>
+           <div>
+            {FavoriteMovie.length > 0 &&
+           <h5>Your favorite movies are: {FavoriteMovie} </h5>}
+           </div>
+          </Row>
           
       </Card>
 
