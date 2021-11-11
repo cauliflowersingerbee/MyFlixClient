@@ -14,6 +14,8 @@ import { UserDeleteView } from '../profile-view/user-delete-view';
 import { FaveMoviesView } from '../profile-view/faveMovie-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
+import { DeleteFaveMoviesView } from '../profile-view/delete-fave-movie';
+
 
 
 

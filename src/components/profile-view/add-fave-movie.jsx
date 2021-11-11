@@ -6,11 +6,10 @@ import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import faveIcon from '../../img/favorites-icon.png';
-import { DeleteFaveMoviesView } from './delete-fave-movie';
 
 
 
-export class FaveMoviesView extends React.Component {
+export class AddFaveMoviesView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,8 +19,9 @@ export class FaveMoviesView extends React.Component {
 
   
    componentDidMount() {
-    const user = localStorage.getItem('user');
-    const url = `https://kino-noir.herokuapp.com/users/${user}`;
+    let user = localStorage.getItem('user');
+    let FavoriteMovie = this.state;
+    let url = `https://kino-noir.herokuapp.com/users/${user}/movies/${[FavoriteMovie]}`;
     const token = localStorage.getItem('token');
 
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
@@ -37,35 +37,30 @@ export class FaveMoviesView extends React.Component {
 
 
   render () {
+  const {movies} = this.props;
 
   const FavoriteMovie = this.state;
-  const { movie } = this.props
+
   return (
   <>
     <Row>
      
     <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
-         
-            <Row>
-              <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
-            </Row>
-            
-            <Row>
-              <ul>
-              {FavoriteMovie}.map(item => (
-                <li key={movie._id}>{movie}</li>
-              ))
-            </ul>
-            </Row>
-         
-           <Row>
-            <DeleteFaveMoviesView />
+          <Row>
+            <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
           </Row>
-        
+          <Row>
+          <div>
+            {FavoriteMovie.length === 0 && 
+           <h5>You have no favorite movies</h5>}
+           </div>
+           <div>
+            {FavoriteMovie.length > 0 &&
+           <h5>Your favorite movies are: {FavoriteMovie} </h5>}
+           </div>
+          </Row>
           
       </Card>
-        
-        
 
     </Row>
   </>

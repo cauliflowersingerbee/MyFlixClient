@@ -13,7 +13,6 @@ import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
 
 
-
 export class ProfileView extends React.Component {
   constructor(props) {
     super(props);
@@ -58,6 +57,9 @@ export class ProfileView extends React.Component {
     <Col xs={3}>
       <FaveMoviesView />
     </Col>
+
+    
+
   </Row>
     </Container>
 </>
