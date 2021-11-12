@@ -18,18 +18,24 @@ export class AddFaveMoviesView extends React.Component {
     }
   }
 
-  
+  handleMovieChange = e => {
+    this.setState({
+      Movie: e.target.value
+    });
+  }
+
    handleAddFaveMovie= (e) => {
     const { FavoriteMovie } = this.props;
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    const url = `https://kino-noir.herokuapp.com/users/${Username}/${movies}/${[FavoriteMovie]}`;
+    const url = `https://kino-noir.herokuapp.com/users/${Username}/${movies}/${MovieID}`;
     const FavoriteMovie = this.state;
     
-
-
+    (url, {headers: { Authorization: `Bearer ${token}` }
+      })
     
-  app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }),(req, res) => {
+    axios.post(url, {headers: { Authorization: `Bearer ${token}` }
+  }) (res) => {
     User.findOneAndUpdate({ Username: req.params.Username }, {
       $push: { FavoriteMovies: req.params.MovieID }
     },
