@@ -19,25 +19,31 @@ export class AddFaveMoviesView extends React.Component {
   }
 
   
-   componentDidMount() {
-    const { movies } = this.props;
-    const { user } = this.props;
+   handleAddFaveMovie= (e) => {
+    const { FavoriteMovie } = this.props;
+    const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/${[FavoriteMovie]}`;
+    const url = `https://kino-noir.herokuapp.com/users/${Username}/${movies}/${[FavoriteMovie]}`;
     const FavoriteMovie = this.state;
     
-    
 
-    axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
-         .then(response => {
-         this.setState({
-         FavoriteMovie: response.data.FavoriteMovie,
-         }); 
-        })
-        .catch (error => {
-          console.log(error);
-        })
-      }
+
+    
+  app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }),(req, res) => {
+    User.findOneAndUpdate({ Username: req.params.Username }, {
+      $push: { FavoriteMovies: req.params.MovieID }
+    },
+    { new: true }, // This line makes sure that the updated document is returned
+  (err, updatedUser) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    } else {
+      res.json(updatedUser);
+    }
+  });
+  });
+
 
 
   render () {
