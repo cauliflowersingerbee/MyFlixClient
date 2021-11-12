@@ -54,6 +54,22 @@ export class MainView extends React.Component {
     });
   }
 
+  getUser(token) {
+    const username = localStorage.getItem('user');
+    axios.get(`https://kino-noir.herokuapp.com/users/${username}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        this.setState({
+          user: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
+
   
   setSelectedMovie(newSelectedMovie) {
     this.setState({
@@ -105,7 +121,7 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-             return <ProfileView movies={movies}/>
+             return <ProfileView movies={movies} user={user}/>
           
           }} />
           <Route exact path="/register" render={() => {

@@ -46,6 +46,7 @@ export class FaveMoviesView extends React.Component {
   render () {
 
   const { isLoaded, FavoriteMovie } = this.state;
+
   
   return (
   <>

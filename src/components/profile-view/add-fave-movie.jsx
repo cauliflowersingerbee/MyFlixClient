@@ -13,16 +13,20 @@ export class AddFaveMoviesView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        FavoriteMovie : []
+        FavoriteMovie : [], 
+        user: null,
     }
   }
 
   
    componentDidMount() {
-    let user = localStorage.getItem('user');
-    let FavoriteMovie = this.state;
-    let url = `https://kino-noir.herokuapp.com/users/${user}/movies/${[FavoriteMovie]}`;
+    const { movies } = this.props;
+    const { user } = this.props;
     const token = localStorage.getItem('token');
+    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/${[FavoriteMovie]}`;
+    const FavoriteMovie = this.state;
+    
+    
 
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
          .then(response => {
