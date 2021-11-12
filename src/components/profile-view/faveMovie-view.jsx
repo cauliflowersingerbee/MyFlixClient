@@ -23,7 +23,7 @@ export class FaveMoviesView extends React.Component {
    componentDidMount() {
     const user = localStorage.getItem('user');
     const { movies } = this.props;
-    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}`;
+    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/FavoriteMovie`;
     const token = localStorage.getItem('token');
 
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
