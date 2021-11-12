@@ -14,38 +14,38 @@ export class FaveMoviesView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        FavoriteMovie : [], 
-        isLoaded: false,
+        user : null, 
+        FavoriteMovie : []
 
     }
   }
   
    componentDidMount() {
     const user = localStorage.getItem('user');
-    const { movies } = this.props;
-    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/FavoriteMovie`;
+    const url = `https://kino-noir.herokuapp.com/users/${user}`;
     const token = localStorage.getItem('token');
 
-    axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
-         .then(res => res.json())
-         .then(json => {
+    
+  
+      axios.get(url, {headers: { Authorization: `Bearer ${token}` }
+      })
+        .then((response) => {
           this.setState({
-            FavoriteMovie: json,
-            isLoaded: true,
-         })
-         .catch (error => {
-          alert ('Error Displaying Favorite Movie')
-          console.log(error.response.data);
+            user : response.data,
+            FavoriteMovie : response.data.FavoriteMovie
+          });
+          console.log(response.data.FavoriteMovie)
         })
-        });
-
-      }   
+        .catch(function (error) {
+          console.log(error);
+        })
+    } 
          
      
 
   render () {
 
-  const { isLoaded, FavoriteMovie } = this.state;
+  const { FavoriteMovie } = this.state;
 
   
   return (

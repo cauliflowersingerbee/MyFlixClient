@@ -41142,32 +41142,30 @@ class FaveMoviesView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            FavoriteMovie: [],
-            isLoaded: false
+            user: null,
+            FavoriteMovie: []
         };
     }
     componentDidMount() {
         const user = localStorage.getItem('user');
-        const { movies  } = this.props;
-        const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/FavoriteMovie`;
+        const url = `https://kino-noir.herokuapp.com/users/${user}`;
         const token = localStorage.getItem('token');
         _axiosDefault.default.get(url, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }).then((res)=>res.json()
-        ).then((json)=>{
+        }).then((response)=>{
             this.setState({
-                FavoriteMovie: json,
-                isLoaded: true
-            }).catch((error)=>{
-                alert('Error Displaying Favorite Movie');
-                console.log(error.response.data);
+                user: response.data,
+                FavoriteMovie: response.data.FavoriteMovie
             });
+            console.log(response.data.FavoriteMovie);
+        }).catch(function(error) {
+            console.log(error);
         });
     }
     render() {
-        const { isLoaded , FavoriteMovie  } = this.state;
+        const { FavoriteMovie  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
