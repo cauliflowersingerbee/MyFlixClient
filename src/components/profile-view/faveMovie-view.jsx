@@ -22,18 +22,21 @@ export class FaveMoviesView extends React.Component {
   
    componentDidMount() {
     const user = localStorage.getItem('user');
-    const url = `https://kino-noir.herokuapp.com/users/${user}`;
+    const movies = this.props;
+    const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/$`;
     const token = localStorage.getItem('token');
-
-       fetch('url')
 
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
          .then(res => res.json())
          .then(json => {
           this.setState({
+            FavoriteMovie: json,
             isLoaded: true,
-            FavoriteMovie: json
          })
+         .catch (error => {
+          alert ('Error Displaying Favorite Movie')
+          console.log(error.response.data);
+        })
         });
 
       }   
