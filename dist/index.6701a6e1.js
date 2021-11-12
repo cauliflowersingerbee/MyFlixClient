@@ -22851,6 +22851,7 @@ class MainView extends _reactDefault.default.Component {
                                 })
                             }));
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                movies: movies
                             }));
                         },
                         __source: {
@@ -22988,7 +22989,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","../profile-view/user-update-view":"lN3py","../profile-view/user-delete-view":"lDCvg","../profile-view/faveMovie-view":"2Za4F","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","../profile-view/delete-fave-movie":"anUjC","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","../profile-view/user-update-view":"lN3py","../profile-view/user-delete-view":"lDCvg","../profile-view/faveMovie-view":"2Za4F","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../profile-view/delete-fave-movie":"anUjC"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -40776,11 +40777,12 @@ class ProfileView extends _reactDefault.default.Component {
     }
     render() {
         const user = localStorage.getItem('user');
+        const { movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 40
+                    lineNumber: 41
                 },
                 __self: this,
                 children: [
@@ -40793,7 +40795,7 @@ class ProfileView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 41
+                            lineNumber: 42
                         },
                         __self: this,
                         children: [
@@ -40808,14 +40810,14 @@ class ProfileView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 42
+                                    lineNumber: 43
                                 },
                                 __self: this
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 44
                                 },
                                 __self: this,
                                 children: [
@@ -40829,7 +40831,7 @@ class ProfileView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 45
+                            lineNumber: 46
                         },
                         __self: this,
                         children: [
@@ -40837,7 +40839,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 46
+                                    lineNumber: 47
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -40850,7 +40852,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 47
+                                        lineNumber: 48
                                     },
                                     __self: this
                                 })
@@ -40859,13 +40861,13 @@ class ProfileView extends _reactDefault.default.Component {
                                 xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 49
+                                    lineNumber: 50
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 50
+                                        lineNumber: 51
                                     },
                                     __self: this
                                 })
@@ -40874,13 +40876,13 @@ class ProfileView extends _reactDefault.default.Component {
                                 xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 53
+                                    lineNumber: 54
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_userDeleteView.UserDeleteView, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 54
+                                        lineNumber: 55
                                     },
                                     __self: this
                                 })
@@ -40889,13 +40891,14 @@ class ProfileView extends _reactDefault.default.Component {
                                 xs: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 57
+                                    lineNumber: 58
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_faveMovieView.FaveMoviesView, {
+                                    movies: movies,
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 58
+                                        lineNumber: 59
                                     },
                                     __self: this
                                 })
@@ -41129,8 +41132,8 @@ class FaveMoviesView extends _reactDefault.default.Component {
     }
     componentDidMount() {
         const user = localStorage.getItem('user');
-        const movies = this.props;
-        const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}/$`;
+        const { movies  } = this.props;
+        const url = `https://kino-noir.herokuapp.com/users/${user}/${movies}`;
         const token = localStorage.getItem('token');
         _axiosDefault.default.get(url, {
             headers: {
@@ -41291,7 +41294,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./delete-fave-movie":"anUjC","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./delete-fave-movie":"anUjC"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"anUjC":[function(require,module,exports) {
