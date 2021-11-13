@@ -8,7 +8,7 @@ export class MovieView extends React.Component {
 
 
     render() {
-      const { movie, onBackClick } = this.props;
+      const { movies, onBackClick } = this.props;
   
       return (
         <Container>
@@ -19,23 +19,23 @@ export class MovieView extends React.Component {
                       <Card.Body>
                       <div className="movie-view">
                         <div className="movie-poster">
-                          <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
+                          <img variant="top" src={movies.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>
                         <div className="movie-title">
                           <span className="label">Title: </span>
-                          <span className="value">{movie.Title}</span>
+                          <span className="value">{movies.Title}</span>
                         </div>
                         <div className="movie-description">
                           <span className="label">Description: </span>
-                          <span className="value">{movie.Description}</span>
+                          <span className="value">{movies.Description}</span>
                         </div>
                         <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
                       </div>
-                      <Link to={`/directors/${movie.Director.Name}`}>
+                      <Link to={`/directors/${movies.Director.Name}`}>
                       <Button variant="link">Director</Button>
                       </Link>
 
-                      <Link to={`/genres/${movie.Genre.Name}`}>
+                      <Link to={`/genres/${movies.Genre.Name}`}>
                         <Button variant="link">Genre</Button>
                       </Link>
 
@@ -49,7 +49,7 @@ export class MovieView extends React.Component {
   }
 
   MovieView.propTypes = {
-    movie: PropTypes.shape({
+    movies: PropTypes.shape({
       Title: PropTypes.string,
       Description: PropTypes.string.isRequired,
       ImagePath: PropTypes.string.isRequired
