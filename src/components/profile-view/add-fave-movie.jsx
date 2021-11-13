@@ -13,73 +13,81 @@ export class AddFaveMoviesView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        FavoriteMovie : [], 
-        user: null,
+        FavoriteMovie: null,
     }
   }
 
-  handleMovieChange = e => {
-    this.setState({
-      Movie: e.target.value
+  componentDidMount= (e) => {
+    const Username = localStorage.getItem('user');
+    const url = `https://kino-noir.herokuapp.com/users/${Username}`;
+    const token = localStorage.getItem('token');
+    
+  
+    axios.get(url, {headers: { Authorization: `Bearer ${token}` }
+      })
+        .then((response) => {
+          this.setState({
+            user : response.data,
+            FavoriteMovie : response.data.FavoriteMovie
+          });
+          console.log(response.data.FavoriteMovie)
+        })
+
+        .catch(function (error) {
+          console.log(error);
+        })
+    } 
+         
+
+   handleMovieAdd =(e) => {
+
+    const { movies } = this.props;
+    const Username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.post(`https://kino-noir.herokuapp.com/users/${Username}/${movies}/${movies._id}`, {headers: { Authorization: `Bearer ${token}`}})
+    .then (response => {
+       users.findOneAndUpdate({ Username: req.params.Username }),
+       {$push: { FavoriteMovie: req.params.movies._id }},
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send('Error: ' + err);
+        } else {
+          alert ('Movie successfully added to favorites!');
+          res.status(201).send(message);
+        }
+      }
+    })
+    .then(response => {
+      this.setState({
+        FavoriteMovie: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 
-   handleAddFaveMovie= (e) => {
-    const { FavoriteMovie } = this.props;
-    const Username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    const url = `https://kino-noir.herokuapp.com/users/${Username}/${movies}/${MovieID}`;
-    const FavoriteMovie = this.state;
-    
-    (url, {headers: { Authorization: `Bearer ${token}` }
-      })
-    
-    axios.post(url, {headers: { Authorization: `Bearer ${token}` }
-  }) (res) => {
-    User.findOneAndUpdate({ Username: req.params.Username }, {
-      $push: { FavoriteMovies: req.params.MovieID }
-    },
-    { new: true }, // This line makes sure that the updated document is returned
-  (err, updatedUser) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    } else {
-      res.json(updatedUser);
-    }
-  });
-  });
 
+  
 
 
   render () {
-  const {movies} = this.props;
 
   const FavoriteMovie = this.state;
 
   return (
-  <>
-    <Row>
-     
-    <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
+       <>
           <Row>
-            <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem'}}/>
+          <div className='addFavorites'>
+          <Button style={{marginTop: '2rem', }} variant="primary" 
+          type="submit" onClick={this.handleMovieAdd}>Add to Favorites</Button>
+          </div>
           </Row>
-          <Row>
-          <div>
-            {FavoriteMovie.length === 0 && 
-           <h5>You have no favorite movies</h5>}
-           </div>
-           <div>
-            {FavoriteMovie.length > 0 &&
-           <h5>Your favorite movies are: {FavoriteMovie} </h5>}
-           </div>
-          </Row>
-          
-      </Card>
-
-    </Row>
-  </>
+      
+      </>
 
   );
  };

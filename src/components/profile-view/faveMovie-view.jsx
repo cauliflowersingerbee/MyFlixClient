@@ -25,6 +25,7 @@ export class FaveMoviesView extends React.Component {
     const Username = localStorage.getItem('user');
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
+    
 
     
   
@@ -47,7 +48,7 @@ export class FaveMoviesView extends React.Component {
   render () {
 
   const { FavoriteMovie } = this.state;
-
+  const { movies } = this.props
   
   return (
   <>
@@ -84,7 +85,7 @@ export class FaveMoviesView extends React.Component {
             </Row>
 
             <Row>
-            <AddFaveMoviesView FavoriteMovie={FavoriteMovie} />
+            <AddFaveMoviesView movies={movies} FavoriteMovie={FavoriteMovie} />
           </Row>
          
            <Row>
