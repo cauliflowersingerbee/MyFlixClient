@@ -41185,10 +41185,10 @@ class FaveMoviesView extends _reactDefault.default.Component {
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             style: {
-                                width: '15rem',
+                                width: '20rem',
                                 marginTop: '0.5rem',
                                 marginBottom: '1rem',
-                                height: '28rem',
+                                height: '40rem',
                                 alignItems: 'center'
                             },
                             xs: 2,
@@ -41210,7 +41210,8 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         style: {
                                             height: '8rem',
                                             width: '8rem',
-                                            marginTop: '2rem'
+                                            marginTop: '2rem',
+                                            marginBottom: '2rem'
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
@@ -41301,6 +41302,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_deleteFaveMovie.DeleteFaveMoviesView, {
+                                        movies: movies,
                                         FavoriteMovie: FavoriteMovie,
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
@@ -41323,7 +41325,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./delete-fave-movie":"anUjC","./add-fave-movie":"5qxuV","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./delete-fave-movie":"anUjC","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./add-fave-movie":"5qxuV"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"anUjC":[function(require,module,exports) {
@@ -41363,8 +41365,8 @@ class DeleteFaveMoviesView extends _reactDefault.default.Component {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const Username = localStorage.getItem('user');
-        const { movie  } = this.props;
-        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+        const { movies  } = this.props;
+        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${Username}/movies/${movies._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -41376,70 +41378,47 @@ class DeleteFaveMoviesView extends _reactDefault.default.Component {
         });
     };
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    style: {
+                        marginLeft: '2.5rem',
+                        marginTop: '2rem'
+                    },
                     __source: {
                         fileName: "src/components/profile-view/delete-fave-movie.jsx",
-                        lineNumber: 52
+                        lineNumber: 53
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                        style: {
-                            width: '15rem',
-                            marginTop: '0.5rem',
-                            marginBottom: '1rem',
-                            height: '28rem',
-                            alignItems: 'center'
-                        },
-                        xs: 2,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h6", {
                         __source: {
                             fileName: "src/components/profile-view/delete-fave-movie.jsx",
                             lineNumber: 54
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                style: {
-                                    marginLeft: '1rem',
-                                    marginTop: '2rem'
-                                },
-                                __source: {
-                                    fileName: "src/components/profile-view/delete-fave-movie.jsx",
-                                    lineNumber: 55
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                    __source: {
-                                        fileName: "src/components/profile-view/delete-fave-movie.jsx",
-                                        lineNumber: 56
-                                    },
-                                    __self: this,
-                                    children: "Remove Movie From Favorites?"
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                __source: {
-                                    fileName: "src/components/profile-view/delete-fave-movie.jsx",
-                                    lineNumber: 58
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    style: {
-                                        marginTop: '2rem'
-                                    },
-                                    variant: "primary",
-                                    type: "submit",
-                                    onClick: this.handleDeleteMovie,
-                                    __source: {
-                                        fileName: "src/components/profile-view/delete-fave-movie.jsx",
-                                        lineNumber: 59
-                                    },
-                                    __self: this,
-                                    children: "Delete Movie"
-                                })
-                            })
-                        ]
+                        children: "Remove Movie From Favorites:"
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/profile-view/delete-fave-movie.jsx",
+                        lineNumber: 56
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                        style: {
+                            marginTop: '2rem',
+                            marginLeft: '5rem'
+                        },
+                        variant: "primary",
+                        type: "submit",
+                        onClick: this.handleDeleteMovie,
+                        __source: {
+                            fileName: "src/components/profile-view/delete-fave-movie.jsx",
+                            lineNumber: 57
+                        },
+                        __self: this,
+                        children: "Delete Movie"
                     })
                 })
             ]
@@ -41504,6 +41483,7 @@ class AddFaveMoviesView extends _reactDefault.default.Component {
         });
     };
     handleMovieAdd = (e)=>{
+        e.preventDefault();
         const { movies  } = this.props;
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
@@ -41519,7 +41499,7 @@ class AddFaveMoviesView extends _reactDefault.default.Component {
                     console.error(err);
                     res.status(500).send('Error: ' + err);
                 } else {
-                    alert('Movie successfully added to favorites!');
+                    alert('Movie added to favorites!');
                     res.status(201).send(message);
                 }
             };
@@ -41538,30 +41518,40 @@ class AddFaveMoviesView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/profile-view/add-fave-movie.jsx",
-                        lineNumber: 83
+                        lineNumber: 85
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "addFavorites",
                         __source: {
                             fileName: "src/components/profile-view/add-fave-movie.jsx",
-                            lineNumber: 84
+                            lineNumber: 86
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                            style: {
-                                marginTop: '2rem'
-                            },
-                            variant: "primary",
-                            type: "submit",
-                            onClick: this.handleMovieAdd,
-                            __source: {
-                                fileName: "src/components/profile-view/add-fave-movie.jsx",
-                                lineNumber: 85
-                            },
-                            __self: this,
-                            children: "Add to Favorites"
-                        })
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h6", {
+                                __source: {
+                                    fileName: "src/components/profile-view/add-fave-movie.jsx",
+                                    lineNumber: 87
+                                },
+                                __self: this,
+                                children: "Add Movie to Favorites:"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                style: {
+                                    marginTop: '2rem'
+                                },
+                                variant: "primary",
+                                type: "submit",
+                                onClick: this.handleMovieAdd,
+                                __source: {
+                                    fileName: "src/components/profile-view/add-fave-movie.jsx",
+                                    lineNumber: 88
+                                },
+                                __self: this,
+                                children: "Add to Favorites"
+                            })
+                        ]
                     })
                 })
             ]

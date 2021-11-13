@@ -23,10 +23,10 @@ export class DeleteFaveMoviesView extends React.Component {
     e.preventDefault();
     const token = localStorage.getItem('token');
     const Username = localStorage.getItem('user');
-    const { movie } = this.props;
+    const { movies } = this.props;
 
     axios.delete(
-        `https://kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://kino-noir.herokuapp.com/users/${Username}/movies/${movies._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -49,17 +49,13 @@ render () {
 
   return (
   <>
-    <Row>
-     
-    <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '28rem', alignItems: 'center'}} xs={2}>
-          <Row style={{marginLeft: '1rem', marginTop: '2rem'}}>
-             <p>Remove Movie From Favorites?</p>
+    
+          <Row style={{marginLeft: '2.5rem', marginTop: '2rem'}}>
+             <h6>Remove Movie From Favorites:</h6>
           </Row>
           <Row>                                                                    
-          <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={this.handleDeleteMovie}>Delete Movie</Button>
-          </Row>
-          
-      </Card>
+          <Button style={{marginTop: '2rem', marginLeft: '5rem',}} variant="primary" type="submit" onClick={this.handleDeleteMovie}>Delete Movie</Button>
+         
 
     </Row>
   </>

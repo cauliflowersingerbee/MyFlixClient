@@ -41,33 +41,35 @@ export class AddFaveMoviesView extends React.Component {
 
    handleMovieAdd =(e) => {
 
+    e.preventDefault();
     const { movies } = this.props;
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
-    axios.post(`https://kino-noir.herokuapp.com/users/${Username}/${movies}/${movies._id}`, {headers: { Authorization: `Bearer ${token}`}})
-    .then (response => {
-       users.findOneAndUpdate({ Username: req.params.Username }),
-       {$push: { FavoriteMovie: req.params.movies._id }},
-      { new: true },
-      (err, updatedUser) => {
-        if (err) {
-          console.error(err);
-          res.status(500).send('Error: ' + err);
-        } else {
-          alert ('Movie successfully added to favorites!');
-          res.status(201).send(message);
-        }
-      }
-    })
-    .then(response => {
-      this.setState({
-        FavoriteMovie: response.data
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    axios.post(`https://kino-noir.herokuapp.com/users/${Username}/${movies}/${movies._id}`, 
+    {headers: { Authorization: `Bearer ${token}`}})
+        .then (response => {
+          users.findOneAndUpdate({ Username: req.params.Username }),
+          {$push: { FavoriteMovie: req.params.movies._id }},
+          { new: true },
+          (err, updatedUser) => {
+            if (err) {
+              console.error(err);
+              res.status(500).send('Error: ' + err);
+            } else {
+              alert ('Movie added to favorites!');
+              res.status(201).send(message);
+            }
+          }
+        })
+        .then(response => {
+          this.setState({
+            FavoriteMovie: response.data
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
   }
 
 
@@ -82,6 +84,7 @@ export class AddFaveMoviesView extends React.Component {
        <>
           <Row>
           <div className='addFavorites'>
+          <h6>Add Movie to Favorites:</h6>
           <Button style={{marginTop: '2rem', }} variant="primary" 
           type="submit" onClick={this.handleMovieAdd}>Add to Favorites</Button>
           </div>
