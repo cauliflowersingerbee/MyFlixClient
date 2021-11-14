@@ -7,8 +7,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import faveIcon from '../../img/favorites-icon.png';
 import { DeleteFaveMoviesView } from './delete-fave-movie';
-import { AddFaveMoviesView } from './add-fave-movie';
-
+import { name } from 'file-loader';
 
 
 export class FaveMoviesView extends React.Component {
@@ -25,6 +24,7 @@ export class FaveMoviesView extends React.Component {
     const Username = localStorage.getItem('user');
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
+    const { movies } = this.props
     
 
     
@@ -41,14 +41,13 @@ export class FaveMoviesView extends React.Component {
         .catch(function (error) {
           console.log(error);
         })
-    } 
-         
+    };
      
 
   render () {
 
   const { FavoriteMovie } = this.state;
-  const { movies } = this.props
+  const { movies } = this.props;
   
   return (
   <>
@@ -72,6 +71,7 @@ export class FaveMoviesView extends React.Component {
                   <>
                     <h5>Your favorite movies are: </h5>
                     <ul>
+
                       {FavoriteMovie.map(m => (
                         <li key={FavoriteMovie._id}> 
                           {FavoriteMovie}  
@@ -84,10 +84,7 @@ export class FaveMoviesView extends React.Component {
 
             </Row>
 
-            <Row>
-            <AddFaveMoviesView movies={movies} FavoriteMovie={FavoriteMovie} />
-          </Row>
-         
+          
            <Row>
             <DeleteFaveMoviesView movies={movies} FavoriteMovie={FavoriteMovie} />
           </Row>
