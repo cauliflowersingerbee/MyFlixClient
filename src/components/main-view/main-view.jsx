@@ -103,8 +103,12 @@ export class MainView extends React.Component {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-             return <ProfileView />
-          
+              if (movies.length === 0) return <div className="main-view" />;
+              return movies.map(movies => (
+                <Col md={3} key={movies._id}>
+                  <MovieCard movies={movies} />
+                </Col>
+              ))
           }} />
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
