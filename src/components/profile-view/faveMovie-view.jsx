@@ -46,9 +46,9 @@ export class FaveMoviesView extends React.Component {
 
   render () {
 
+  const { FavoriteMovie } = this.state;
   const { movies } = this.props;
- 
-
+  
   return (
   <>
   <div className='FaveMovie'>
