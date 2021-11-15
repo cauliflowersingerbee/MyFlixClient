@@ -22860,71 +22860,42 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __self: this
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Switch, {
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 120
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/",
-                                    exact: true,
-                                    component: Dogs,
-                                    __source: {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 121
-                                    },
-                                    __self: this
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/cats",
-                                    component: Cats,
-                                    __source: {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 122
-                                    },
-                                    __self: this
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/sheeps",
-                                    component: Sheeps,
-                                    __source: {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 123
-                                    },
-                                    __self: this
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/goats",
-                                    component: Goats,
-                                    __source: {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 124
-                                    },
-                                    __self: this
-                                })
-                            ]
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                path: "/",
+                                exact: true,
+                                component: MainView,
+                                __source: {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 121
+                                },
+                                __self: this
+                            })
                         })
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 128
+                        lineNumber: 126
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 129
+                            lineNumber: 127
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                             className: "main-view justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 130
+                                lineNumber: 128
                             },
                             __self: this,
                             children: [
@@ -22950,7 +22921,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 131
+                                        lineNumber: 129
                                     },
                                     __self: this
                                 }),
@@ -22966,7 +22937,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 144
+                                        lineNumber: 142
                                     },
                                     __self: this
                                 }),
@@ -22992,7 +22963,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 149
+                                        lineNumber: 147
                                     },
                                     __self: this
                                 }),
@@ -23018,7 +22989,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 159
+                                        lineNumber: 157
                                     },
                                     __self: this
                                 }),
@@ -23044,7 +23015,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 170
+                                        lineNumber: 168
                                     },
                                     __self: this
                                 }),
@@ -23068,7 +23039,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 181
+                                        lineNumber: 179
                                     },
                                     __self: this
                                 })
@@ -23086,7 +23057,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../navbar-view/navbar":"Bc0jJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","../navbar-view/navbar":"bicRv","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -41398,7 +41369,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./delete-fave-movie":"anUjC","file-loader":"hlXAR"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./delete-fave-movie":"anUjC","file-loader":"hlXAR","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"anUjC":[function(require,module,exports) {
@@ -61268,8 +61239,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"1LQMq","./lib/_stream_writable.js":"NavxL","./lib/_stream_duplex.js":"6DuDV","./lib/_stream_transform.js":"7CK1j","./lib/_stream_passthrough.js":"jY8Ll","./lib/internal/streams/end-of-stream.js":"hWqfZ","./lib/internal/streams/pipeline.js":"1tzau"}],"1LQMq":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -62668,8 +62639,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"1LQMq","./_stream_writable":"NavxL","inherits":"fjm9h"}],"NavxL":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -95925,11 +95896,11 @@ var createPopper = /*#__PURE__*/ _createPopperJs.popperGenerator({
     defaultModifiers: defaultModifiers
 }); // eslint-disable-next-line import/no-unused-modules
 
-},{"./createPopper.js":"eWRl5","./modifiers/eventListeners.js":"gK2qK","./modifiers/popperOffsets.js":"767Ci","./modifiers/computeStyles.js":"eNeWb","./modifiers/applyStyles.js":"iCp47","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"Bc0jJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$999d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./createPopper.js":"eWRl5","./modifiers/eventListeners.js":"gK2qK","./modifiers/popperOffsets.js":"767Ci","./modifiers/computeStyles.js":"eNeWb","./modifiers/applyStyles.js":"iCp47","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy"}],"bicRv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bd0e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$999d.prelude(module);
+$parcel$ReactRefreshHelpers$bd0e.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -95941,21 +95912,21 @@ var _reactRouterDom = require("react-router-dom");
 const Navbar = ()=>{
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
-            fileName: "src/components/navbar-view/navbar.js",
+            fileName: "src/components/navbar-view/navbar.jsx",
             lineNumber: 6
         },
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("li", {
                 __source: {
-                    fileName: "src/components/navbar-view/navbar.js",
+                    fileName: "src/components/navbar-view/navbar.jsx",
                     lineNumber: 7
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                     to: "/",
                     __source: {
-                        fileName: "src/components/navbar-view/navbar.js",
+                        fileName: "src/components/navbar-view/navbar.jsx",
                         lineNumber: 8
                     },
                     __self: undefined,
@@ -95964,14 +95935,14 @@ const Navbar = ()=>{
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("li", {
                 __source: {
-                    fileName: "src/components/navbar-view/navbar.js",
+                    fileName: "src/components/navbar-view/navbar.jsx",
                     lineNumber: 10
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                     to: "/cats",
                     __source: {
-                        fileName: "src/components/navbar-view/navbar.js",
+                        fileName: "src/components/navbar-view/navbar.jsx",
                         lineNumber: 11
                     },
                     __self: undefined,
@@ -95980,14 +95951,14 @@ const Navbar = ()=>{
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("li", {
                 __source: {
-                    fileName: "src/components/navbar-view/navbar.js",
+                    fileName: "src/components/navbar-view/navbar.jsx",
                     lineNumber: 13
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                     to: "/sheeps",
                     __source: {
-                        fileName: "src/components/navbar-view/navbar.js",
+                        fileName: "src/components/navbar-view/navbar.jsx",
                         lineNumber: 14
                     },
                     __self: undefined,
@@ -95996,14 +95967,14 @@ const Navbar = ()=>{
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("li", {
                 __source: {
-                    fileName: "src/components/navbar-view/navbar.js",
+                    fileName: "src/components/navbar-view/navbar.jsx",
                     lineNumber: 16
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                     to: "/goats",
                     __source: {
-                        fileName: "src/components/navbar-view/navbar.js",
+                        fileName: "src/components/navbar-view/navbar.jsx",
                         lineNumber: 17
                     },
                     __self: undefined,
@@ -96018,7 +95989,7 @@ exports.default = Navbar;
 var _c;
 $RefreshReg$(_c, "Navbar");
 
-  $parcel$ReactRefreshHelpers$999d.postlude(module);
+  $parcel$ReactRefreshHelpers$bd0e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

@@ -118,10 +118,8 @@ export class MainView extends React.Component {
           <div>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Dogs} />
-          <Route path='/cats' component={Cats} />
-          <Route path='/sheeps' component={Sheeps} />
-          <Route path='/goats' component={Goats} />
+          <Route path='/' exact component={MainView} />
+          
         </Switch>
         </div>
 
