@@ -115,13 +115,7 @@ export class MainView extends React.Component {
     return (
 
         <Router>
-          <div>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact component={MainView} />
           
-        </Switch>
-        </div>
 
          <div>
         <Container>
