@@ -43,6 +43,13 @@ export class FaveMoviesView extends React.Component {
         })
     };
      
+    movieName() {
+      const { movies } = this.props;
+
+      const name = movies.find(movie => movie._id === FavoriteMovie);
+      console.log(name)
+      
+    }
 
   render () {
 
@@ -74,7 +81,7 @@ export class FaveMoviesView extends React.Component {
 
                         {FavoriteMovie.map(m => (
                         <li key={FavoriteMovie._id}> 
-                          {FavoriteMovie}  
+                          {name}  
                         </li>))}
                     </ul>
                     </>
