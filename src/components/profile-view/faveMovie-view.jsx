@@ -72,7 +72,7 @@ export class FaveMoviesView extends React.Component {
                     <h5>Your favorite movies are: </h5>
                     <ul>
 
-                      {FavoriteMovie.map(m => (
+                        {FavoriteMovie.map(m => (
                         <li key={FavoriteMovie._id}> 
                           {FavoriteMovie}  
                         </li>))}
@@ -88,6 +88,10 @@ export class FaveMoviesView extends React.Component {
            <Row>
             <DeleteFaveMoviesView movies={movies} FavoriteMovie={FavoriteMovie} />
           </Row>
+
+        
+
+
 
 
         
