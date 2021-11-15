@@ -23,17 +23,18 @@ export class MainView extends React.Component {
     super(props);
 
     this.state = {
-      user: null
+      user: null,
+      movies: []
     }
   }
 
   componentDidMount() {
-    const accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
+    const token = localStorage.getItem('token');
+    if (token !== null) {
       this.setState({
         user: localStorage.getItem('user')
       });
-      this.getMovies(accessToken);
+      this.getMovies(token);
     }
   }
 
