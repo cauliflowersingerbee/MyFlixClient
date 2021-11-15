@@ -1,32 +1,22 @@
-import React from "react";
+import React from 'react';
+import { Link } from "react-router-dom";
 
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements';
-
-const Navbar = () => {
+const Navbar= () =>{
     return (
-        <>
-           <Nav>
-            <Bars />
-
-            <NavMenu>
-                <NavLink to="/" activeStyle>
-                    Home
-                </NavLink>
-                <NavLink to="/profile" activeStyle>
-                    Profile
-                </NavLink>
-                <NavLink to="/directors" activeStyle>
-                    Directors
-                </NavLink>
-                <NavLink to="/genres" activeStyle>
-                    Genres
-                </NavLink>
-                <NavLink to="/logout" activeStyle>
-                    Log Out
-                </NavLink>
-            </NavMenu> 
-           </Nav> 
-        </>
+    <div>
+      <li>
+        <Link to="/">Dogs</Link>
+      </li>
+      <li>
+        <Link to="/cats">Cats</Link>
+      </li>
+      <li>
+        <Link to="/sheeps">Sheeps</Link>
+      </li>
+      <li>
+        <Link to="/goats">Goats</Link>
+      </li>
+    </div>
     );
-};
-export default Navbar;
+  }
+  export default Navbar;

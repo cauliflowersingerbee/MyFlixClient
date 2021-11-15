@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -11,7 +11,7 @@ import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
-import { Navbar } from '../navbar-view/Navbar'
+import Navbar from '../navbar-view/navbar';
 
 
 
@@ -114,9 +114,18 @@ export class MainView extends React.Component {
     
     return (
 
-      <Router>
-       
-       <div>
+        <Router>
+          <div>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Dogs} />
+          <Route path='/cats' component={Cats} />
+          <Route path='/sheeps' component={Sheeps} />
+          <Route path='/goats' component={Goats} />
+        </Switch>
+        </div>
+
+         <div>
         <Container>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
