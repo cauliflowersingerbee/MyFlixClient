@@ -22,7 +22,8 @@ export class MainView extends React.Component {
     super(props);
 
     this.state = {
-      user: null
+      user: null,
+      movies: []
     }
   }
 
@@ -126,7 +127,7 @@ export class MainView extends React.Component {
              if (movies.length === 0) return <div className="main-view" />;
              return movies.map(movies => (
                <Col md={3} key={movies._id}>
-                 <MovieCard movie={movies} />
+                 <MovieCard movies={movies} />
                </Col>
              ))
            }} />
