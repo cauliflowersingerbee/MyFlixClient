@@ -37,11 +37,11 @@ export class MainView extends React.Component {
   }
 
   getMovies(token) {
+
     axios.get('https://kino-noir.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      //result becomes state
       this.setState({
         movies: response.data
       });
@@ -112,15 +112,25 @@ export class MainView extends React.Component {
     const { movies, user } = this.state;
     
     return (
+
       <Router>
+       
+       <div>
+        <Container>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-             return <ProfileView movies={movies} user={user}/>
+             
+             if (movies.length === 0) return <div className="main-view" />;
+             return movies.map(movies => (
+               <Col md={3} key={movies._id}>
+                 <MovieCard movie={movies} />
+               </Col>
+             ))
+           }} />
           
-          }} />
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
             return <RegistrationView />
@@ -173,6 +183,8 @@ export class MainView extends React.Component {
             }}
           />
         </Row>
+        </Container>
+      </div>
       </Router>
     );
   }
