@@ -12,7 +12,8 @@ import { ProfileView } from '../profile-view/profile-view';
 import { UserUpdateView } from '../profile-view/user-update-view';
 import { UserDeleteView } from '../profile-view/user-delete-view';
 import { FaveMoviesView } from '../profile-view/faveMovie-view';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col, Navbar } from 'react-bootstrap';
+import { NavbarView } from '../navbar/navbar';
 import logo from '../../img/KinoNoirLogo.png'
 
 
@@ -99,12 +100,20 @@ export class MainView extends React.Component {
     
     return (
       <Router>
+       <NavbarView />
+
         <Row className="main-view justify-content-md-center">
+          
           <Route exact path="/" render={() => {
-            if (!user) return <Col>
+            if (!user) 
+            return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
-              if (movies.length === 0) return <div className="main-view" />;
+
+              if (movies.length === 0) 
+              return 
+              <div className="main-view" />;
+              
               return movies.map(movies => (
                 <Col md={3} key={movies._id}>
                   <MovieCard movies={movies} />
