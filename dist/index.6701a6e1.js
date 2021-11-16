@@ -40843,7 +40843,7 @@ class ProfileView extends _reactDefault.default.Component {
                                 style: {
                                     height: '5rem',
                                     width: '5rem',
-                                    marginTop: '0.5rem',
+                                    marginTop: '5rem',
                                     float: _core.left
                                 },
                                 __source: {
