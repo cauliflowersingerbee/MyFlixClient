@@ -11,8 +11,6 @@ import { UserUpdateView } from './user-update-view';
 import settingsIcon from '../../img/settings-icon-img.png'
 import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
-import { MovieCard } from '../movie-card/movie-card';
-
 
 
 export class ProfileView extends React.Component {
@@ -37,14 +35,16 @@ export class ProfileView extends React.Component {
 
   render () {
   const { user } = this.state;
+  const { movies } = this.props;
   
   return <>
   <Container>
   <Row style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center'}}>
-  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '5rem', float: left}}/>
+  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '0.5rem', float: left}}/> 
   <h1>Welcome {user} !</h1>
+  
   </Row>
-  <Row>
+  <Row> 
     <Col xs={3}>
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '10rem'}}/>
       </Col>
@@ -57,8 +57,11 @@ export class ProfileView extends React.Component {
     </Col>
 
     <Col xs={3}>
-      <FaveMoviesView />
+      <FaveMoviesView movies={movies} user={user}/>
     </Col>
+
+    
+
   </Row>
     </Container>
 </>
