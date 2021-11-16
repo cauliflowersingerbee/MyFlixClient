@@ -11,6 +11,7 @@ import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import logo from '../../img/KinoNoirLogo.png'
+import { NavBarView } from '../navbar/navbar';
 
 
 
@@ -97,14 +98,6 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    this.setState({
-      user: null,
-    });
-  }
-
  
 
   
@@ -114,7 +107,7 @@ export class MainView extends React.Component {
     return (
 
         <Router>
-          
+           <NavBarView user={user} />
 
          <div>
         <Container>
