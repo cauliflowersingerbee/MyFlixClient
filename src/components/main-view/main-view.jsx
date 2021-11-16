@@ -9,12 +9,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { UserUpdateView } from '../profile-view/user-update-view';
-import { UserDeleteView } from '../profile-view/user-delete-view';
-import { FaveMoviesView } from '../profile-view/faveMovie-view';
 import { Card, Container, Row, Col, Navbar } from 'react-bootstrap';
 import { NavbarView } from '../navbar/navbar';
-import logo from '../../img/KinoNoirLogo.png'
 
 
 
@@ -131,7 +127,7 @@ export class MainView extends React.Component {
             </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView movie={movies.find(m => m._Id === match.params.movieId)} onBackClick={() => history.goBack()} />
+              <MovieView movie={movies.find(m => m._Id === match.params.{movies._Id})} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
