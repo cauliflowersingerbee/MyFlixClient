@@ -40805,7 +40805,7 @@ class ProfileView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            User: null
+            user: null
         };
     }
     componentDidMount() {
@@ -40815,7 +40815,7 @@ class ProfileView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const user = localStorage.getItem('user');
+        const { user  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                 __source: {
@@ -41032,7 +41032,7 @@ class UserDeleteView extends _reactDefault.default.Component {
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             style: {
                                 width: '15rem',
-                                marginTop: '0.5rem',
+                                marginTop: '3rem',
                                 marginBottom: '1rem',
                                 height: '28rem',
                                 alignItems: 'center'
@@ -41194,7 +41194,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                         style: {
                             width: '15rem',
-                            marginTop: '0.5rem',
+                            marginTop: '3rem',
                             marginBottom: '1rem',
                             height: '28rem',
                             alignItems: 'center'
@@ -41288,7 +41288,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/KinoNoirLogo.png":"cqMek","../../img/favorites-icon.png":"faWu1"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"lN3py":[function(require,module,exports) {
@@ -41404,7 +41404,7 @@ class UserUpdateView extends _reactDefault.default.Component {
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
                             style: {
                                 width: '15rem',
-                                marginTop: '0.5rem',
+                                marginTop: '3rem',
                                 marginBottom: '1rem',
                                 height: '40rem'
                             },

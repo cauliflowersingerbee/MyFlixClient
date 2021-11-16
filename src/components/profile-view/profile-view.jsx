@@ -20,7 +20,7 @@ export class ProfileView extends React.Component {
     super(props);
 
     this.state = {
-        User: null,
+        user: null,
       }
   }
 
@@ -36,7 +36,7 @@ export class ProfileView extends React.Component {
 
 
   render () {
-  const user = localStorage.getItem('user')
+  const { user } = this.state;
   
   return <>
   <Container>
