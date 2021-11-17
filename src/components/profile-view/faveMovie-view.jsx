@@ -43,13 +43,25 @@ export class FaveMoviesView extends React.Component {
         })
     };
      
-    movieName() {
-      const { movies } = this.props;
 
-      const name = movies.find(movie => movie._id === FavoriteMovie);
-      console.log(name)
-      
-    }
+   handleUnfavorite= () => {
+     
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.delete(`https://kino-noir.herokuapp.com/users/${username}/movies/` + (id), {
+        headers: { Authorization: `Bearer ${token}` }
+    })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+
 
   render () {
 
@@ -60,40 +72,38 @@ export class FaveMoviesView extends React.Component {
   <>
   <div className='FaveMovie'>
     <Row>
-     
+    
     <Card style={{ width: '20rem', marginTop: '3rem', marginBottom: '1rem', height: '40rem', alignItems: 'center'}} xs={2}>
          
             <Row>
               <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem', marginBottom: '2rem'}}/>
             </Row>
-            
+            <Row>
+            <h5>Favorite Movies</h5>
+            </Row>
             <Row>
                 <div>
                   {FavoriteMovie.length === 0 && 
                     <h5>You have no favorite movies</h5>}
                 </div>
-              
-                
-              
-          {FavoriteMovie.length > 0 &&
-          <h6>Favorite Movies:</h6> &&
-          (movies.map((m) => {
-            if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
-            return (
-              <div>
-                     
-                    <Card style={{ width: '5rem', marginTop: '1rem', marginBottom: '1rem', height: '8rem', alignItems: 'center'}} xs={2}  key={m._id}>
-                      <Card.Img className='movieCard' variant='top' src={m.ImagePath} />
-                      <Card.Body>
-                          <Card.Title className='movie-card-title'>{m.Title}
-                          </Card.Title>
-                      </Card.Body>
-                    </Card>
-             </div> 
-                );
-              }
-            }))
-            }
+                 <div>
+                 {FavoriteMovie.length > 0 &&
+                  (movies.map((m) => {
+                    if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
+                    return (
+                      <div>
+                            
+                            <Card style={{ width: '13rem', marginTop: '2rem', marginBottom: '1rem', height: '8rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
+                              <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
+                              
+                            </Card>
+                    </div> 
+                        );
+                      }
+                    }))
+                    }
+                 </div>
+         
            
 
                            

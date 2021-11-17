@@ -36,7 +36,7 @@ export class MovieView extends React.Component {
           
             <Row>
                 <Col>
-                    <Card style={{marginTop: '5rem'}} >
+                    <Card >
                       <Card.Body>
                       <div className="movie-view">
                         <div className="movie-poster">

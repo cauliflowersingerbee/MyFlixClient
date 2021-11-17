@@ -9,25 +9,27 @@ import { Link } from 'react-router-dom';
 
 export class MovieCard extends React.Component {
   render() {
-    const { movies } = this.props;
+    const { movie } = this.props;
 
     return (
-      <Card>
-        <Card.Img variant="top" src={movies.ImagePath} />
+      <>
+      <Card className='movie-card'>
+        <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
-          <Card.Title>{movies.Title}</Card.Title>
-          <Card.Text>{movies.Description}</Card.Text>
-          <Link to={`/movies/${movies._id}`}>
+          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
             <Button variant="link">Open</Button>
           </Link>
         </Card.Body>
       </Card>
+      </>
     );
   }
 }
 
 MovieCard.propTypes = {
-  movies: PropTypes.shape({
+  movie: PropTypes.shape({
     Title: PropTypes.string,
     Description: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired
