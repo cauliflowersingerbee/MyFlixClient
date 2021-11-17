@@ -23,7 +23,8 @@ export class MainView extends React.Component {
 
     this.state = {
       user: null,
-      movies: []
+      movies: [], 
+      selectedMovie: null
     }
   }
 
@@ -69,9 +70,9 @@ export class MainView extends React.Component {
 
 
   
-  setSelectedMovie(newSelectedMovie) {
+  setSelectedMovie(movie) {
     this.setState({
-      selectedMovie: newSelectedMovie,
+      selectedMovie: movie,
     });
   }
 
@@ -118,9 +119,9 @@ export class MainView extends React.Component {
             </Col>
              
              if (movies.length === 0) return <div className="main-view" />;
-             return movies.map(movie => (
-               <Col md={3} key={movie._id}>
-                 <MovieCard movie={movie} />
+             return movies.map(movies => (
+               <Col md={3} key={movies._id}>
+                 <MovieCard movies={movies} />
                </Col>
              ))
            }} />

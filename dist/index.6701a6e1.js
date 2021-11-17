@@ -22767,7 +22767,8 @@ class MainView extends _reactDefault.default.Component {
         super(props);
         this.state = {
             user: null,
-            movies: []
+            movies: [],
+            selectedMovie: null
         };
     }
     componentDidMount() {
@@ -22806,9 +22807,9 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    setSelectedMovie(newSelectedMovie) {
+    setSelectedMovie(movie) {
         this.setState({
-            selectedMovie: newSelectedMovie
+            selectedMovie: movie
         });
     }
     onRegistration(user) {
@@ -22834,7 +22835,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 109
+                lineNumber: 110
             },
             __self: this,
             children: [
@@ -22842,27 +22843,27 @@ class MainView extends _reactDefault.default.Component {
                     user: user,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 110
+                        lineNumber: 111
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 112
+                        lineNumber: 113
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 113
+                            lineNumber: 114
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                             className: "main-view justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 114
+                                lineNumber: 115
                             },
                             __self: this,
                             children: [
@@ -22878,17 +22879,17 @@ class MainView extends _reactDefault.default.Component {
                                         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             className: "main-view"
                                         }));
-                                        return movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        return movies.map((movies1)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                                 md: 3,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                                    movie: movie
+                                                    movies: movies1
                                                 })
-                                            }, movie._id)
+                                            }, movies1._id)
                                         );
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 115
+                                        lineNumber: 116
                                     },
                                     __self: this
                                 }),
@@ -22904,7 +22905,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 128
+                                        lineNumber: 129
                                     },
                                     __self: this
                                 }),
@@ -22930,7 +22931,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 133
+                                        lineNumber: 134
                                     },
                                     __self: this
                                 }),
@@ -22956,7 +22957,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 143
+                                        lineNumber: 144
                                     },
                                     __self: this
                                 }),
@@ -22982,7 +22983,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 154
+                                        lineNumber: 155
                                     },
                                     __self: this
                                 }),
@@ -23007,7 +23008,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 165
+                                        lineNumber: 166
                                     },
                                     __self: this
                                 })
@@ -23025,7 +23026,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","../navbar/navbar":"63yS7","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -40202,11 +40203,8 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-            style: {
-                marginTop: '5rem'
-            },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 15
@@ -40215,7 +40213,7 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
                     variant: "top",
-                    src: movie.ImagePath,
+                    src: movies.ImagePath,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 16
@@ -40235,7 +40233,7 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 18
                             },
                             __self: this,
-                            children: movie.Title
+                            children: movies.Title
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                             __source: {
@@ -40243,10 +40241,10 @@ class MovieCard extends _reactDefault.default.Component {
                                 lineNumber: 19
                             },
                             __self: this,
-                            children: movie.Description
+                            children: movies.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/movies/${movie._id}`,
+                            to: `/movies/${movies._id}`,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 20
@@ -40269,7 +40267,7 @@ class MovieCard extends _reactDefault.default.Component {
     }
 }
 MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
+    movies: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string,
         Description: _propTypesDefault.default.string.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired
@@ -40530,7 +40528,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","axios":"iYoWk"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41386,7 +41384,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./user-delete-view":"lDCvg","file-loader":"hlXAR","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","file-loader":"hlXAR","./user-delete-view":"lDCvg"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"hlXAR":[function(require,module,exports) {
@@ -47651,8 +47649,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"c1LuA","./_stream_writable":"14IMz","inherits":"fjm9h"}],"14IMz":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -50413,8 +50411,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"5jXhY","./lib/_stream_writable.js":"lNfHu","./lib/_stream_duplex.js":"fBskt","./lib/_stream_transform.js":"ltVi8","./lib/_stream_passthrough.js":"2gWfD","./lib/internal/streams/end-of-stream.js":"dKH0m","./lib/internal/streams/pipeline.js":"cabht"}],"5jXhY":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
