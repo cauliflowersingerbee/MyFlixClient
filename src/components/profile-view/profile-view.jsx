@@ -39,12 +39,12 @@ export class ProfileView extends React.Component {
   
   return <>
   <Container>
-  <Row style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center'}}>
-  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '0.5rem', float: left}}/>
-  <h1>Welcome {user} !</h1>
+  <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center'}}>
+  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '5rem', float: left}}/>
+  <h1> Welcome {user}! </h1>
   </Row>
   <Row> 
-    <Col xs={3}>
+    <Col xs={2}>
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '10rem'}}/>
       </Col>
     <Col xs={3}>
@@ -52,14 +52,12 @@ export class ProfileView extends React.Component {
     </Col>
 
     <Col xs={3}>
-      <UserDeleteView />
-    </Col>
-
-    <Col xs={3}>
       <FaveMoviesView movies={movies} user={user}/>
     </Col>
 
-    
+    <Col xs={3}>
+      <UserDeleteView />
+    </Col>
 
   </Row>
     </Container>

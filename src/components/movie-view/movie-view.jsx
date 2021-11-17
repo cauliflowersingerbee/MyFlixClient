@@ -2,13 +2,34 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 export class MovieView extends React.Component {
 
 
+
+  addFavoriteMovie = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    const { movies } = this.props;
+
+  
+    axios.post(`https://kino-noir.herokuapp.com/users/${username}/movies/${movies._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        alert(`Movie added to Favorites`)
+        console.log(movies)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
     render() {
-      const { movie, onBackClick } = this.props;
+      const { movies, onBackClick } = this.props;
   
       return (
         <Container>
@@ -19,25 +40,29 @@ export class MovieView extends React.Component {
                       <Card.Body>
                       <div className="movie-view">
                         <div className="movie-poster">
-                          <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
+                          <img variant="top" src={movies.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>
                         <div className="movie-title">
                           <span className="label">Title: </span>
-                          <span className="value">{movie.Title}</span>
+                          <span className="value">{movies.Title}</span>
                         </div>
                         <div className="movie-description">
                           <span className="label">Description: </span>
-                          <span className="value">{movie.Description}</span>
+                          <span className="value">{movies.Description}</span>
                         </div>
                         <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
                       </div>
-                      <Link to={`/directors/${movie.Director.Name}`}>
+                      <Link to={`/directors/${movies.Director.Name}`}>
                       <Button variant="link">Director</Button>
                       </Link>
 
-                      <Link to={`/genres/${movie.Genre.Name}`}>
+                      <Link to={`/genres/${movies.Genre.Name}`}>
                         <Button variant="link">Genre</Button>
                       </Link>
+
+                      <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
+
+
 
                       </Card.Body>
                     </Card>
@@ -49,7 +74,7 @@ export class MovieView extends React.Component {
   }
 
   MovieView.propTypes = {
-    movie: PropTypes.shape({
+    movies: PropTypes.shape({
       Title: PropTypes.string,
       Description: PropTypes.string.isRequired,
       ImagePath: PropTypes.string.isRequired

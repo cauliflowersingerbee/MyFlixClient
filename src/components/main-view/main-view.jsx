@@ -108,7 +108,7 @@ export class MainView extends React.Component {
 
         <Router>
            <NavBarView user={user} />
-
+         
          <div>
         <Container>
         <Row className="main-view justify-content-md-center">
@@ -136,7 +136,7 @@ export class MainView extends React.Component {
             </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView movies={movies.find(m => m._Id === match.params.movies._id)} onBackClick={() => history.goBack()} />
+              <MovieView movies={movies.find(m => movies._id === match.params._id)} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
