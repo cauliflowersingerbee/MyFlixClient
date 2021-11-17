@@ -21,7 +21,7 @@ export class MovieView extends React.Component {
     })
       .then(response => {
         alert(`Movie added to Favorites`)
-        console.log(movies)
+        console.log(response)
       })
       .catch(function (error) {
         console.log(error);
