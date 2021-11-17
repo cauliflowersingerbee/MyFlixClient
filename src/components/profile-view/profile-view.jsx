@@ -34,15 +34,14 @@ export class ProfileView extends React.Component {
 
 
   render () {
-  const { user } = this.state;
+  const { user } = this.props;
   const { movies } = this.props;
   
   return <>
   <Container>
   <Row style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center'}}>
-  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '0.5rem', float: left}}/> 
+  <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', marginTop: '0.5rem', float: left}}/>
   <h1>Welcome {user} !</h1>
-  
   </Row>
   <Row> 
     <Col xs={3}>
