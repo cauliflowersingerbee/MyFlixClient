@@ -36,7 +36,7 @@ export class MovieView extends React.Component {
           
             <Row>
                 <Col>
-                    <Card>
+                    <Card style={{marginTop: '5rem'}} >
                       <Card.Body>
                       <div className="movie-view">
                         <div className="movie-poster">
@@ -60,7 +60,7 @@ export class MovieView extends React.Component {
                         <Button variant="link">Genre</Button>
                       </Link>
 
-                      <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
+                      <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
 
 
 

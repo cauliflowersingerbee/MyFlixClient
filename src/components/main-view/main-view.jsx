@@ -108,7 +108,7 @@ export class MainView extends React.Component {
 
         <Router>
            <NavBarView user={user} />
-         
+
          <div>
         <Container>
         <Row className="main-view justify-content-md-center">
@@ -118,9 +118,9 @@ export class MainView extends React.Component {
             </Col>
              
              if (movies.length === 0) return <div className="main-view" />;
-             return movies.map(movies => (
-               <Col md={3} key={movies._id}>
-                 <MovieCard movies={movies} />
+             return movies.map(movie => (
+               <Col md={3} key={movie._id}>
+                 <MovieCard movie={movie} />
                </Col>
              ))
            }} />
