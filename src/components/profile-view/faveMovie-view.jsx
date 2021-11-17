@@ -76,12 +76,13 @@ export class FaveMoviesView extends React.Component {
                 
               
           {FavoriteMovie.length > 0 &&
+          <h6>Favorite Movies:</h6> &&
           (movies.map((m) => {
             if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
             return (
               <div>
-                     <h1>'Your favorite movies are:</h1>
-                    <Card className='favorites-item card-content'  key={m._id}>
+                     
+                    <Card style={{ width: '5rem', marginTop: '1rem', marginBottom: '1rem', height: '8rem', alignItems: 'center'}} xs={2}  key={m._id}>
                       <Card.Img className='movieCard' variant='top' src={m.ImagePath} />
                       <Card.Body>
                           <Card.Title className='movie-card-title'>{m.Title}
