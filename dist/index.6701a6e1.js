@@ -22879,12 +22879,12 @@ class MainView extends _reactDefault.default.Component {
                                         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             className: "main-view"
                                         }));
-                                        return movies.map((item)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        return movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                                 md: 3,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                                                    movie: item
+                                                    movie: movie
                                                 })
-                                            }, item._id)
+                                            }, movie._id)
                                         );
                                     },
                                     __source: {
@@ -23026,7 +23026,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/KinoNoirLogo.png":"cqMek","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","../navbar/navbar":"63yS7","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -40528,7 +40528,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","axios":"iYoWk"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41229,16 +41229,16 @@ class FaveMoviesView extends _reactDefault.default.Component {
             console.log(error);
         });
     };
-    handleUnfavorite = ()=>{
-        const { movies  } = this.props;
-        const username = localStorage.getItem('user');
+    deleteFavorite = ()=>{
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete(`https://kino-noir.herokuapp.com/users/${username}/movies/${movies._id}`, {
+        const Username = localStorage.getItem('user');
+        const { user , FavoriteMovie  } = this.state;
+        const { movies  } = this.props;
+        _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(MovieID)`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            alert(`Movie added to Favorites`);
             console.log(response);
         }).catch(function(error) {
             console.log(error);
@@ -41253,13 +41253,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                     className: "FaveMovie",
                     __source: {
                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                        lineNumber: 75
+                        lineNumber: 74
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                            lineNumber: 76
+                            lineNumber: 75
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41273,14 +41273,14 @@ class FaveMoviesView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                lineNumber: 78
+                                lineNumber: 77
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 80
+                                        lineNumber: 79
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41294,7 +41294,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 81
+                                            lineNumber: 80
                                         },
                                         __self: this
                                     })
@@ -41302,13 +41302,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 83
+                                        lineNumber: 82
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 84
+                                            lineNumber: 83
                                         },
                                         __self: this,
                                         children: "Favorite Movies"
@@ -41317,20 +41317,20 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 86
+                                        lineNumber: 85
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 87
+                                                lineNumber: 86
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                                 __source: {
                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                    lineNumber: 89
+                                                    lineNumber: 88
                                                 },
                                                 __self: this,
                                                 children: "You have no favorite movies"
@@ -41339,7 +41339,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 91
+                                                lineNumber: 90
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length > 0 && movies.map((m)=>{
@@ -41347,7 +41347,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                 )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                     __source: {
                                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                        lineNumber: 96
+                                                        lineNumber: 95
                                                     },
                                                     __self: this,
                                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41362,7 +41362,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                         xs: 2,
                                                         __source: {
                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                            lineNumber: 98
+                                                            lineNumber: 97
                                                         },
                                                         __self: this,
                                                         children: [
@@ -41372,7 +41372,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                 src: m.ImagePath,
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 99
+                                                                    lineNumber: 98
                                                                 },
                                                                 __self: this
                                                             }),
@@ -41382,10 +41382,10 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                 },
                                                                 variant: "outline-success",
                                                                 type: "submit",
-                                                                onClick: this.handleUnfavorite,
+                                                                onClick: this.deleteFavorite,
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 101
+                                                                    lineNumber: 100
                                                                 },
                                                                 __self: this,
                                                                 children: "Remove from Favorites"
@@ -41411,7 +41411,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/KinoNoirLogo.png":"cqMek","../../img/favorites-icon.png":"faWu1","file-loader":"hlXAR","./user-delete-view":"lDCvg"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./user-delete-view":"lDCvg","file-loader":"hlXAR","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"hlXAR":[function(require,module,exports) {
@@ -45918,8 +45918,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"c1LuA","./lib/_stream_writable.js":"14IMz","./lib/_stream_duplex.js":"6Qn9N","./lib/_stream_transform.js":"8ph77","./lib/_stream_passthrough.js":"drXaO","./lib/internal/streams/end-of-stream.js":"3h35a","./lib/internal/streams/pipeline.js":"4AtC7"}],"c1LuA":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -47676,8 +47676,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"c1LuA","./_stream_writable":"14IMz","inherits":"fjm9h"}],"14IMz":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -53125,8 +53125,8 @@ module.exports = function(iterations, keylen) {
 };
 
 },{}],"9ipfj":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 var defaultEncoding;
 /* istanbul ignore next */ if (global.process && global.process.browser) defaultEncoding = 'utf-8';
 else if (global.process && global.process.version) {
@@ -62578,8 +62578,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"1LQMq","./_stream_writable":"NavxL","inherits":"fjm9h"}],"NavxL":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a

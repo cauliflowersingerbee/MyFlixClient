@@ -119,9 +119,9 @@ export class MainView extends React.Component {
             </Col>
              
              if (movies.length === 0) return <div className="main-view" />;
-             return movies.map(item => (
-               <Col md={3} key={item._id}>
-                 <MovieCard movie={item} />
+             return movies.map(movie => (
+               <Col md={3} key={movie._id}>
+                 <MovieCard movie={movie} />
                </Col>
              ))
            }} />
@@ -174,7 +174,7 @@ export class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              return <ProfileView history={history} movies={movies} user={user} />;
+              return <ProfileView history={history} movies={movies} user={user}/>;
             }}
           />
         </Row>

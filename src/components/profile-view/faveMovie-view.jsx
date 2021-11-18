@@ -42,28 +42,27 @@ export class FaveMoviesView extends React.Component {
           console.log(error);
         })
     };
-     
+    
 
-   handleUnfavorite= () => {
-
-    const { movies } = this.props;
-    const username = localStorage.getItem('user');
+    deleteFavorite = () => {
     const token = localStorage.getItem('token');
+    const Username = localStorage.getItem('user');
+    const {user, FavoriteMovie} = this.state;
+    const {movies} = this.props;
+    
 
-    axios.delete(`https://kino-noir.herokuapp.com/users/${username}/movies/${movies._id}`, {
-        headers: { Authorization: `Bearer ${token}` }
+    axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(MovieID)`, {
+      headers: { Authorization: `Bearer ${token}` }
     })
-        .then((response) => {
-          alert(`Movie added to Favorites`)
-          console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-};
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+    })
+  }
 
-
-
+ 
 
   render () {
 
@@ -98,7 +97,7 @@ export class FaveMoviesView extends React.Component {
                             <Card style={{ width: '13rem', marginTop: '2rem', marginBottom: '1rem', height: '8rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
                               <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
 
-                              <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.handleUnfavorite}>Remove from Favorites</Button>
+                              <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
                               
                             </Card>
                     </div> 
