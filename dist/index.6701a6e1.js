@@ -95886,7 +95886,7 @@ class NavBarView extends _reactDefault.default.Component {
             variant: "light",
             fixed: "top",
             className: "navbar",
-            bg: "light",
+            bg: "bg-secondary",
             __source: {
                 fileName: "src/components/navbar/navbar.jsx",
                 lineNumber: 31

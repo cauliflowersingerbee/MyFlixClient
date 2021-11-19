@@ -17,7 +17,7 @@ body {
   flex-wrap: wrap;
 }
 .navbar {
-  box-shadow: 5px 5px 5px black;
+  color: #ffb96b;
 }
 
 a, p, .nav-item {

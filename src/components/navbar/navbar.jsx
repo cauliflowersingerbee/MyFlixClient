@@ -28,7 +28,7 @@ export class NavBarView extends React.Component {
         if (!user) return null;
 
     return (
-    <Navbar collapseOnSelect expand="lg" variant="light" fixed="top" className="navbar" bg="light">
+    <Navbar collapseOnSelect expand="lg" variant="light" fixed="top" className="navbar" bg="bg-secondary">
       <Container fluid>
         <Navbar.Brand href="/">Kino Noir</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
