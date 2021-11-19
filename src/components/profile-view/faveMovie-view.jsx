@@ -94,7 +94,7 @@ export class FaveMoviesView extends React.Component {
                     return (
                       <div>
                             
-                            <Card style={{ width: '13rem', marginTop: '2rem', marginBottom: '1rem', height: '8rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
+                            <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
                               <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
 
                               <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
