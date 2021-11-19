@@ -36,7 +36,7 @@ export class MovieView extends React.Component {
           
             <Row>
                 <Col>
-                    <Card style={{marginTop: '3rem'}}>
+                    <Card >
                       <Card.Body>
                       <div className="movie-view"> 
                         <div className="movie-poster">
@@ -50,17 +50,31 @@ export class MovieView extends React.Component {
                           <span className="label">Description: </span>
                           <span className="value">{movies.Description}</span>
                         </div>
-                        <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
+                        <Row>
+                         <Col>
+                           <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
+                        
+                           <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
+                         </Col>
+                        </Row>
+                        
                       </div>
-                      <Link to={`/directors/${movies.Director.Name}`}>
-                      <Button variant="link">Director</Button>
-                      </Link>
-
-                      <Link to={`/genres/${movies.Genre.Name}`}>
-                        <Button variant="link">Genre</Button>
-                      </Link>
-
-                      <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
+                      <div>
+                        <Row>
+                          <Col>
+                            <Link to={`/directors/${movies.Director.Name}`}>
+                              <Button variant="link">Director</Button>
+                            </Link>
+                         
+                             <Link to={`/genres/${movies.Genre.Name}`}>
+                              <Button variant="link">Genre</Button>
+                             </Link>
+                          </Col>
+                        </Row>
+                      </div>
+                     
+                      
+                     
 
 
 

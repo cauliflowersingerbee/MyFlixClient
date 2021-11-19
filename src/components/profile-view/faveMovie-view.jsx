@@ -51,7 +51,7 @@ export class FaveMoviesView extends React.Component {
     const {movies} = this.props;
     
 
-    axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(MovieID)`, {
+    axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(movie._id)`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {
