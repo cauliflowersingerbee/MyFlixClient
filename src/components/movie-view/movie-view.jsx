@@ -36,9 +36,9 @@ export class MovieView extends React.Component {
           
             <Row>
                 <Col>
-                    <Card >
+                    <Card style={{marginTop: '3rem'}}>
                       <Card.Body>
-                      <div className="movie-view">
+                      <div className="movie-view"> 
                         <div className="movie-poster">
                           <img variant="top" src={movies.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>

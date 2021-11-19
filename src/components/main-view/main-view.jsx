@@ -108,7 +108,7 @@ export class MainView extends React.Component {
     return (
 
         <Router>
-           <NavBarView user={user} />
+           <NavBarView user={user} style={{marginBottom: '5rem'}}/>
 
          <div>
         <Container>
