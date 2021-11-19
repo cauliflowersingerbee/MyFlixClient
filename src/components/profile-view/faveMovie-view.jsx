@@ -24,7 +24,7 @@ export class FaveMoviesView extends React.Component {
     const Username = localStorage.getItem('user');
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
-    const { movies } = this.props
+    const { movies } = this.props;
     
 
     
@@ -33,7 +33,6 @@ export class FaveMoviesView extends React.Component {
       })
         .then((response) => {
           this.setState({
-            user : response.data,
             FavoriteMovie : response.data.FavoriteMovie
           });
           console.log(response.data.FavoriteMovie)
@@ -47,11 +46,14 @@ export class FaveMoviesView extends React.Component {
     deleteFavorite = () => {
     const token = localStorage.getItem('token');
     const Username = localStorage.getItem('user');
-    const {user, FavoriteMovie} = this.state;
+  
     const {movies} = this.props;
     
+    this.componentDidMount();
+    
+    const movie = movies.find(m => m._id === this.state);
 
-    axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(movie._id)`, {
+    axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {

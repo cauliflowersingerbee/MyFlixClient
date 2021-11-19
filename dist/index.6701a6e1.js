@@ -41266,7 +41266,6 @@ class FaveMoviesView extends _reactDefault.default.Component {
             }
         }).then((response)=>{
             this.setState({
-                user: response.data,
                 FavoriteMovie: response.data.FavoriteMovie
             });
             console.log(response.data.FavoriteMovie);
@@ -41277,9 +41276,11 @@ class FaveMoviesView extends _reactDefault.default.Component {
     deleteFavorite = ()=>{
         const token = localStorage.getItem('token');
         const Username = localStorage.getItem('user');
-        const { user , FavoriteMovie  } = this.state;
         const { movies  } = this.props;
-        _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/$(movie._id)`, {
+        this.componentDidMount();
+        const movie = movies.find((m)=>m._id === this.state
+        );
+        _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -41298,13 +41299,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                     className: "FaveMovie",
                     __source: {
                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                        lineNumber: 74
+                        lineNumber: 76
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                            lineNumber: 75
+                            lineNumber: 77
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41318,14 +41319,14 @@ class FaveMoviesView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                lineNumber: 77
+                                lineNumber: 79
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 79
+                                        lineNumber: 81
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41339,7 +41340,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 80
+                                            lineNumber: 82
                                         },
                                         __self: this
                                     })
@@ -41347,13 +41348,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 82
+                                        lineNumber: 84
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 83
+                                            lineNumber: 85
                                         },
                                         __self: this,
                                         children: "Favorite Movies"
@@ -41362,20 +41363,20 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 85
+                                        lineNumber: 87
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 86
+                                                lineNumber: 88
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                                 __source: {
                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                    lineNumber: 88
+                                                    lineNumber: 90
                                                 },
                                                 __self: this,
                                                 children: "You have no favorite movies"
@@ -41384,7 +41385,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 90
+                                                lineNumber: 92
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length > 0 && movies.map((m)=>{
@@ -41392,7 +41393,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                 )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                     __source: {
                                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                        lineNumber: 95
+                                                        lineNumber: 97
                                                     },
                                                     __self: this,
                                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41407,7 +41408,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                         xs: 2,
                                                         __source: {
                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                            lineNumber: 97
+                                                            lineNumber: 99
                                                         },
                                                         __self: this,
                                                         children: [
@@ -41417,7 +41418,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                 src: m.ImagePath,
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 98
+                                                                    lineNumber: 100
                                                                 },
                                                                 __self: this
                                                             }),
@@ -41430,7 +41431,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                 onClick: this.deleteFavorite,
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 100
+                                                                    lineNumber: 102
                                                                 },
                                                                 __self: this,
                                                                 children: "Remove from Favorites"
