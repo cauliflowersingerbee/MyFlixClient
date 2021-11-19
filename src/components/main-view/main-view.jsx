@@ -137,7 +137,7 @@ export class MainView extends React.Component {
             </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView movies={movies.find(m => movies._id === match.params._id)} onBackClick={() => history.goBack()} />
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
             </Col>
           }} />
 
@@ -163,7 +163,7 @@ export class MainView extends React.Component {
           }
           } />
 
-          <Route exact path="/users/:username"
+          <Route exact path="/users/:Username"
             render={({ history }) => {
               if (!user)
                 return (
@@ -174,7 +174,7 @@ export class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              return <ProfileView history={history} movies={movies} user={user}/>;
+              return <ProfileView user={user} onBackClick={() => history.goBack()}/>;
             }}
           />
         </Row>

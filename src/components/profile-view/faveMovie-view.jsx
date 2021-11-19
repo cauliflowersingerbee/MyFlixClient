@@ -25,6 +25,7 @@ export class FaveMoviesView extends React.Component {
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
     const { movies } = this.props;
+
     
 
     
@@ -48,11 +49,11 @@ export class FaveMoviesView extends React.Component {
                const token = localStorage.getItem('token');
       const Username = localStorage.getItem('user');
       const { FavoriteMovie } = this.state;
-      const {movies} = this.props;
+      const {movie} = this.props;
     
       
         
-          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${FavoriteMovie}`, {
+          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
             headers: { Authorization: `Bearer ${token}` }
           })
             .then((response) => {
@@ -71,9 +72,9 @@ export class FaveMoviesView extends React.Component {
  
 
   render () {
-
+    const { onBackClick } = this.props;
   const { FavoriteMovie } = this.state;
-  const { movies } = this.props;
+  const { movie } = this.props;
   
   return (
   <>
@@ -95,47 +96,21 @@ export class FaveMoviesView extends React.Component {
                 </div>
                  <div>
                  {FavoriteMovie.length > 0 &&
-                  (movies.map((m) => {
-                    if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
-                    return (
-                      <div>
-                            
-                            <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
-                              <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
 
-                              <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
-                              
-                            </Card>
-                    </div> 
-                        );
-                      }
-                    }))
+                  <div className="favorite-movies">
+                    {FavoriteMovie.map(fav => (
+                        <div md={3} key={fav._id}>
+                            <FavoriteMovie key={fav._id} movie={fav} deleteFav={this.deleteFavorite} />
+                        </div>
+                    ))}
+                </div>
                     }
                  </div>
-         
-           
-
-                           
-                
-
-            </Row>
-
-          
-        
-
-
-
-
-        
-          
+            </Row>  
       </Card>
-        
-        
-
     </Row>
     </div>
   </>
-
   );
  };
 };

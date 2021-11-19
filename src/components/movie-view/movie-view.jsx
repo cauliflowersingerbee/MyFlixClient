@@ -13,10 +13,10 @@ export class MovieView extends React.Component {
     e.preventDefault();
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-    const { movies } = this.props;
+    const { movie } = this.props;
 
   
-    axios.post(`https://kino-noir.herokuapp.com/users/${username}/movies/${movies._id}`, {}, {
+    axios.post(`https://kino-noir.herokuapp.com/users/${username}/movies/${movie._id}`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -29,7 +29,7 @@ export class MovieView extends React.Component {
   };
 
     render() {
-      const { movies, onBackClick } = this.props;
+      const { movie, onBackClick } = this.props;
   
       return (
         <Container>
@@ -40,15 +40,15 @@ export class MovieView extends React.Component {
                       <Card.Body>
                       <div className="movie-view"> 
                         <div className="movie-poster">
-                          <img variant="top" src={movies.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
+                          <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>
                         <div className="movie-title">
                           <span className="label">Title: </span>
-                          <span className="value">{movies.Title}</span>
+                          <span className="value">{movie.Title}</span>
                         </div>
                         <div className="movie-description">
                           <span className="label">Description: </span>
-                          <span className="value">{movies.Description}</span>
+                          <span className="value">{movie.Description}</span>
                         </div>
                         <Row>
                          <Col>
@@ -62,11 +62,11 @@ export class MovieView extends React.Component {
                       <div>
                         <Row>
                           <Col>
-                            <Link to={`/directors/${movies.Director.Name}`}>
+                            <Link to={`/directors/${movie.Director.Name}`}>
                               <Button variant="link">Director</Button>
                             </Link>
                          
-                             <Link to={`/genres/${movies.Genre.Name}`}>
+                             <Link to={`/genres/${movie.Genre.Name}`}>
                               <Button variant="link">Genre</Button>
                              </Link>
                           </Col>
@@ -88,7 +88,7 @@ export class MovieView extends React.Component {
   }
 
   MovieView.propTypes = {
-    movies: PropTypes.shape({
+    movie: PropTypes.shape({
       Title: PropTypes.string,
       Description: PropTypes.string.isRequired,
       ImagePath: PropTypes.string.isRequired
