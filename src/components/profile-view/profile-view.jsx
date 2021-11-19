@@ -39,7 +39,7 @@ export class ProfileView extends React.Component {
   
   return <>
   <Container>
-  <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center', marginTop: '5rem'}}>
+  <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center', marginTop: '3rem'}}>
   <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', float: left}}/>
   <h2> Welcome {user}! </h2>
   </Row>

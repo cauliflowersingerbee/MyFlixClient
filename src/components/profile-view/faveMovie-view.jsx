@@ -74,7 +74,7 @@ export class FaveMoviesView extends React.Component {
   <div className='FaveMovie'>
     <Row>
     
-    <Card style={{ width: '20rem', marginTop: '3rem', marginBottom: '1rem', height: '40rem', alignItems: 'center'}} xs={2}>
+    <Card style={{ width: '20rem', marginTop: '0.5rem', marginBottom: '1rem', height: '40rem', alignItems: 'center'}} xs={2}>
          
             <Row>
               <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem', marginBottom: '2rem'}}/>
