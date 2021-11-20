@@ -69,7 +69,7 @@ export class FaveMoviesView extends React.Component {
   <div className='FaveMovie'>
     <Row>
     
-    <Card style={{ width: '20rem', marginTop: '0.5rem', marginBottom: '1rem', height: '40rem', alignItems: 'center'}} xs={2}>
+    <Card style={{ width: '20rem', marginTop: '0.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center'}} xs={2}>
          
             <Row>
               <img src={faveIcon} alt="Kino Noir favorite movie icon" style={{height: '8rem', width: '8rem', marginTop: '2rem', marginBottom: '2rem'}}/>
@@ -93,16 +93,16 @@ export class FaveMoviesView extends React.Component {
 
                           return (
                             <div>
-                              <Row>
-                                  <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
+                              <Row >
+                                  <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
+                                    <Card.Header>{movie.Title}</Card.Header>
                                     <Card.Img className='movie-card' variant='top' src={movie.ImagePath} />
                                     <Card.Body>
-                                      <Card.Title className="movie-card-title">
-                                        {movie.Title}
-                                      </Card.Title>
+                                      
                                       <Button className='movie-card' size="sm" style={{marginTop: '2rem', }} variant="outline-success" value="movie._id" type="submit" onClick={()=>this.deleteFavorite(movie)}>Remove from Favorites</Button>
                                       </Card.Body>
                                   </Card>
+                                  
                                   </Row>
                           </div> 
                               );
