@@ -24,12 +24,7 @@ export class FaveMoviesView extends React.Component {
     const Username = localStorage.getItem('user');
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
-    const { movies } = this.props;
-
-    
-
-    
-  
+   
       axios.get(url, {headers: { Authorization: `Bearer ${token}` }
       })
         .then((response) => {
@@ -46,35 +41,36 @@ export class FaveMoviesView extends React.Component {
 
     deleteFavorite = () => {
         
-               const token = localStorage.getItem('token');
+      const token = localStorage.getItem('token');
       const Username = localStorage.getItem('user');
+<<<<<<< Updated upstream
+      
+          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+=======
       const { FavoriteMovie } = this.state;
-      const {movie} = this.props;
+    
     
       
         
-          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/` + (id), {
+>>>>>>> Stashed changes
             headers: { Authorization: `Bearer ${token}` }
           })
             .then((response) => {
+              alert('Movie removed from favorites');
               console.log(response);
             })
             .catch(function (error) {
               console.log(error);
+              console.log(movie);
           })
-        
-        
-      
     };
-  
-
-
  
 
   render () {
-    const { onBackClick } = this.props;
+
   const { FavoriteMovie } = this.state;
-  const { movie } = this.props;
+  const { movies } = this.props;
   
   return (
   <>
@@ -96,21 +92,77 @@ export class FaveMoviesView extends React.Component {
                 </div>
                  <div>
                  {FavoriteMovie.length > 0 &&
+<<<<<<< Updated upstream
+                   (movies.map((movie) => {
+                    if (
+                      movie._id ===
+                      favoriteMovies.find((fav) => fav === movie._id)
+                    ) 
+                    {
 
-                  <div className="favorite-movies">
-                    {FavoriteMovie.map(fav => (
-                        <div md={3} key={fav._id}>
-                            <FavoriteMovie key={fav._id} movie={fav} deleteFav={this.deleteFavorite} />
-                        </div>
-                    ))}
-                </div>
+                      return (
+                         <div>
+                               <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
+                                 <Card.Img className='movie-card' variant='top' src={movie.ImagePath} />
+                                 <Card.Body>
+                                   <Card.Title className="movie-card-title">
+                                     {movie.Title}
+                                   </Card.Title>
+                                   <Button style={{marginTop: '2rem', }} variant="outline-success" value="movie._id" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
+                                   </Card.Body>
+                               </Card>
+                       </div> 
+                           );
+                         }
+                    }))
+=======
+                 
+                 (movies.map((m) => {
+                  if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
+                  return (
+                    <div>
+                          
+                          <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
+                            <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
+              
+                            <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
+                            
+                          </Card>
+                    </div> 
+                      );
+>>>>>>> Stashed changes
                     }
+                  }))
+                }
                  </div>
-            </Row>  
+<<<<<<< Updated upstream
+            </Row>
+=======
+         
+               
+
+                           
+                
+
+            </Row>
+
+          
+        
+
+
+
+
+        
+          
+>>>>>>> Stashed changes
       </Card>
+        
+        
+
     </Row>
     </div>
   </>
+
   );
  };
 };

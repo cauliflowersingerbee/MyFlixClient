@@ -23004,8 +23004,15 @@ class MainView extends _reactDefault.default.Component {
                                             className: "main-view"
                                         }));
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                            movies: movies,
+<<<<<<< Updated upstream
+                                            user: user
+=======
+                                            movie: movies.find((m)=>m._id === match.params.movieId
+                                            ),
                                             user: user,
                                             onBackClick: ()=>history.goBack()
+>>>>>>> Stashed changes
                                         }));
                                     },
                                     __source: {
@@ -23028,7 +23035,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","../navbar/navbar":"63yS7","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../../img/KinoNoirLogo.png":"cqMek","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -40572,7 +40579,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","axios":"iYoWk"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41258,7 +41265,6 @@ class FaveMoviesView extends _reactDefault.default.Component {
         const Username = localStorage.getItem('user');
         const url = `https://kino-noir.herokuapp.com/users/${Username}`;
         const token = localStorage.getItem('token');
-        const { movies  } = this.props;
         _axiosDefault.default.get(url, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -41275,35 +41281,47 @@ class FaveMoviesView extends _reactDefault.default.Component {
     deleteFavorite = ()=>{
         const token = localStorage.getItem('token');
         const Username = localStorage.getItem('user');
-        const { FavoriteMovie  } = this.state;
-        const { movie  } = this.props;
+<<<<<<< Updated upstream
         _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+=======
+        const { FavoriteMovie  } = this.state;
+        _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/` + id, {
+>>>>>>> Stashed changes
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
+            alert('Movie removed from favorites');
             console.log(response);
         }).catch(function(error) {
             console.log(error);
+            console.log(movie);
         });
     };
     render() {
-        const { onBackClick  } = this.props;
         const { FavoriteMovie  } = this.state;
-        const { movie  } = this.props;
+        const { movies  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     className: "FaveMovie",
                     __source: {
                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                        lineNumber: 81
+<<<<<<< Updated upstream
+                        lineNumber: 66
+=======
+                        lineNumber: 83
+>>>>>>> Stashed changes
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                            lineNumber: 82
+<<<<<<< Updated upstream
+                            lineNumber: 67
+=======
+                            lineNumber: 84
+>>>>>>> Stashed changes
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41317,14 +41335,22 @@ class FaveMoviesView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                lineNumber: 84
+<<<<<<< Updated upstream
+                                lineNumber: 69
+=======
+                                lineNumber: 86
+>>>>>>> Stashed changes
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 86
+<<<<<<< Updated upstream
+                                        lineNumber: 71
+=======
+                                        lineNumber: 88
+>>>>>>> Stashed changes
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41338,7 +41364,11 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 87
+<<<<<<< Updated upstream
+                                            lineNumber: 72
+=======
+                                            lineNumber: 89
+>>>>>>> Stashed changes
                                         },
                                         __self: this
                                     })
@@ -41346,13 +41376,21 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 89
+<<<<<<< Updated upstream
+                                        lineNumber: 74
+=======
+                                        lineNumber: 91
+>>>>>>> Stashed changes
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                            lineNumber: 90
+<<<<<<< Updated upstream
+                                            lineNumber: 75
+=======
+                                            lineNumber: 92
+>>>>>>> Stashed changes
                                         },
                                         __self: this,
                                         children: "Favorite Movies"
@@ -41361,20 +41399,32 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                        lineNumber: 92
+<<<<<<< Updated upstream
+                                        lineNumber: 77
+=======
+                                        lineNumber: 94
+>>>>>>> Stashed changes
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 93
+<<<<<<< Updated upstream
+                                                lineNumber: 78
+=======
+                                                lineNumber: 95
+>>>>>>> Stashed changes
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                                 __source: {
                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                    lineNumber: 95
+<<<<<<< Updated upstream
+                                                    lineNumber: 80
+=======
+                                                    lineNumber: 97
+>>>>>>> Stashed changes
                                                 },
                                                 __self: this,
                                                 children: "You have no favorite movies"
@@ -41383,34 +41433,121 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                lineNumber: 97
+<<<<<<< Updated upstream
+                                                lineNumber: 82
                                             },
                                             __self: this,
-                                            children: FavoriteMovie.length > 0 && /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                className: "favorite-movies",
-                                                __source: {
-                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                    lineNumber: 100
-                                                },
-                                                __self: this,
-                                                children: FavoriteMovie.map((fav)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                        md: 3,
+                                            children: FavoriteMovie.length > 0 && movies.map((movie)=>{
+                                                if (movie._id === favoriteMovies.find((fav)=>fav === movie._id
+                                                )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                    __source: {
+                                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                        lineNumber: 92
+=======
+                                                lineNumber: 99
+                                            },
+                                            __self: this,
+                                            children: FavoriteMovie.length > 0 && movies.map((m)=>{
+                                                if (m._id === FavoriteMovie.find((fave)=>fave === m._id
+                                                )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                    __source: {
+                                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                        lineNumber: 105
+>>>>>>> Stashed changes
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                                                        style: {
+                                                            width: '15rem',
+                                                            marginTop: '2rem',
+                                                            marginBottom: '1rem',
+                                                            height: '11rem',
+                                                            alignItems: 'center',
+                                                            padding: '1rem'
+                                                        },
+                                                        xs: 2,
                                                         __source: {
                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                            lineNumber: 102
+<<<<<<< Updated upstream
+                                                            lineNumber: 93
+=======
+                                                            lineNumber: 107
+>>>>>>> Stashed changes
                                                         },
                                                         __self: this,
-                                                        children: /*#__PURE__*/ _jsxRuntime.jsx(FavoriteMovie, {
-                                                            movie: fav,
-                                                            deleteFav: this.deleteFavorite,
-                                                            __source: {
-                                                                fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                lineNumber: 103
-                                                            },
-                                                            __self: this
-                                                        }, fav._id)
-                                                    }, fav._id)
-                                                )
+                                                        children: [
+                                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
+                                                                className: "movie-card",
+                                                                variant: "top",
+<<<<<<< Updated upstream
+                                                                src: movie.ImagePath,
+                                                                __source: {
+                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                    lineNumber: 94
+                                                                },
+                                                                __self: this
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+                                                                __source: {
+                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                    lineNumber: 95
+                                                                },
+                                                                __self: this,
+                                                                children: [
+                                                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                                                        className: "movie-card-title",
+                                                                        __source: {
+                                                                            fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                            lineNumber: 96
+                                                                        },
+                                                                        __self: this,
+                                                                        children: movie.Title
+                                                                    }),
+                                                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                                                        style: {
+                                                                            marginTop: '2rem'
+                                                                        },
+                                                                        variant: "outline-success",
+                                                                        value: "movie._id",
+                                                                        type: "submit",
+                                                                        onClick: this.deleteFavorite,
+                                                                        __source: {
+                                                                            fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                            lineNumber: 99
+                                                                        },
+                                                                        __self: this,
+                                                                        children: "Remove from Favorites"
+                                                                    })
+                                                                ]
+                                                            })
+                                                        ]
+                                                    }, movie._id)
+=======
+                                                                src: m.ImagePath,
+                                                                __source: {
+                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                    lineNumber: 108
+                                                                },
+                                                                __self: this
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                                                style: {
+                                                                    marginTop: '2rem'
+                                                                },
+                                                                variant: "outline-success",
+                                                                type: "submit",
+                                                                onClick: this.deleteFavorite,
+                                                                __source: {
+                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
+                                                                    lineNumber: 110
+                                                                },
+                                                                __self: this,
+                                                                children: "Remove from Favorites"
+                                                            })
+                                                        ]
+                                                    }, m._id)
+>>>>>>> Stashed changes
+                                                }));
                                             })
                                         })
                                     ]
@@ -41429,7 +41566,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","./user-delete-view":"lDCvg","file-loader":"hlXAR","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"faWu1":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/LoginImg.jpg":"6elRi","../../img/KinoNoirLogo.png":"cqMek","axios":"iYoWk","react-router-dom":"cpyQW","../../img/favorites-icon.png":"faWu1","file-loader":"hlXAR","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","./user-delete-view":"lDCvg"}],"faWu1":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "favorites-icon.e9848854.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"hlXAR":[function(require,module,exports) {
@@ -44191,8 +44328,8 @@ exports.constants = {
 };
 
 },{"randombytes":"e0O39","create-hash":"iuV6a","create-hmac":"1k92p","browserify-sign/algos":"5WqGl","pbkdf2":"7nSe1","browserify-cipher":"aIcOd","diffie-hellman":"fCobK","browserify-sign":"fJN3l","create-ecdh":"kXJeW","public-encrypt":"l67mP","randomfill":"bCPsL"}],"e0O39":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 'use strict';
 // limit of Crypto.getRandomValues()
 // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
@@ -45936,8 +46073,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"c1LuA","./lib/_stream_writable.js":"14IMz","./lib/_stream_duplex.js":"6Qn9N","./lib/_stream_transform.js":"8ph77","./lib/_stream_passthrough.js":"drXaO","./lib/internal/streams/end-of-stream.js":"3h35a","./lib/internal/streams/pipeline.js":"4AtC7"}],"c1LuA":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -50456,8 +50593,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"5jXhY","./lib/_stream_writable.js":"lNfHu","./lib/_stream_duplex.js":"fBskt","./lib/_stream_transform.js":"ltVi8","./lib/_stream_passthrough.js":"2gWfD","./lib/internal/streams/end-of-stream.js":"dKH0m","./lib/internal/streams/pipeline.js":"cabht"}],"5jXhY":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -51856,8 +51993,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"5jXhY","./_stream_writable":"lNfHu","inherits":"fjm9h"}],"lNfHu":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -53143,8 +53280,8 @@ module.exports = function(iterations, keylen) {
 };
 
 },{}],"9ipfj":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 var defaultEncoding;
 /* istanbul ignore next */ if (global.process && global.process.browser) defaultEncoding = 'utf-8';
 else if (global.process && global.process.version) {
@@ -61196,8 +61333,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"1LQMq","./lib/_stream_writable.js":"NavxL","./lib/_stream_duplex.js":"6DuDV","./lib/_stream_transform.js":"7CK1j","./lib/_stream_passthrough.js":"jY8Ll","./lib/internal/streams/end-of-stream.js":"hWqfZ","./lib/internal/streams/pipeline.js":"1tzau"}],"1LQMq":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -62596,8 +62733,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"1LQMq","./_stream_writable":"NavxL","inherits":"fjm9h"}],"NavxL":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
