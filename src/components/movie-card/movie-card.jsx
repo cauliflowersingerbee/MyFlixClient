@@ -12,8 +12,9 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card>
-        <Card.Img variant="top" src={movie.ImagePath} />
+      <>
+      <Card className='movie-card' style={{marginTop: '5rem'}}>
+        <Card.Img variant="top" src={movie.ImagePath}/>
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
@@ -22,6 +23,7 @@ export class MovieCard extends React.Component {
           </Link>
         </Card.Body>
       </Card>
+      </>
     );
   }
 }
@@ -31,6 +33,6 @@ MovieCard.propTypes = {
     Title: PropTypes.string,
     Description: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  }).isRequired, 
+  
 };

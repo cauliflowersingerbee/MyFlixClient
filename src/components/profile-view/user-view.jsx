@@ -9,41 +9,33 @@ import { Link } from "react-router-dom";
 
 export class UserView extends React.Component {
 
-  constructor() {
-    super();
-
-        this.state = {
-          user
-        }
-   }
-
-// get user 
-   getUser(token) {
-    const username = localStorage.getItem('user');
-    const data =  response.data
-    
-    axios.get(`https://kino-noir.herokuapp.com/users/${username}`, {
-    headers: { Authorization: `Bearer ${token}` },
+  // get user method
+  getUser(token) {
+    const user = localStorage.getItem('user');
+    axios.get(`https://kino-noir.herokuapp.com/users/${user}`, {
+      headers: { Authorization: `Bearer ${token}` },
     })
-      .then((response) => {
-        this.setState({ data });
-      })
-      .catch(function (error) {
-        console.log(error);
+    .then((response) => {
+      this.setState({
+        Username: response.data.Username,
+        Password: response.data.Password,
+        Email: response.data.Email,
+        Birthday: response.data.Birthday,
+        FavoriteMovies: response.data.FavoriteMovies,
       });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render() {
-    const { user } = this.state;
-    const { data } =  response.data
+    const data = response.data;
+    return <h1> 'Your user details are:' + ' ' + {data} </h1>
 
-    if (user === null) return <Col>
-    <h1>No such user!</h1>
-    </Col>;
-    return <Col>
-    <h1> Your user details are: </h1>
-         { data }
-    </Col>
+
+        
+
    }
 
 }

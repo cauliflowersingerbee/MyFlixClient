@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
-import logo from '../../img/KinoNoirLogo.png';
+import settingsIcon from '../../img/settings-icon-img.png';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { LoginView } from '../login-view/login-view';
@@ -10,92 +10,125 @@ import { LoginView } from '../login-view/login-view';
 
 export class UserUpdateView extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      username: '',
+      password: '',
+      email: '',
+      birthday: ''
+     }
+  }
 
-        this.state = {
-          user: localStorage.getItem('user')
-        };
-      }
+    handleUsernameChange = e => {
+    this.setState({
+      username: e.target.value
+    });
+  }
 
-   handleUpdate = (e) => {
-    e.preventDefault();
-    console.log('this is:', this);
+    handlePasswordChange = e => {
+      this.setState({
+        password: e.target.value
+    });
+  }
+
+    handleEmailChange = e => {
+      this.setState({
+        email: e.target.value
+    });
+    }
+    handleBirthdayChange = e => {
+      this.setState({
+        birthday: e.target.value
+    });
+  }
+        
   
 
-    axios.put(`https://kino-noir.herokuapp.com/users/${username}`, {
-        headers: { Authorization: `Bearer ${token}` },
-        data: {
-          Username: setUsername(e.target.value),
-          Password: setPassword(e.target.value),
-          Email: setEmail(e.target.value),
-          Birthday: setBirthday(e.target.value)          
-          
-        },
-      })
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-        this.setState({ data });
-        alert("Account Updated");
-        
-        localStorage.setItem("user", this.state.Username);
-        window.open(`/users/${username}`, "_self");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+   handleUpdate = e => {
 
-    }  
+     alert(`${this.state.username} ${this.state.password} ${this.state.email} ${this.state.birthday}`)
+     
+     e.preventDefault()   
+    
+    const username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    
+
+    axios.put(`https://kino-noir.herokuapp.com/users/${username}`, 
+    
+    {
+        
+          username: this.state.username,
+          password: this.state.password,
+          email: this.state.email,
+          birthday: this.state.birthday        
+
+    },
+    {headers: { Authorization: `Bearer ${token}` }
+
+      })
+      .then (response => {
+        this.setState({
+          username: response.data.username,
+          password: response.data.password,
+          email: response.data.email,
+          birthday: response.data.birthday
+        });
+        localStorage.setItem('user', response.data.username);
+        alert("Account Details Updated.");
+      })
+      .catch (error => {
+        alert ('Error Updating Account')
+        console.log(error.response.data);
+      })
+  }
 
     render() {
-     
+     const { username, password, email, birthday} = this.state
+
      return (<div className="update-user">
       <Container>  
         <Row>
           <Col>
-                <Card style={{ width: '20rem', marginTop: '5rem', marginBottom: '1rem', height: '28rem'}} xs={2}>
+                <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '40rem'}} xs={2}>
                   <Card.Body>
-                    <Card.Title>Account Update</Card.Title>
-                      <Form>
+                        <div>
+                          <img src={settingsIcon} alt="Kino Noir Logo" style={{height: '8rem', width: '8rem', marginTop: '1rem', marginLeft: '2rem', marginBottom: '1rem'}}/>
+                        </div> 
+                    <Card.Title>Would you like to update your account?</Card.Title>
+                      <Form onSubmit={this.handleUpdate}>
                         <Form.Group controlId="formUsername">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control type="text" onChange={e => setUsername(e.target.value)} required
+                        <Form.Control type="text" value={username} onChange={this.handleUsernameChange} required
                           placeholder="johndoe"/>
                         </Form.Group>
 
                         <Form.Group controlId="formPassword">
                         <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" onChange={e => setPassword(e.target.value)} required minLength="6"
+                        <Form.Control type="password" value={password} onChange={this.handlePasswordChange} required minLength="6"
                           placeholder="min 8 characters"/>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
                         <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" onChange={e => setEmail(e.target.value)} required
+                        <Form.Control type="email" value={email} onChange={this.handleEmailChange} required
                           placeholder="johndoe@examplemail.com"/>
                         </Form.Group>
 
                         <Form.Group controlId="formBirthday">
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="birthday" onChange={e => setBirthday(e.target.value)} required
+                        <Form.Control type="date" value={birthday} onChange={this.handleBirthdayChange} required
                           placeholder="YYYY-MM-DD"/>
                         </Form.Group>
 
-                        <Button style={{marginTop: '1rem', }} variant="primary" type="submit" onClick={() => this.handleUpdate()}>Submit</Button>
+                        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={this.handleUpdate}>Submit</Button>
 
-                        <div>
-                          <img src={logo} alt="Kino Noir Logo" style={{height: '4rem', width: '7rem', marginTop: '0.1rem'}}/>
-                        </div> 
                               
                     </Form>  
                 </Card.Body>
               </Card>
-          </Col>
-          <Col xs={7}>
-            <div className="float-right"> 
-                <img src={img} alt="Cool woman wearing sunglasses leaning back against boat" style={{height: '100%', width: '100%', marginRight: '2rem'}}/>
-            </div>
           </Col>
         </Row>
         </Container>

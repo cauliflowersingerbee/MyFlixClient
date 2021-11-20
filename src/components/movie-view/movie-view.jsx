@@ -2,10 +2,31 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 export class MovieView extends React.Component {
 
+
+
+  addFavoriteMovie = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+    const { movie } = this.props;
+
+  
+    axios.post(`https://kino-noir.herokuapp.com/users/${username}/movies/${movie._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        alert(`Movie added to Favorites`)
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
     render() {
       const { movie, onBackClick } = this.props;
@@ -15,30 +36,42 @@ export class MovieView extends React.Component {
           
             <Row>
                 <Col>
-                    <Card>
+                    <Card >
                       <Card.Body>
-                      <div className="movie-view">
+                      <div className="movie-view"> 
                         <div className="movie-poster">
                           <img variant="top" src={movie.ImagePath} style={{ padding: '3rem' , width: '70%', marginTop: '1rem', height: '70%'}}/>
                         </div>
                         <div className="movie-title">
                           <span className="label">Title: </span>
                           <span className="value">{movie.Title}</span>
-                        </div>
+                
+                          <span>
+                          <Link to={`/directors/${movie.Director.Name}`}>
+                              <Button variant="link">Director</Button>
+                            </Link>
+                          </span>
+                            <span>
+                            <Link to={`/genres/${movie.Genre.Name}`}>
+                              <Button variant="link">Genre</Button>
+                             </Link>
+                            </span>
+                          </div>
                         <div className="movie-description">
                           <span className="label">Description: </span>
                           <span className="value">{movie.Description}</span>
                         </div>
-                        <Button style={{marginTop: '1rem'}} variant="primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
+                        <Row>
+                         <Col>
+                           <Button style={{marginTop: '1rem'}} variant="outline-primary" type="submit"  onClick={() => { onBackClick(null); }}>Back</Button>
+                           </Col>
+                           <Col>
+                           <Button style={{marginTop: '1rem', width: '10rem'}} variant="outline-danger" type="submit" onClick={this.addFavoriteMovie}>Add to Favorites</Button>
+                         </Col>
+                        
+                        </Row>
+                        
                       </div>
-                      <Link to={`/directors/${movie.Director.Name}`}>
-                      <Button variant="link">Director</Button>
-                      </Link>
-
-                      <Link to={`/genres/${movie.Genre.Name}`}>
-                        <Button variant="link">Genre</Button>
-                      </Link>
-
                       </Card.Body>
                     </Card>
               </Col>
