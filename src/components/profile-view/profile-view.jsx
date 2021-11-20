@@ -35,7 +35,7 @@ export class ProfileView extends React.Component {
 
   render () {
   const { user } = this.props;
-  const { movie } = this.props;
+  const { movies } = this.props;
   
   return <>
   <Container>
@@ -52,7 +52,7 @@ export class ProfileView extends React.Component {
     </Col>
 
     <Col xs={3}>
-      <FaveMoviesView movie={movie} user={user}/>
+      <FaveMoviesView movies={movies} user={user}/>
     </Col>
 
     <Col xs={3}>
