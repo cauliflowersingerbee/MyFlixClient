@@ -52,7 +52,7 @@ export class ProfileView extends React.Component {
     </Col>
 
     <Col xs={3}>
-      <FaveMoviesView movies={movies} user={user}/>
+      <FaveMoviesView movies={movies} user={user} />
     </Col>
 
     <Col xs={3}>

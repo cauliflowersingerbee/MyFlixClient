@@ -25,8 +25,9 @@ export class FaveMoviesView extends React.Component {
     const url = `https://kino-noir.herokuapp.com/users/${Username}`;
     const token = localStorage.getItem('token');
    
-      axios.get(url, {headers: { Authorization: `Bearer ${token}` }
-      })
+      axios
+         .get(url, {headers: { Authorization: `Bearer ${token}` }
+         })
         .then((response) => {
           this.setState({
             FavoriteMovie : response.data.FavoriteMovie
@@ -36,30 +37,31 @@ export class FaveMoviesView extends React.Component {
         .catch(function (error) {
           console.log(error);
         })
-    };
+     };
     
 
     deleteFavorite = (movie) => {
-        
+      
       const token = localStorage.getItem('token');
       const Username = localStorage.getItem('user');
       
-          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+          axios
+            .delete(`https://kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
             headers: { Authorization: `Bearer ${token}` }
-          })
+           })
             .then((response) => {
               alert('Movie removed from favorites');
               console.log(response);
             })
             .catch(function (error) {
               console.log(error);
-          })
+           })
     };
  
 
   render () {
 
-  const { FavoriteMovie } = this.state;
+  const { user, FavoriteMovie } = this.state;
   const { movies } = this.props;
   
   return (
@@ -91,15 +93,17 @@ export class FaveMoviesView extends React.Component {
 
                           return (
                             <div>
+                              <Row>
                                   <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
                                     <Card.Img className='movie-card' variant='top' src={movie.ImagePath} />
                                     <Card.Body>
                                       <Card.Title className="movie-card-title">
                                         {movie.Title}
                                       </Card.Title>
-                                      <Button className='movie-card' style={{marginTop: '2rem', }} variant="outline-success" value="movie._id" type="submit" onClick={()=>this.deleteFavorite(movie)}>Remove from Favorites</Button>
+                                      <Button className='movie-card' size="sm" style={{marginTop: '2rem', }} variant="outline-success" value="movie._id" type="submit" onClick={()=>this.deleteFavorite(movie)}>Remove from Favorites</Button>
                                       </Card.Body>
                                   </Card>
+                                  </Row>
                           </div> 
                               );
                             }
