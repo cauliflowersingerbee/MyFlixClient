@@ -23005,14 +23005,7 @@ class MainView extends _reactDefault.default.Component {
                                         }));
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
                                             movies: movies,
-<<<<<<< Updated upstream
                                             user: user
-=======
-                                            movie: movies.find((m)=>m._id === match.params.movieId
-                                            ),
-                                            user: user,
-                                            onBackClick: ()=>history.goBack()
->>>>>>> Stashed changes
                                         }));
                                     },
                                     __source: {
@@ -41281,12 +41274,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
     deleteFavorite = ()=>{
         const token = localStorage.getItem('token');
         const Username = localStorage.getItem('user');
-<<<<<<< Updated upstream
         _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
-=======
-        const { FavoriteMovie  } = this.state;
-        _axiosDefault.default.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/` + id, {
->>>>>>> Stashed changes
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -41307,21 +41295,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                     className: "FaveMovie",
                     __source: {
                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                        lineNumber: 66
-=======
-                        lineNumber: 83
->>>>>>> Stashed changes
+                        lineNumber: 68
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                            lineNumber: 67
-=======
-                            lineNumber: 84
->>>>>>> Stashed changes
+                            lineNumber: 69
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41335,22 +41315,14 @@ class FaveMoviesView extends _reactDefault.default.Component {
                             xs: 2,
                             __source: {
                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                lineNumber: 69
-=======
-                                lineNumber: 86
->>>>>>> Stashed changes
+                                lineNumber: 71
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 71
-=======
-                                        lineNumber: 88
->>>>>>> Stashed changes
+                                        lineNumber: 73
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -41364,11 +41336,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                            lineNumber: 72
-=======
-                                            lineNumber: 89
->>>>>>> Stashed changes
+                                            lineNumber: 74
                                         },
                                         __self: this
                                     })
@@ -41376,21 +41344,13 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 74
-=======
-                                        lineNumber: 91
->>>>>>> Stashed changes
+                                        lineNumber: 76
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                         __source: {
                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                            lineNumber: 75
-=======
-                                            lineNumber: 92
->>>>>>> Stashed changes
+                                            lineNumber: 77
                                         },
                                         __self: this,
                                         children: "Favorite Movies"
@@ -41399,32 +41359,20 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                        lineNumber: 77
-=======
-                                        lineNumber: 94
->>>>>>> Stashed changes
+                                        lineNumber: 79
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                                lineNumber: 78
-=======
-                                                lineNumber: 95
->>>>>>> Stashed changes
+                                                lineNumber: 80
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                                 __source: {
                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                                    lineNumber: 80
-=======
-                                                    lineNumber: 97
->>>>>>> Stashed changes
+                                                    lineNumber: 82
                                                 },
                                                 __self: this,
                                                 children: "You have no favorite movies"
@@ -41433,8 +41381,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                                lineNumber: 82
+                                                lineNumber: 84
                                             },
                                             __self: this,
                                             children: FavoriteMovie.length > 0 && movies.map((movie)=>{
@@ -41442,18 +41389,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                 )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                     __source: {
                                                         fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                        lineNumber: 92
-=======
-                                                lineNumber: 99
-                                            },
-                                            __self: this,
-                                            children: FavoriteMovie.length > 0 && movies.map((m)=>{
-                                                if (m._id === FavoriteMovie.find((fave)=>fave === m._id
-                                                )) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                    __source: {
-                                                        fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                        lineNumber: 105
->>>>>>> Stashed changes
+                                                        lineNumber: 94
                                                     },
                                                     __self: this,
                                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
@@ -41468,29 +41404,24 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                         xs: 2,
                                                         __source: {
                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-<<<<<<< Updated upstream
-                                                            lineNumber: 93
-=======
-                                                            lineNumber: 107
->>>>>>> Stashed changes
+                                                            lineNumber: 95
                                                         },
                                                         __self: this,
                                                         children: [
                                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
                                                                 className: "movie-card",
                                                                 variant: "top",
-<<<<<<< Updated upstream
                                                                 src: movie.ImagePath,
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 94
+                                                                    lineNumber: 96
                                                                 },
                                                                 __self: this
                                                             }),
                                                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                                                 __source: {
                                                                     fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 95
+                                                                    lineNumber: 97
                                                                 },
                                                                 __self: this,
                                                                 children: [
@@ -41498,7 +41429,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                         className: "movie-card-title",
                                                                         __source: {
                                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                            lineNumber: 96
+                                                                            lineNumber: 98
                                                                         },
                                                                         __self: this,
                                                                         children: movie.Title
@@ -41513,7 +41444,7 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                                         onClick: this.deleteFavorite,
                                                                         __source: {
                                                                             fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                            lineNumber: 99
+                                                                            lineNumber: 101
                                                                         },
                                                                         __self: this,
                                                                         children: "Remove from Favorites"
@@ -41522,31 +41453,6 @@ class FaveMoviesView extends _reactDefault.default.Component {
                                                             })
                                                         ]
                                                     }, movie._id)
-=======
-                                                                src: m.ImagePath,
-                                                                __source: {
-                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 108
-                                                                },
-                                                                __self: this
-                                                            }),
-                                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                                                style: {
-                                                                    marginTop: '2rem'
-                                                                },
-                                                                variant: "outline-success",
-                                                                type: "submit",
-                                                                onClick: this.deleteFavorite,
-                                                                __source: {
-                                                                    fileName: "src/components/profile-view/faveMovie-view.jsx",
-                                                                    lineNumber: 110
-                                                                },
-                                                                __self: this,
-                                                                children: "Remove from Favorites"
-                                                            })
-                                                        ]
-                                                    }, m._id)
->>>>>>> Stashed changes
                                                 }));
                                             })
                                         })
@@ -44328,8 +44234,8 @@ exports.constants = {
 };
 
 },{"randombytes":"e0O39","create-hash":"iuV6a","create-hmac":"1k92p","browserify-sign/algos":"5WqGl","pbkdf2":"7nSe1","browserify-cipher":"aIcOd","diffie-hellman":"fCobK","browserify-sign":"fJN3l","create-ecdh":"kXJeW","public-encrypt":"l67mP","randomfill":"bCPsL"}],"e0O39":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 'use strict';
 // limit of Crypto.getRandomValues()
 // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
@@ -51993,8 +51899,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"5jXhY","./_stream_writable":"lNfHu","inherits":"fjm9h"}],"lNfHu":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -53280,8 +53186,8 @@ module.exports = function(iterations, keylen) {
 };
 
 },{}],"9ipfj":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 var defaultEncoding;
 /* istanbul ignore next */ if (global.process && global.process.browser) defaultEncoding = 'utf-8';
 else if (global.process && global.process.version) {
@@ -62733,8 +62639,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"1LQMq","./_stream_writable":"NavxL","inherits":"fjm9h"}],"NavxL":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -84359,8 +84265,8 @@ function compare(a, b) {
 }
 
 },{"parse-asn1":"j8BKF","./mgf":"dPNej","./xor":"a8Ou9","bn.js":"htNGe","browserify-rsa":"eEZfA","create-hash":"iuV6a","./withPublic":"ibTFq","safe-buffer":"cby1Z"}],"bCPsL":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 'use strict';
 function oldBrowser() {
     throw new Error('secure random number generation not supported by this browser\nuse chrome, FireFox or Internet Explorer 11');

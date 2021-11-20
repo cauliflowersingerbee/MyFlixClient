@@ -43,17 +43,8 @@ export class FaveMoviesView extends React.Component {
         
       const token = localStorage.getItem('token');
       const Username = localStorage.getItem('user');
-<<<<<<< Updated upstream
       
           axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/${movie._id}`, {
-=======
-      const { FavoriteMovie } = this.state;
-    
-    
-      
-        
-          axios.delete(`https//kino-noir.herokuapp.com/users/${Username}/movies/` + (id), {
->>>>>>> Stashed changes
             headers: { Authorization: `Bearer ${token}` }
           })
             .then((response) => {
@@ -92,7 +83,6 @@ export class FaveMoviesView extends React.Component {
                 </div>
                  <div>
                  {FavoriteMovie.length > 0 &&
-<<<<<<< Updated upstream
                    (movies.map((movie) => {
                     if (
                       movie._id ===
@@ -115,46 +105,9 @@ export class FaveMoviesView extends React.Component {
                            );
                          }
                     }))
-=======
-                 
-                 (movies.map((m) => {
-                  if (m._id === FavoriteMovie.find((fave) => fave === m._id)) {
-                  return (
-                    <div>
-                          
-                          <Card style={{ width: '15rem', marginTop: '2rem', marginBottom: '1rem', height: '11rem', alignItems: 'center', padding: '1rem'}} xs={2}  key={m._id}>
-                            <Card.Img className='movie-card' variant='top' src={m.ImagePath} />
-              
-                            <Button style={{marginTop: '2rem', }} variant="outline-success" type="submit" onClick={this.deleteFavorite}>Remove from Favorites</Button>
-                            
-                          </Card>
-                    </div> 
-                      );
->>>>>>> Stashed changes
                     }
-                  }))
-                }
                  </div>
-<<<<<<< Updated upstream
             </Row>
-=======
-         
-               
-
-                           
-                
-
-            </Row>
-
-          
-        
-
-
-
-
-        
-          
->>>>>>> Stashed changes
       </Card>
         
         
