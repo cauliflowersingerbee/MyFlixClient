@@ -44237,8 +44237,8 @@ exports.constants = {
 };
 
 },{"randombytes":"e0O39","create-hash":"iuV6a","create-hmac":"1k92p","browserify-sign/algos":"5WqGl","pbkdf2":"7nSe1","browserify-cipher":"aIcOd","diffie-hellman":"fCobK","browserify-sign":"fJN3l","create-ecdh":"kXJeW","public-encrypt":"l67mP","randomfill":"bCPsL"}],"e0O39":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 'use strict';
 // limit of Crypto.getRandomValues()
 // https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
@@ -45982,8 +45982,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"c1LuA","./lib/_stream_writable.js":"14IMz","./lib/_stream_duplex.js":"6Qn9N","./lib/_stream_transform.js":"8ph77","./lib/_stream_passthrough.js":"drXaO","./lib/internal/streams/end-of-stream.js":"3h35a","./lib/internal/streams/pipeline.js":"4AtC7"}],"c1LuA":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -47740,8 +47740,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"c1LuA","./_stream_writable":"14IMz","inherits":"fjm9h"}],"14IMz":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -50502,8 +50502,8 @@ exports.finished = require('./lib/internal/streams/end-of-stream.js');
 exports.pipeline = require('./lib/internal/streams/pipeline.js');
 
 },{"./lib/_stream_readable.js":"5jXhY","./lib/_stream_writable.js":"lNfHu","./lib/_stream_duplex.js":"fBskt","./lib/_stream_transform.js":"ltVi8","./lib/_stream_passthrough.js":"2gWfD","./lib/internal/streams/end-of-stream.js":"dKH0m","./lib/internal/streams/pipeline.js":"cabht"}],"5jXhY":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -51902,8 +51902,8 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
 });
 
 },{"process":"dJFya","./_stream_readable":"5jXhY","./_stream_writable":"lNfHu","inherits":"fjm9h"}],"lNfHu":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
