@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -85,7 +85,7 @@ export class MainView extends React.Component {
     localStorage.setItem('user', authData.user.Username);
   }
 
-  
+  //upon login, next function updates `user` property in state
 
   onLoggedIn(authData) {
     console.log(authData);
