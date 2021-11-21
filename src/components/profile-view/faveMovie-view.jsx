@@ -93,7 +93,7 @@ export class FaveMoviesView extends React.Component {
                         {
 
                           return (
-                            <div>
+                            <div >
                               <Row >
                                   <Card style={{ width: '15rem', marginTop: 'o.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
                                     <Card.Header>{movie.Title}</Card.Header>
