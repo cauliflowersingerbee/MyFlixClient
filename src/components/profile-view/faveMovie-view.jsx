@@ -51,6 +51,7 @@ export class FaveMoviesView extends React.Component {
            })
             .then((response) => {
               alert('Movie removed from favorites');
+              this.componentDidMount();
               console.log(response);
             })
             .catch(function (error) {
