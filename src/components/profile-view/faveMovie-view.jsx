@@ -1,13 +1,8 @@
 import React from 'react';
-import PropTypes from "prop-types";
 import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
-import img from '../../img/LoginImg.jpg';
-import logo from '../../img/KinoNoirLogo.png';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import faveIcon from '../../img/favorites-icon.png';
-import { UserDeleteView } from './user-delete-view';
-import { name } from 'file-loader';
+
 
 
 export class FaveMoviesView extends React.Component {
@@ -87,7 +82,7 @@ export class FaveMoviesView extends React.Component {
                   {FavoriteMovie.length === 0 && 
                     <h5>You have no favorite movies</h5>}
                 </div>
-                 <div>
+                 <div key={movie._id}> 
                     {FavoriteMovie.length > 0 &&
                       (movies.map(movie => {
                         if (
@@ -97,9 +92,9 @@ export class FaveMoviesView extends React.Component {
                         {
 
                           return (
-                            <div >
+                            <div key={movie._id}>
                               <Row >
-                                  <Card style={{ width: '15rem', marginTop: 'o.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}  key={movie._id}>
+                                  <Card key={movie._id} style={{ width: '15rem', marginTop: 'o.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}>
                                     <Card.Header>{movie.Title}</Card.Header>
                                     <Card.Img className='movie-card' variant='top' src={movie.ImagePath} />
                                     <Card.Body>

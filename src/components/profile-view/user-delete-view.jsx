@@ -27,7 +27,6 @@ export class UserDeleteView extends React.Component {
     }
   }
 
-//removing user
   handleDelete= (e) => {
     e.preventDefault();
     
@@ -68,7 +67,7 @@ export class UserDeleteView extends React.Component {
           </Card.Title>
         <Row>
   
-        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => handleDelete(e)}>Delete Account</Button>
+        <Button style={{marginTop: '2rem', }} variant="primary" type="submit" onClick={(e) => this.handleDelete(e)}>Delete Account</Button>
               </Row>
         </Card>
         </Col>
