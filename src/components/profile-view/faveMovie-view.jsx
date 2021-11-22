@@ -65,7 +65,7 @@ export class FaveMoviesView extends React.Component {
   const { movies } = this.props;
   
   return (
-  <>
+  
   <div className='FaveMovie'>
     <Row>
     
@@ -82,7 +82,7 @@ export class FaveMoviesView extends React.Component {
                   {FavoriteMovie.length === 0 && 
                     <h5>You have no favorite movies</h5>}
                 </div>
-                 <div key={movie._id}> 
+                 <div>
                     {FavoriteMovie.length > 0 &&
                       (movies.map(movie => {
                         if (
@@ -94,7 +94,7 @@ export class FaveMoviesView extends React.Component {
                           return (
                             <div key={movie._id}>
                               <Row >
-                                  <Card key={movie._id} style={{ width: '15rem', marginTop: 'o.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}>
+                                  <Card style={{ width: '15rem', marginTop: 'o.5rem', marginBottom: '1rem', height: 'auto', alignItems: 'center', padding: '1rem'}} xs={2}>
                                     <Card.Header>{movie.Title}</Card.Header>
                                     <Card.Img className='movie-card' variant='top' src={movie.ImagePath} />
                                     <Card.Body>
@@ -117,7 +117,7 @@ export class FaveMoviesView extends React.Component {
 
     </Row>
     </div>
-  </>
+  
 
   );
  };

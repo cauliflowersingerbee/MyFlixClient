@@ -52,7 +52,7 @@ export class UserDeleteView extends React.Component {
 
     return (
 
-      <>
+      
       <Row>
         <Col>
         <Card style={{ width: '15rem', marginTop: '0.5rem', marginBottom: '1rem', height: '40rem', alignItems: 'center'}} xs={2}>
@@ -72,7 +72,7 @@ export class UserDeleteView extends React.Component {
         </Card>
         </Col>
       </Row>
-              </>
+              
 
    );
 

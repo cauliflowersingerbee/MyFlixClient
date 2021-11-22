@@ -31,7 +31,7 @@ export function LoginView(props) {
   
   
   return (
-    <>
+    
     <Container className="login-card">
       <Row className="justify-content-md-center"> 
       <Col xs={2}>
@@ -67,8 +67,7 @@ export function LoginView(props) {
         </Col>
           </Row>
     </Container>
-    </>
-    
+
   );
 }
 
