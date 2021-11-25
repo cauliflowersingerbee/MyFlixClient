@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-
+import { setMovies } from '../../actions/actions';
+// we haven't written this one yet
+import MoviesList from '../movies-list/movies-list';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
@@ -15,7 +17,7 @@ import { NavBarView } from '../navbar/navbar';
 
 
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
 
   constructor(props){
     super(props);
@@ -102,7 +104,8 @@ export class MainView extends React.Component {
 
   
   render() {
-    const { movies, user } = this.state;
+    const { movies} = this.props;
+    const { user } = this.state;
     
     return (
 
@@ -118,12 +121,8 @@ export class MainView extends React.Component {
             </Col>
              
              if (movies.length === 0) return <div className="main-view" />;
-             return movies.map(movie => (
-               <Col md={3} key={movie._id}>
-                 <MovieCard movie={movie} />
-               </Col>
-             ))
-           }} />
+             return <MoviesList movies={movies}/>;
+            }} />
           
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
@@ -165,4 +164,10 @@ export class MainView extends React.Component {
       </Router>
     );
   }
+}
+
+
+
+const mapStateToProps = state => {
+  return { movies: state.movies }
 }
