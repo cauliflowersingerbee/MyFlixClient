@@ -3,7 +3,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { setMovies } from '../../actions/actions';
-// we haven't written this one yet
 import MoviesList from '../movies-list/movies-list';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -171,3 +170,6 @@ class MainView extends React.Component {
 const mapStateToProps = state => {
   return { movies: state.movies }
 }
+
+
+export default connect(mapStateToProps, { setMovies } )(MainView);
