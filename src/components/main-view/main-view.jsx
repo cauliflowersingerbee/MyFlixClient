@@ -23,7 +23,6 @@ class MainView extends React.Component {
 
     this.state = {
       user: null,
-      movies: [], 
       selectedMovie: null
     }
   }
@@ -44,9 +43,7 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      this.setState({
-        movies: response.data
-      });
+      this.props.setMovies(response.data);
     })
     .catch(function (error) {
       console.log(error);
@@ -103,7 +100,7 @@ class MainView extends React.Component {
 
   
   render() {
-    const { movies} = this.props;
+    const { movies } = this.props;
     const { user } = this.state;
     
     return (
