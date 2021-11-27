@@ -945,22 +945,21 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-var _reactBootstrap = require("react-bootstrap");
 var _mainView = require("./components/main-view/main-view");
-var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _indexScss = require("./index.scss");
+var _reactBootstrap = require("react-bootstrap");
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 12
+                lineNumber: 10
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                 __source: {
                     fileName: "src/index.jsx",
-                    lineNumber: 13
+                    lineNumber: 11
                 },
                 __self: this
             })
@@ -969,7 +968,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
 }
 // Finds the root of the app
 const container = document.getElementsByClassName('app-container')[0];
-// Tells React to render app in the root DOM element
+// Tells React to render your app in the root DOM element
 _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container);
 
   $parcel$ReactRefreshHelpers$b058.postlude(module);
@@ -35505,7 +35504,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../profile-view/profile-view":"2E7Aw","react-bootstrap":"h2YVd","../navbar/navbar":"63yS7","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../movie-card/movie-card":"6EiBJ"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-view/movie-view":"ikZdr","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../movie-card/movie-card":"6EiBJ","../profile-view/profile-view":"2E7Aw","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -39718,48 +39717,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","../../img/kino-noir-logo.png":"9KG93","react-bootstrap":"h2YVd","../../img/registration-img.png":"8FZMh","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"9KG93":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"8FZMh":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
-
-},{"./helpers/bundle-url":"bS8Px"}],"i1KfJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-logo.png":"9KG93","../../img/registration-img.png":"8FZMh"}],"i1KfJ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -39879,7 +39837,48 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"jZiql"}],"054li":[function(require,module,exports) {
+},{"react-refresh/runtime":"jZiql"}],"9KG93":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-logo.20ac9161.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"bS8Px":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8FZMh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "registration-img.2bddcc4e.png";
+
+},{"./helpers/bundle-url":"bS8Px"}],"054li":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$02dd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40154,7 +40153,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","../../img/kino-noir-login-img.png":"1xjmj","../../img/kino-noir-logo.png":"9KG93","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"1xjmj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","../../img/kino-noir-login-img.png":"1xjmj","../../img/kino-noir-logo.png":"9KG93"}],"1xjmj":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kino-noir-login-img.d171f66c.png";
 
 },{"./helpers/bundle-url":"bS8Px"}],"ikZdr":[function(require,module,exports) {
@@ -40439,7 +40438,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ","axios":"iYoWk"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40717,7 +40716,111 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"2E7Aw":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"6EiBJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4249.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movie  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                className: "movie-card",
+                style: {
+                    marginTop: '5rem'
+                },
+                __source: {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 16
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
+                        variant: "top",
+                        src: movie.ImagePath,
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 18
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 19
+                                },
+                                __self: this,
+                                children: movie.Title
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 20
+                                },
+                                __self: this,
+                                children: movie.Description
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                to: `/movies/${movie._id}`,
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 21
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                    variant: "link",
+                                    __source: {
+                                        fileName: "src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 22
+                                    },
+                                    __self: this,
+                                    children: "Open"
+                                })
+                            })
+                        ]
+                    })
+                ]
+            })
+        }));
+    }
+}
+MovieCard.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Title: _propTypesDefault.default.string,
+        Description: _propTypesDefault.default.string.isRequired,
+        ImagePath: _propTypesDefault.default.string.isRequired
+    }).isRequired
+};
+
+  $parcel$ReactRefreshHelpers$4249.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"2E7Aw":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$58c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42001,110 +42104,6 @@ class NavBarView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./navbar.scss":"eqSoH","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"eqSoH":[function() {},{}],"6EiBJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4249.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
-class MovieCard extends _reactDefault.default.Component {
-    render() {
-        const { movie  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                className: "movie-card",
-                style: {
-                    marginTop: '5rem'
-                },
-                __source: {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 16
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
-                        variant: "top",
-                        src: movie.ImagePath,
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 17
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
-                        __source: {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 18
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 19
-                                },
-                                __self: this,
-                                children: movie.Title
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 20
-                                },
-                                __self: this,
-                                children: movie.Description
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                to: `/movies/${movie._id}`,
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 21
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    variant: "link",
-                                    __source: {
-                                        fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 22
-                                    },
-                                    __self: this,
-                                    children: "Open"
-                                })
-                            })
-                        ]
-                    })
-                ]
-            })
-        }));
-    }
-}
-MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
-        Title: _propTypesDefault.default.string,
-        Description: _propTypesDefault.default.string.isRequired,
-        ImagePath: _propTypesDefault.default.string.isRequired
-    }).isRequired
-};
-
-  $parcel$ReactRefreshHelpers$4249.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"jUTZ8":[function() {},{}]},["1Uwvp","dAWoV","dLPEP"], "dLPEP", "parcelRequire6ba1")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./navbar.scss":"eqSoH","@parcel/transformer-js/src/esmodule-helpers.js":"eYvCy","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"i1KfJ"}],"eqSoH":[function() {},{}],"jUTZ8":[function() {},{}]},["1Uwvp","dAWoV","dLPEP"], "dLPEP", "parcelRequire6ba1")
 
 //# sourceMappingURL=index.6701a6e1.js.map
