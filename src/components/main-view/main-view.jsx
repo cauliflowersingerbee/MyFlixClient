@@ -1,11 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { setMovies } from '../../actions/actions';
-import MoviesList from '../movies-list/movies-list';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
+import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
@@ -16,13 +14,14 @@ import { NavBarView } from '../navbar/navbar';
 
 
 
-class MainView extends React.Component {
+export class MainView extends React.Component {
 
   constructor(props){
     super(props);
 
     this.state = {
       user: null,
+      movies: [], 
       selectedMovie: null
     }
   }
@@ -43,7 +42,9 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      this.props.setMovies(response.data);
+      this.setState({
+        movies: response.data
+      });
     })
     .catch(function (error) {
       console.log(error);
@@ -100,8 +101,7 @@ class MainView extends React.Component {
 
   
   render() {
-    const { movies } = this.props;
-    const { user } = this.state;
+    const { movies, user } = this.state;
     
     return (
 
@@ -117,8 +117,12 @@ class MainView extends React.Component {
             </Col>
              
              if (movies.length === 0) return <div className="main-view" />;
-             return <MoviesList movies={movies}/>;
-            }} />
+             return movies.map(movie => (
+               <Col md={3} key={movie._id}>
+                 <MovieCard movie={movie} />
+               </Col>
+             ))
+           }} />
           
           <Route exact path="/register" render={() => {
             if (user) return <Redirect to="/" />
@@ -161,12 +165,3 @@ class MainView extends React.Component {
     );
   }
 }
-
-
-
-const mapStateToProps = state => {
-  return { movies: state.movies }
-}
-
-
-export default connect(mapStateToProps, { setMovies } )(MainView);
