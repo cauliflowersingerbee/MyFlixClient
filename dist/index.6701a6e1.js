@@ -22774,10 +22774,9 @@ var _directorView = require("../director-view/director-view");
 var _profileView = require("../profile-view/profile-view");
 var _reactBootstrap = require("react-bootstrap");
 var _navbar = require("../navbar/navbar");
-// #0
-var _actions = require("../../actions/actions");
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
+var _actions = require("../../actions/actions");
 class MainView extends _reactDefault.default.Component {
     constructor(props){
         super(props);
@@ -22852,7 +22851,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 111
+                lineNumber: 110
             },
             __self: this,
             children: [
@@ -22863,27 +22862,27 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 112
+                        lineNumber: 111
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 114
+                        lineNumber: 113
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 115
+                            lineNumber: 114
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                             className: "main-view justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 116
+                                lineNumber: 115
                             },
                             __self: this,
                             children: [
@@ -22906,7 +22905,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 117
+                                        lineNumber: 116
                                     },
                                     __self: this
                                 }),
@@ -22922,7 +22921,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 127
+                                        lineNumber: 126
                                     },
                                     __self: this
                                 }),
@@ -22943,7 +22942,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 132
+                                        lineNumber: 131
                                     },
                                     __self: this
                                 }),
@@ -22964,7 +22963,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 139
+                                        lineNumber: 138
                                     },
                                     __self: this
                                 }),
@@ -22985,7 +22984,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 147
+                                        lineNumber: 146
                                     },
                                     __self: this
                                 }),
@@ -23003,7 +23002,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 155
+                                        lineNumber: 154
                                     },
                                     __self: this
                                 })
@@ -43447,20 +43446,15 @@ parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
 parcelHelpers.export(exports, "SET_USER", ()=>SET_USER
 );
-parcelHelpers.export(exports, "UPDATE_USER", ()=>UPDATE_USER
-);
 parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
 parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
 parcelHelpers.export(exports, "setUser", ()=>setUser
 );
-parcelHelpers.export(exports, "updateUser", ()=>updateUser
-);
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
 const SET_USER = 'SET_USER';
-const UPDATE_USER = 'UPDATE_USER';
 function setMovies(value) {
     return {
         type: SET_MOVIES,
@@ -43476,12 +43470,6 @@ function setFilter(value) {
 function setUser(value) {
     return {
         type: SET_USER,
-        value
-    };
-}
-function updateUser(value) {
-    return {
-        type: UPDATE_USER,
         value
     };
 }
@@ -44290,7 +44278,7 @@ function movies(state = [], action) {
             return state;
     }
 }
-function user(state = [], action) {
+function users(state = '', action) {
     switch(action.type){
         case _actions.SET_USER:
             return action.value;
@@ -44301,7 +44289,7 @@ function user(state = [], action) {
 const moviesApp = _redux.combineReducers({
     visibilityFilter,
     movies,
-    user
+    users
 });
 exports.default = moviesApp;
 

@@ -10,9 +10,8 @@ import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavBarView } from '../navbar/navbar';
-// #0
-import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
+import { setMovies } from '../../actions/actions';
 
 
 
