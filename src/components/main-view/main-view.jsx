@@ -119,12 +119,9 @@ class MainView extends React.Component {
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
              
-             if (movies.length === 0) return <div className="main-view" />;
-             return movies.map(movie => (
-               <Col md={3} key={movie._id}>
-                 <MovieCard movie={movie} />
-               </Col>
-             ))
+             if (movies.length === 0) return <div className="main-view" />; 
+             // #6
+             return <MoviesList movies={movies}/>;
            }} />
           
           <Route exact path="/register" render={() => {
@@ -168,3 +165,12 @@ class MainView extends React.Component {
     );
   }
 }
+
+
+// #7
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
+
+// #8
+export default connect(mapStateToProps, { setMovies } )(MainView);
