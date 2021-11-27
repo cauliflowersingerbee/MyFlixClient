@@ -5,14 +5,10 @@ import { Card, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-
-
-export class MovieCard extends React.Component {
-  render() {
-    const { movie } = this.props;
+export function MovieCard(props) {
+  const { movie } = props;
 
     return (
-      <>
       <Card className='movie-card' style={{marginTop: '5rem'}}>
         <Card.Img variant="top" src={movie.ImagePath}/>
         <Card.Body>
@@ -23,10 +19,9 @@ export class MovieCard extends React.Component {
           </Link>
         </Card.Body>
       </Card>
-      </>
     );
   }
-}
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
