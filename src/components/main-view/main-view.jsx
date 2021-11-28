@@ -1,15 +1,19 @@
 import React from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
+import { NavBarView } from '../navbar/navbar';
+
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { Container, Row, Col } from 'react-bootstrap';
-import { NavBarView } from '../navbar/navbar';
+
+import "./main-view.scss";
+
+import { connect } from 'react-redux';
 import MoviesList from '../movies-list/movies-list';
 import { setMovies } from '../../actions/actions';
 
@@ -22,6 +26,7 @@ class MainView extends React.Component {
 
     this.state = {
       user: null,
+      //movies: null,
       selectedMovie: null
     }
   }
@@ -101,8 +106,8 @@ class MainView extends React.Component {
   
   render() {
     // #5 movies is extracted from this.props rather 
-    //than from the this.state
-    const { movies } = this.props;
+    //than from this.state
+    let { movies } = this.props;
     const { user } = this.state;
     
     return (
