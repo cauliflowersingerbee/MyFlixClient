@@ -11,7 +11,6 @@ import { UserUpdateView } from './user-update-view';
 import settingsIcon from '../../img/settings-icon-img.png'
 import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
-
 import { connect } from 'react-redux';
 import { setUser } from '../../actions/actions';
 
@@ -19,20 +18,28 @@ import { setUser } from '../../actions/actions';
 export class ProfileView extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+        user: null,
+      }
   }
 
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.props.setUser;
-      };
+      this.setState({
+        user: localStorage.getItem('user')
+      });
     }
-  
+  }
+
 
 
   render () {
-  const { user, movies } = this.props;
+  const { user } = this.props;
+  const { movies } = this.props;
 
+  console.log('user profileview', user)
   
   return <>
   <Container>
@@ -63,12 +70,10 @@ export class ProfileView extends React.Component {
  }
 }
 
-
 let mapStateToProps = state => {
-  return {
-    user: state.user,
-    movies: state.movies
-  }
+  return { movies: state.movies },
+         { user: state.user }
 }
 
-export default connect(mapStateToProps, { setUser })(ProfileView);
+// #8
+export default connect(mapStateToProps, { setUser } )(ProfileView);

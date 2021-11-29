@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavBarView } from '../navbar/navbar';
+import { connect } from 'react-redux';
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -10,12 +12,9 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-
-import "./main-view.scss";
-
-import { connect } from 'react-redux';
 import MoviesList from '../movies-list/movies-list';
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
+import "./main-view.scss";
 
 
 
@@ -26,7 +25,6 @@ class MainView extends React.Component {
 
     this.state = {
       user: null,
-      //movies: null,
       selectedMovie: null
     }
   }
@@ -61,9 +59,7 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => {
-        this.setState({
-          user: response.data
-        });
+        this.props.setUser(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -106,7 +102,7 @@ class MainView extends React.Component {
   
   render() {
     // #5 movies is extracted from this.props rather 
-    //than from this.state
+    //than from the this.state
     let { movies } = this.props;
     const { user } = this.state;
     
@@ -159,7 +155,7 @@ class MainView extends React.Component {
           <Route exact path="/users/:Username"
             render={({ history }) => {
               if (!user || movies.length === 0) return <Redirect to="/" />;
-              return <ProfileView movies={movies} //user={user}
+              return <ProfileView movies={movies} user={user}
               />;
             }}
           />
@@ -174,8 +170,10 @@ class MainView extends React.Component {
 
 // #7
 let mapStateToProps = state => {
-  return { movies: state.movies }
+  return { movies: state.movies, 
+            user: state.user         
+  }
 }
 
 // #8
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, { setMovies, setUser } )(MainView);
