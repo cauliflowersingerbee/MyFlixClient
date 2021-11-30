@@ -37,6 +37,7 @@ class MainView extends React.Component {
       });
       this.getMovies(accessToken);
       this.getUser(accessToken);
+      
     }
   }
 
