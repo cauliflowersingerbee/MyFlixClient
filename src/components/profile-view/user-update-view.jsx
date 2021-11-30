@@ -137,3 +137,9 @@ export class UserUpdateView extends React.Component {
   };
 
 
+
+  let mapStateToProps = state => {
+    return { user: state.user }
+  }
+
+  export default connect(mapStateToProps)(UserUpdateView);
