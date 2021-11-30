@@ -23,14 +23,14 @@ export class ProfileView extends React.Component {
       }
   }
 
-  componentDidMount() {
-    const accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-    }
-  }
+  //componentDidMount() {
+    //const accessToken = localStorage.getItem('token');
+    //if (accessToken !== null) {
+     // this.setState({
+      //  user: localStorage.getItem('user')
+     // });
+   // }
+  //}
 
 
 
