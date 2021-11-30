@@ -12,7 +12,6 @@ import settingsIcon from '../../img/settings-icon-img.png'
 import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
 import { connect } from 'react-redux';
-import { setUser } from '../../actions/actions';
 
 
 export class ProfileView extends React.Component {
@@ -20,7 +19,7 @@ export class ProfileView extends React.Component {
     super(props);
 
     this.state = {
-        user: null,
+        user: [],
       }
   }
 
@@ -37,15 +36,15 @@ export class ProfileView extends React.Component {
 
   render () {
   const { user } = this.props;
+  console.log(user);
   const { movies } = this.props;
-
-  console.log('user profileview', user)
+  console.log(movies);
   
   return <>
   <Container>
   <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center', marginTop: '3rem'}}>
   <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', float: left}}/>
-  <h2> Welcome {user}! </h2>
+  <h2> Welcome {user.Username}! </h2>
   </Row>
   <Row> 
     <Col xs={2}>
@@ -75,5 +74,6 @@ let mapStateToProps = state => {
          { user: state.user }
 }
 
+
 // #8
-export default connect(mapStateToProps, { setUser } )(ProfileView);
+export default connect(mapStateToProps)(ProfileView);

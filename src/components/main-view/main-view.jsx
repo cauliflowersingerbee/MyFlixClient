@@ -32,14 +32,11 @@ class MainView extends React.Component {
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
       this.getMovies(accessToken);
       this.getUser(accessToken);
-      
+     };
     }
-  }
+  //}
 
   getMovies(token) {
 
@@ -62,6 +59,7 @@ class MainView extends React.Component {
     })
       .then((response) => {
         this.props.setUser(response.data);
+        console.log(username, response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -107,7 +105,7 @@ class MainView extends React.Component {
     // #5 movies is extracted from this.props rather 
     //than from the this.state
     let { movies, user } = this.props;
-    console.log('user mainview', user);
+    console.log(user.Username);
     
     return (
 
@@ -173,7 +171,7 @@ class MainView extends React.Component {
 
 // #7
 let mapStateToProps = state => {
-  return { movies: state.movies, 
+  return { movies: state.movies,
             user: state.user         
   }
 }

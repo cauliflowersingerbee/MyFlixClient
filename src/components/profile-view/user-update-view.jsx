@@ -4,8 +4,6 @@ import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
 import settingsIcon from '../../img/settings-icon-img.png';
 import axios from 'axios';
-import { Link } from "react-router-dom";
-import { LoginView } from '../login-view/login-view';
 
 
 export class UserUpdateView extends React.Component {
