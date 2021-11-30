@@ -12,13 +12,13 @@ export class UserUpdateView extends React.Component {
   constructor(props) {
     super(props);
     
-    //this.state = {
-      //username: '',
-      //password: '',
-      //email: '',
-      //birthday: ''
+    this.state = {
+      username: '',
+      password: '',
+      email: '',
+      birthday: ''
      }
-  //}
+  }
 
     handleUsernameChange = e => {
     this.setState({
@@ -85,8 +85,7 @@ export class UserUpdateView extends React.Component {
   }
 
     render() {
-     //const { username, password, email, birthday} = this.state;
-     const {user} = this.props;
+     const { username, password, email, birthday} = this.state;
      
 
      return (<div className="update-user">
