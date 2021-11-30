@@ -86,7 +86,8 @@ export class UserUpdateView extends React.Component {
   }
 
     render() {
-     const { username, password, email, birthday} = this.state
+     const { username, password, email, birthday} = this.state;
+     
 
      return (<div className="update-user">
       <Container>  
