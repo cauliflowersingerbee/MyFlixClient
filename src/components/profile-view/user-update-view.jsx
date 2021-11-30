@@ -4,6 +4,7 @@ import { Card, Form, Button, Container, Row, Col } from 'react-bootstrap';
 import img from '../../img/LoginImg.jpg';
 import settingsIcon from '../../img/settings-icon-img.png';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 export class UserUpdateView extends React.Component {
@@ -11,13 +12,13 @@ export class UserUpdateView extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state = {
-      username: '',
-      password: '',
-      email: '',
-      birthday: ''
+    //this.state = {
+      //username: '',
+      //password: '',
+      //email: '',
+      //birthday: ''
      }
-  }
+  //}
 
     handleUsernameChange = e => {
     this.setState({
@@ -84,7 +85,8 @@ export class UserUpdateView extends React.Component {
   }
 
     render() {
-     const { username, password, email, birthday} = this.state;
+     //const { username, password, email, birthday} = this.state;
+     const {user} = this.props;
      
 
      return (<div className="update-user">
