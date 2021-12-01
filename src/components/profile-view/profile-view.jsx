@@ -37,12 +37,13 @@ export class ProfileView extends React.Component {
   render () {
   const { user } = this.props;
   const { movies } = this.props;
+  const username = localStorage.getItem('user');
   
   return <>
   <Container>
   <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center', marginTop: '3rem'}}>
   <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', float: left}}/>
-  <h2> Welcome {user}! </h2>
+  <h2> Welcome {username}! </h2>
   </Row>
   <Row> 
     <Col xs={2}>

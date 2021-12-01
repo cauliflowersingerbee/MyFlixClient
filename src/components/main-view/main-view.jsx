@@ -105,7 +105,7 @@ class MainView extends React.Component {
     // #5 movies is extracted from this.props rather 
     //than from the this.state
     let { movies, user } = this.props;
-    console.log(user.Username);
+    //console.log(user.Username);
     
     return (
 
