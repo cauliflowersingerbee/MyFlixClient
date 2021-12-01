@@ -5,6 +5,7 @@ import img from '../../img/LoginImg.jpg';
 import settingsIcon from '../../img/settings-icon-img.png';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { setUser } from '../../actions/actions';
 
 
 export class UserUpdateView extends React.Component {
@@ -75,6 +76,7 @@ export class UserUpdateView extends React.Component {
           email: response.data.email,
           birthday: response.data.birthday
         });
+        this.props.setUser(response.data);
         localStorage.setItem('user', response.data.username);
         alert("Account Details Updated.");
       })
@@ -143,4 +145,7 @@ export class UserUpdateView extends React.Component {
     return { user: state.user }
   }
 
-  export default connect(mapStateToProps)(UserUpdateView);
+  export default connect(mapStateToProps, { setUser })(UserUpdateView);
+
+
+  

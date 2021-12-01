@@ -19,32 +19,30 @@ export class ProfileView extends React.Component {
     super(props);
 
     this.state = {
-        user: [],
+        user: null,
       }
   }
 
-  //componentDidMount() {
-    //const accessToken = localStorage.getItem('token');
-    //if (accessToken !== null) {
-     // this.setState({
-      //  user: localStorage.getItem('user')
-     // });
-   // }
-  //}
+  componentDidMount() {
+    const accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+    }
+  }
 
 
 
   render () {
   const { user } = this.props;
-  console.log(user);
   const { movies } = this.props;
-  console.log(movies);
   
   return <>
   <Container>
   <Row className="greeting" style={{height: '8rem', width: '50rem', marginLeft: '7rem', justifyContent: 'center', marginTop: '3rem'}}>
   <img src={userIcon} alt="Kino Noir User Icon" style={{height: '5rem', width: '5rem', float: left}}/>
-  <h2> Welcome {user.Username}! </h2>
+  <h2> Welcome {user}! </h2>
   </Row>
   <Row> 
     <Col xs={2}>
@@ -68,6 +66,7 @@ export class ProfileView extends React.Component {
 
  }
 }
+
 
 let mapStateToProps = state => {
   return { movies: state.movies },
