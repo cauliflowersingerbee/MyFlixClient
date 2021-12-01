@@ -78,6 +78,7 @@ export class UserUpdateView extends React.Component {
           Birthday: response.data.Birthday
         });
         this.props.setUser(response.data);
+        console.log(response.data);
         localStorage.setItem('user', response.data.Username);
         alert("Account Details Updated.");
       })
