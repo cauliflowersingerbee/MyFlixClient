@@ -21,6 +21,7 @@ export class UserUpdateView extends React.Component {
      }
   }
 
+
     handleUsernameChange = e => {
     this.setState({
       username: e.target.value
