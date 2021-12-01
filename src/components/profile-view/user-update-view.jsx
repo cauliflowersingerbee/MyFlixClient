@@ -71,16 +71,22 @@ export class UserUpdateView extends React.Component {
 
       })
       .then (response => {
-        this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday
-        });
-        this.props.setUser(response.data);
-        console.log(response.data);
-        localStorage.setItem('user', response.data.Username);
+        //this.setState({
+          //Username: response.data.Username,
+          //Password: response.data.Password,
+          //Email: response.data.Email,
+          //Birthday: response.data.Birthday
+        //});
+        //this.props.setUser(response.data);
+        //console.log(response.data);
+        localStorage.setItem('user', this.state.Username);
         alert("Account Details Updated.");
+        setUser({
+          Username: this.state.Username,
+          Password: this.state.Password,
+          Email: this.state.Email,
+          Birthday: this.state.Birthday  
+        })
       })
       .catch (error => {
         alert ('Error Updating Account')
