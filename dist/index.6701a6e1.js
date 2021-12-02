@@ -25725,20 +25725,15 @@ parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
 parcelHelpers.export(exports, "SET_USER", ()=>SET_USER
 );
-parcelHelpers.export(exports, "SET_FAVORITE", ()=>SET_FAVORITE
-);
 parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
 parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
 parcelHelpers.export(exports, "setUser", ()=>setUser
 );
-parcelHelpers.export(exports, "setFavorite", ()=>setFavorite
-);
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
 const SET_USER = 'SET_USER';
-const SET_FAVORITE = 'SET_FAVORITE';
 function setMovies(value) {
     return {
         type: SET_MOVIES,
@@ -25754,12 +25749,6 @@ function setFilter(value) {
 function setUser(value) {
     return {
         type: SET_USER,
-        value
-    };
-}
-function setFavorite(value) {
-    return {
-        type: SET_FAVORITE,
         value
     };
 }
