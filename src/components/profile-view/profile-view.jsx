@@ -49,15 +49,15 @@ export class ProfileView extends React.Component {
     <Col xs={2}>
       <img src={logo} alt="Kino Noir Logo" style={{height: '7rem', width: '10rem', marginTop: '13rem'}}/>
       </Col>
-    <Col xs={3}>
+    <Col xs={10} md={3}>
       <UserUpdateView />
     </Col>
 
-    <Col xs={3}>
+    <Col xs={10} md={3}>
       <FaveMoviesView movies={movies} user={user} />
     </Col>
 
-    <Col xs={3}>
+    <Col xs={10} md={3}>
       <UserDeleteView />
     </Col>
 

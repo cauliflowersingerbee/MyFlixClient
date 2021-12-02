@@ -43062,7 +43062,8 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
+                                xs: 10,
+                                md: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 52
@@ -43077,7 +43078,8 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
+                                xs: 10,
+                                md: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 56
@@ -43094,7 +43096,8 @@ class ProfileView extends _reactDefault.default.Component {
                                 })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                xs: 3,
+                                xs: 10,
+                                md: 3,
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 60
