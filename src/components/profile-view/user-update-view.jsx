@@ -81,7 +81,7 @@ export class UserUpdateView extends React.Component {
         //console.log(response.data);
         localStorage.setItem('user', this.state.Username);
         alert("Account Details Updated.");
-        setUser({
+        this.props.setUser({
           Username: this.state.Username,
           Password: this.state.Password,
           Email: this.state.Email,

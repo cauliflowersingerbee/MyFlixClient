@@ -26028,12 +26028,6 @@ class MainView extends _reactDefault.default.Component {
         }));
     }
 }
-MainView.propTypes = {
-    profile: PropTypes.shape({
-        user: PropTypes.array,
-        movies: PropTypes.array
-    })
-};
 // #7
 let mapStateToProps = (state)=>{
     return {
@@ -43652,7 +43646,7 @@ class UserUpdateView extends _reactDefault.default.Component {
             //console.log(response.data);
             localStorage.setItem('user', this.state.Username);
             alert("Account Details Updated.");
-            _actions.setUser({
+            this.props.setUser({
                 Username: this.state.Username,
                 Password: this.state.Password,
                 Email: this.state.Email,

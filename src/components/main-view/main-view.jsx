@@ -168,13 +168,6 @@ class MainView extends React.Component {
   }
 }
 
-MainView.propTypes = {
-  profile: PropTypes.shape({
-    user: PropTypes.array,
-    movies: PropTypes.array,
-  })
-};
-
 
 // #7
 let mapStateToProps = state => {
