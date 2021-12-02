@@ -25788,6 +25788,7 @@ var _movieView = require("../movie-view/movie-view");
 var _genreView = require("../genre-view/genre-view");
 var _directorView = require("../director-view/director-view");
 var _profileView = require("../profile-view/profile-view");
+var _profileViewDefault = parcelHelpers.interopDefault(_profileView);
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 var _actions = require("../../actions/actions");
@@ -26009,7 +26010,7 @@ class MainView extends _reactDefault.default.Component {
                                         if (!user || movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
                                             to: "/"
                                         }));
-                                        return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                        return(/*#__PURE__*/ _jsxRuntime.jsx(_profileViewDefault.default, {
                                             movies: movies
                                         }));
                                     },
@@ -26027,6 +26028,12 @@ class MainView extends _reactDefault.default.Component {
         }));
     }
 }
+MainView.propTypes = {
+    profile: PropTypes.shape({
+        user: PropTypes.array,
+        movies: PropTypes.array
+    })
+};
 // #7
 let mapStateToProps = (state)=>{
     return {
@@ -42967,6 +42974,7 @@ var _reactRouterDom = require("react-router-dom");
 var _userDeleteView = require("./user-delete-view");
 var _faveMovieView = require("./faveMovie-view");
 var _userUpdateView = require("./user-update-view");
+var _userUpdateViewDefault = parcelHelpers.interopDefault(_userUpdateView);
 var _settingsIconImgPng = require("../../img/settings-icon-img.png");
 var _settingsIconImgPngDefault = parcelHelpers.interopDefault(_settingsIconImgPng);
 var _userIconPng = require("../../img/user-icon.png");
@@ -43077,7 +43085,7 @@ class ProfileView extends _reactDefault.default.Component {
                                     lineNumber: 52
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateView.UserUpdateView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_userUpdateViewDefault.default, {
                                     __source: {
                                         fileName: "src/components/profile-view/profile-view.jsx",
                                         lineNumber: 53

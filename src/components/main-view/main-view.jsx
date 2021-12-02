@@ -11,7 +11,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { ProfileView } from '../profile-view/profile-view';
+import  ProfileView  from '../profile-view/profile-view';
 import MoviesList from '../movies-list/movies-list';
 import { setMovies, setUser } from '../../actions/actions';
 import "./main-view.scss";
@@ -168,6 +168,13 @@ class MainView extends React.Component {
   }
 }
 
+MainView.propTypes = {
+  profile: PropTypes.shape({
+    user: PropTypes.array,
+    movies: PropTypes.array,
+  })
+};
+
 
 // #7
 let mapStateToProps = state => {
@@ -178,3 +185,6 @@ let mapStateToProps = state => {
 
 // #8
 export default connect(mapStateToProps, { setMovies, setUser } )(MainView);
+
+
+

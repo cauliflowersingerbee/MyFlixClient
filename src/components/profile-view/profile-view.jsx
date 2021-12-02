@@ -7,7 +7,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import { UserDeleteView } from './user-delete-view';
 import { FaveMoviesView } from './faveMovie-view';
-import { UserUpdateView } from './user-update-view';
+import  UserUpdateView  from './user-update-view';
 import settingsIcon from '../../img/settings-icon-img.png'
 import userIcon from '../../img/user-icon.png'
 import { left } from '@popperjs/core';
