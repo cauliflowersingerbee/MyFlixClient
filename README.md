@@ -1,15 +1,54 @@
-About The Project
+# MyFlixClient
 
-MyFlixClient
+## Objective
 
-After creating the MyFlixDB REST API to store data about movies and users, this App moves from the backend server-side to the client-facing frontend. 
+Client-side of the MyFlix API built using the MERN tech stack
+(MongoDB, Express, React, and
+Node.js).
 
-The myFlix app allowed users to make requests to a MongoDB database. 
+## Design Criteria
 
-MyFlixClient is the client-side of that app. 
+### User Stories
+- As a user, I want to be able to access information on movies, directors, and genres so
+that I can learn more about movies I’ve watched or am interested in.
+- As a user, I want to be able to create a profile so I can save data about my favorite
+movies.
 
-Its purpose is to create an interface that users can interact with while using the movie app. 
+## Features & Requirements
 
-Responses from the server will be rendered into the interface: movie synopses, director biographies, genres, etc. 
+#### Main view
+- Returns a list of ALL movies to the user (each listed item with an image, title, and
+description)
+- Sorting and filtering
+- Ability to select a movie for more details
 
-MyFlixClient is built With Javascript, React, SCSS, & HTML
+#### Single movie view
+- Returns data (description, genre, director, image) about a single movie to the user
+- Allows users to add a movie to their list of favorites
+
+#### Login view
+- Allows users to log in with a username and password
+Registration view
+- Allows new users to register (username, password, email, birthday)
+
+#### Genre view
+- Returns data about a genre, with a name and description
+- Displays example movies
+
+##### Director view
+- Returns data about a director (name, bio, birth year, death year)
+- Displays example movies
+
+#### Profile view
+- Allows users to update their user info (username, password, email, date of birth)
+- Allows existing users to deregister
+- Displays favorite movies
+- Allows users to remove a movie from their list of favorites
+
+## Technical Requirements
+- Single-page application (SPA)
+- Built with React and the MERN stack
+- Uses state routing to navigate between views and share URLs
+- Uses Parcel as its build tool
+- Written with React Redux (hence respecting the Flux pattern)
+- Uses Bootstrap as a UI library for styling and responsiveness
