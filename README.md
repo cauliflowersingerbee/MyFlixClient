@@ -1,4 +1,7 @@
 # MyFlixClient
+![ex-3 6](https://user-images.githubusercontent.com/86426968/152045028-95efcdf4-7612-4ec8-83e2-046e746718fc.gif)
+
+
 
 ## Objective
 
