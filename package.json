@@ -1,0 +1,25 @@
+{
+  "name": "myflixclient",
+  "version": "1.0.0",
+  "description": "About The Project",
+  "source": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "parcel", 
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cauliflowersingerbee/MyFlixClient.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cauliflowersingerbee/MyFlixClient/issues"
+  },
+  "homepage": "https://github.com/cauliflowersingerbee/MyFlixClient#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
+  }
+}
