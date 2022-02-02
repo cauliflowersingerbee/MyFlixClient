@@ -530,6 +530,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _reactRouterDom = require("react-router-dom");
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _redux = require("redux");
@@ -544,42 +545,41 @@ var _reactBootstrap = require("react-bootstrap");
 const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRedux.Provider, {
-            store: store,
+        /**return (
+      <Provider store={store}>
+      <Container>
+        <MainView />
+     </Container>
+      </Provider> 
+    );*/ /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/index.jsx",
-                lineNumber: 17,
-                columnNumber: 7
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
-            __source: {
-                fileName: "Desktop/webdev/MyFlixClient/src/index.jsx",
-                lineNumber: 18,
-                columnNumber: 7
+                lineNumber: 27,
+                columnNumber: 5
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_mainViewDefault.default, {
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/index.jsx",
-                lineNumber: 19,
-                columnNumber: 9
+                lineNumber: 28,
+                columnNumber: 7
             },
             __self: this
-        }))));
+        }));
     }
 }
 // Finds the root of the app
-const container = document.getElementsByClassName('app-container')[0];
+//const container = document.getElementsByClassName('app-container')[0];
 // Tells React to render your app in the root DOM element
-_reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container);
+//ReactDOM.render(React.createElement(MyFlixApplication), container);
+const rootElement = document.getElementById('app-container');
 
   $parcel$ReactRefreshHelpers$ce55.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"eFnbr","./index.scss":"k36hP","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Container":"hEdsw","redux":"cDNB3","react-redux":"bdVon","redux-devtools-extension":"fOPxo","./reducers/reducers":"fSlSC"}],"21dqq":[function(require,module,exports) {
+},{"react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"eFnbr","./index.scss":"k36hP","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Container":"hEdsw","redux":"cDNB3","react-redux":"bdVon","redux-devtools-extension":"fOPxo","./reducers/reducers":"fSlSC","react-router-dom":"fdOAw"}],"21dqq":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react.development.js');
 
@@ -21628,11 +21628,26 @@ class MainView extends _reactDefault.default.Component {
         //than from the this.state
         let { movies , user: user1  } = this.props;
         //console.log(user.Username);
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 112,
-                columnNumber: 9
+                lineNumber: 117,
+                columnNumber: 12
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+            basename: "/index.html",
+            __source: {
+                fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
+                lineNumber: 119,
+                columnNumber: 12
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Routes, {
+            __source: {
+                fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
+                lineNumber: 121,
+                columnNumber: 12
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navbar.NavBarView, {
@@ -21642,21 +21657,14 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 113,
+                lineNumber: 122,
                 columnNumber: 12
             },
             __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 115,
-                columnNumber: 10
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
-            __source: {
-                fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 116,
+                lineNumber: 123,
                 columnNumber: 9
             },
             __self: this
@@ -21664,7 +21672,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 117,
+                lineNumber: 124,
                 columnNumber: 9
             },
             __self: this
@@ -21685,7 +21693,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 118,
+                lineNumber: 125,
                 columnNumber: 11
             },
             __self: this
@@ -21700,7 +21708,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 128,
+                lineNumber: 135,
                 columnNumber: 11
             },
             __self: this
@@ -21720,7 +21728,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 133,
+                lineNumber: 140,
                 columnNumber: 11
             },
             __self: this
@@ -21740,7 +21748,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 140,
+                lineNumber: 147,
                 columnNumber: 11
             },
             __self: this
@@ -21760,7 +21768,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 148,
+                lineNumber: 155,
                 columnNumber: 11
             },
             __self: this
@@ -21777,11 +21785,11 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Desktop/webdev/MyFlixClient/src/components/main-view/main-view.jsx",
-                lineNumber: 156,
+                lineNumber: 163,
                 columnNumber: 11
             },
             __self: this
-        }))))));
+        })))))));
     }
 }
 // #7

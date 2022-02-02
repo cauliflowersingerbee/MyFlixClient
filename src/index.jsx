@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { 
+  BrowserRouter } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -13,19 +16,27 @@ const store = createStore(moviesApp, devToolsEnhancer());
 
 class MyFlixApplication extends React.Component {
   render() {
-    return (
+    /**return (
       <Provider store={store}>
       <Container>
         <MainView />
-      </Container>
-      </Provider>
-    );
+     </Container>
+      </Provider> 
+    );*/
+
+    <BrowserRouter>
+      <MainView />
+    </BrowserRouter>, 
+    rootElement
   }
 }
 
 
 // Finds the root of the app
-const container = document.getElementsByClassName('app-container')[0];
+//const container = document.getElementsByClassName('app-container')[0];
 
 // Tells React to render your app in the root DOM element
-ReactDOM.render(React.createElement(MyFlixApplication), container);
+//ReactDOM.render(React.createElement(MyFlixApplication), container);
+
+const rootElement = document.getElementById('app-container');
+

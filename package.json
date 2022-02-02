@@ -4,9 +4,7 @@
   "description": "About The Project",
   "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel",
-    "build": "parcel build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/cauliflowersingerbee/MyFlixClient/issues"
   },
-  "homepage": "https://github.com/cauliflowersingerbee/MyFlixClient#readme"
+  "homepage": "https://github.com/cauliflowersingerbee/MyFlixClient#readme",
+  "dependencies": {
+    "@parcel/cache": "^2.2.1",
+    "@parcel/core": "^2.2.1",
+    "axios": "^0.24.0",
+    "navbar": "^2.1.0",
+    "prop-types": "^15.8.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1"
+  }
 }

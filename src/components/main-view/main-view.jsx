@@ -1,10 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { 
+  BrowserRouter,  
+  Routes, 
+  Route, 
+  Redirect 
+} from "react-router-dom";
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavBarView } from '../navbar/navbar';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
@@ -108,11 +114,12 @@ class MainView extends React.Component {
     //console.log(user.Username);
     
     return (
-
-        <Router>
+           <div>
+          
+           <BrowserRouter basename='/index.html'>
+           
+           <Routes>
            <NavBarView user={user} style={{marginBottom: '5rem'}}/>
-
-         <div >
         <Container>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
@@ -162,8 +169,9 @@ class MainView extends React.Component {
           />
         </Row>
         </Container>
+      </Routes>
+      </BrowserRouter>
       </div>
-      </Router>
     );
   }
 }
