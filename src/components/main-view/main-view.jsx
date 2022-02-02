@@ -116,7 +116,7 @@ class MainView extends React.Component {
     return (
            <div>
           
-           <BrowserRouter basename='/index.html'>
+           <BrowserRouter>
            
            <Routes>
            <NavBarView user={user} style={{marginBottom: '5rem'}}/>
