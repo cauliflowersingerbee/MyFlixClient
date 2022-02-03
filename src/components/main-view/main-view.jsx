@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter, Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavBarView } from '../navbar/navbar';
@@ -108,13 +108,11 @@ class MainView extends React.Component {
     //console.log(user.Username);
     
     return (
-          
-           <Router>
-           <NavBarView user={user} style={{marginBottom: '5rem'}}/>
-           <div>
 
-           <Route>
-           
+        <Router>
+           <NavBarView user={user} style={{marginBottom: '5rem'}}/>
+
+         <div >
         <Container>
         <Row className="main-view justify-content-md-center">
           <Route exact path="/" render={() => {
@@ -164,7 +162,6 @@ class MainView extends React.Component {
           />
         </Row>
         </Container>
-      </Route>
       </div>
       </Router>
     );

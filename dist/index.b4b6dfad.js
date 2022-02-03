@@ -29345,11 +29345,11 @@ class MainView extends _reactDefault.default.Component {
         //than from the this.state
         let { movies , user: user1  } = this.props;
         //console.log(user.Username);
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Router, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 112,
-                columnNumber: 12
+                columnNumber: 9
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navbar.NavBarView, {
@@ -29366,21 +29366,14 @@ class MainView extends _reactDefault.default.Component {
         }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 114,
-                columnNumber: 12
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 116,
-                columnNumber: 12
+                lineNumber: 115,
+                columnNumber: 10
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 118,
+                lineNumber: 116,
                 columnNumber: 9
             },
             __self: this
@@ -29388,7 +29381,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 119,
+                lineNumber: 117,
                 columnNumber: 9
             },
             __self: this
@@ -29409,7 +29402,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 120,
+                lineNumber: 118,
                 columnNumber: 11
             },
             __self: this
@@ -29424,7 +29417,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 130,
+                lineNumber: 128,
                 columnNumber: 11
             },
             __self: this
@@ -29444,7 +29437,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 135,
+                lineNumber: 133,
                 columnNumber: 11
             },
             __self: this
@@ -29464,7 +29457,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 142,
+                lineNumber: 140,
                 columnNumber: 11
             },
             __self: this
@@ -29484,7 +29477,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 150,
+                lineNumber: 148,
                 columnNumber: 11
             },
             __self: this
@@ -29501,11 +29494,11 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 158,
+                lineNumber: 156,
                 columnNumber: 11
             },
             __self: this
-        })))))));
+        }))))));
     }
 }
 // #7
