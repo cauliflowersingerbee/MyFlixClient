@@ -1,5 +1,5 @@
 # MyFlixClient
-![ex-3 6](https://user-images.githubusercontent.com/86426968/152045028-95efcdf4-7612-4ec8-83e2-046e746718fc.gif)
+![kino-noir](https://user-images.githubusercontent.com/86426968/152357231-1d2c0d18-ddeb-499b-911f-fea87be25353.gif)
 
 
 
