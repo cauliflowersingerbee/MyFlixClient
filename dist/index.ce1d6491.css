@@ -1,0 +1,31 @@
+body {
+  background-color: #ffffff;
+}
+
+.main-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-card {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.registration-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar {
+  color: #ffb96b;
+}
+
+a, p, .nav-item {
+  align-self: baseline;
+}
+
+.navbar-brand {
+  align-self: auto;
+}
+
+/*# sourceMappingURL=index.ce1d6491.css.map */
