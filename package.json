@@ -15,16 +15,16 @@
   "bugs": {
     "url": "https://github.com/cauliflowersingerbee/MyFlixClient/issues"
   },
-  "homepage": "https://github.com/cauliflowersingerbee/MyFlixClient#readme",
+  "homepage": ".",
   "dependencies": {
     "@parcel/cache": "^2.2.1",
     "@parcel/core": "^2.2.1",
     "axios": "^0.24.0",
     "navbar": "^2.1.0",
     "prop-types": "^15.8.0",
-    "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1"

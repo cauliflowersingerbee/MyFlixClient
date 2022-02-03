@@ -1024,31 +1024,31 @@ var _reactBootstrap = require("react-bootstrap");
 const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        /**return (
-      <Provider store={store}>
-      <Container>
-        <MainView />
-     </Container>
-      </Provider> 
-    );*/ /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {
+        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRedux.Provider, {
+            store: store,
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {
+                }, void 0, false, {
+                    fileName: "src/index.jsx",
+                    lineNumber: 22,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "src/index.jsx",
-                lineNumber: 28,
+                lineNumber: 21,
                 columnNumber: 7
             }, this)
         }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 27,
-            columnNumber: 5
-        }, this);
+            lineNumber: 20,
+            columnNumber: 7
+        }, this));
     }
 }
 // Finds the root of the app
-//const container = document.getElementsByClassName('app-container')[0];
+const container = document.getElementsByClassName('app-container')[0];
 // Tells React to render your app in the root DOM element
-//ReactDOM.render(React.createElement(MyFlixApplication), container);
-const rootElement = document.getElementById('app-container');
+_reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container); //const rootElement = document.getElementById('app-container');
 
   $parcel$ReactRefreshHelpers$98a3.postlude(module);
 } finally {
@@ -49504,21 +49504,21 @@ class MainView extends _reactDefault.default.Component {
         //than from the this.state
         let { movies , user: user1  } = this.props;
         //console.log(user.Username);
-        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.NavBarView, {
-                            user: user1,
-                            style: {
-                                marginBottom: '5rem'
-                            }
-                        }, void 0, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 122,
-                            columnNumber: 12
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
+        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Router, {
+            children: [
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.NavBarView, {
+                    user: user1,
+                    style: {
+                        marginBottom: '5rem'
+                    }
+                }, void 0, false, {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 113,
+                    columnNumber: 12
+                }, this),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                                 className: "main-view justify-content-md-center",
                                 children: [
@@ -49541,7 +49541,7 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 125,
+                                        lineNumber: 120,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -49556,7 +49556,7 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 130,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -49576,7 +49576,7 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 140,
+                                        lineNumber: 135,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -49596,7 +49596,7 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 147,
+                                        lineNumber: 142,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -49616,7 +49616,7 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 155,
+                                        lineNumber: 150,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -49632,34 +49632,34 @@ class MainView extends _reactDefault.default.Component {
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 163,
+                                        lineNumber: 158,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 124,
+                                lineNumber: 119,
                                 columnNumber: 9
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 123,
+                            lineNumber: 118,
                             columnNumber: 9
                         }, this)
-                    ]
-                }, void 0, true, {
+                    }, void 0, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 116,
+                        columnNumber: 12
+                    }, this)
+                }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 121,
+                    lineNumber: 114,
                     columnNumber: 12
                 }, this)
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 119,
-                columnNumber: 12
-            }, this)
-        }, void 0, false, {
+            ]
+        }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 117,
+            lineNumber: 112,
             columnNumber: 12
         }, this));
     }
@@ -52380,7 +52380,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
                 var checker = arrayOfTypeCheckers[i];
                 var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
                 if (checkerResult == null) return null;
-                if (checkerResult.data.hasOwnProperty('expectedType')) expectedTypes.push(checkerResult.data.expectedType);
+                if (checkerResult.data && has(checkerResult.data, 'expectedType')) expectedTypes.push(checkerResult.data.expectedType);
             }
             var expectedTypesMessage = expectedTypes.length > 0 ? ', expected one of type [' + expectedTypes.join(', ') + ']' : '';
             return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
