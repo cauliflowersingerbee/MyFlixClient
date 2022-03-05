@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, Button, NavItem } from 'react-bootstrap';
+import { Navbar, Link, Container, Nav, Button, NavItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
@@ -28,19 +28,14 @@ export class NavBarView extends React.Component {
         if (!user) return null;
 
     return (
-    <Navbar collapseOnSelect expand="lg" variant="light" fixed="top" className="navbar" bg="bg-secondary">
-      <Container fluid>
-        <Navbar.Brand href="/">Kino Noir</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            </Nav>
 
-            <NavLink to={home} className='nav-link'>
+<Navbar collapse="lg" collapseOnSelect className='justify-content-between' variant="light" fixed="top" className="navbar" bg="bg-secondary">
+  <Container>
+  <Navbar.Brand href="/">Kino Noir </Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
+      <Nav className="me-auto navbar-nav ms-auto" style={{float: 'right'}}>
+      <NavLink to={home} className='nav-link'>
                 Home
             </NavLink>
 
@@ -51,10 +46,14 @@ export class NavBarView extends React.Component {
             <NavLink  to={'/'} onClick={this.onLoggedOut} className='logout'>
                 Log Out
             </NavLink>
-            
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          
+
+
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+     
     );
   };
 };

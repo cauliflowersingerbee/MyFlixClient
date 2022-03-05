@@ -1,4 +1,4 @@
-// src/components/visibility-filter-input/visibility-filter-input.jsx
+
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -8,11 +8,13 @@ import { setFilter } from '../../actions/actions';
 
 function VisibilityFilterInput(props) {
   return <Form.Control
+    style={{width: '10rem', marginLeft:'10rem', marginTop: '2rem', marginBottom: '1rem'}}
     onChange={e => props.setFilter(e.target.value)}
     value={props.visibilityFilter}
-    placeholder="filter"
+    placeholder="search movies"
   />;
 }
+
 
 export default connect(
   null,
