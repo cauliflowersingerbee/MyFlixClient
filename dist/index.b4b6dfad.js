@@ -39566,7 +39566,6 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-// src/components/visibility-filter-input/visibility-filter-input.jsx
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
@@ -39578,8 +39577,7 @@ function VisibilityFilterInput(props) {
         onChange: (e)=>props.setFilter(e.target.value)
         ,
         value: props.visibilityFilter,
-        placeholder: "search movies",
-        className: "visibilityFilter"
+        placeholder: "search movies"
     }, void 0, false, {
         fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
         lineNumber: 10,

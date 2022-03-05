@@ -1,4 +1,4 @@
-// src/components/visibility-filter-input/visibility-filter-input.jsx
+
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -11,9 +11,9 @@ function VisibilityFilterInput(props) {
     onChange={e => props.setFilter(e.target.value)}
     value={props.visibilityFilter}
     placeholder="search movies"
-    className='visibilityFilter'
   />;
 }
+
 
 export default connect(
   null,
