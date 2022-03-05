@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button, NavItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
 import './navbar.scss';
 
