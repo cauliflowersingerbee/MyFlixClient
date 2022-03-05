@@ -13,7 +13,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import  ProfileView  from '../profile-view/profile-view';
 import MoviesList from '../movies-list/movies-list';
-import { setMovies, setUser } from '../../actions/actions';
+import { setMovies, setUser, setFilter } from '../../actions/actions';
 import "./main-view.scss";
 
 
