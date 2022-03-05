@@ -28,18 +28,12 @@ export class NavBarView extends React.Component {
         if (!user) return null;
 
     return (
-    <Navbar collapseOnSelect expand="lg" variant="light" fixed="top" className="navbar" bg="bg-secondary">
+    <Navbar collapseOnSelect variant="light" fixed="top" className="navbar" bg="bg-secondary">
       <Container fluid>
         <Navbar.Brand href="/">Kino Noir</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            </Nav>
-
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} >
             <NavLink to={home} className='nav-link'>
                 Home
             </NavLink>
@@ -51,7 +45,7 @@ export class NavBarView extends React.Component {
             <NavLink  to={'/'} onClick={this.onLoggedOut} className='logout'>
                 Log Out
             </NavLink>
-            
+            </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
